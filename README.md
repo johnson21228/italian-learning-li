@@ -34,11 +34,27 @@ SPINE.md
 li/domain/italian_learning_principles.md
 li/domain/childlike_language_acquisition_rule.md
 li/domain/first_person_conversation_rule.md
+li/domain/conversation_before_grammar_rule.md
+li/practice/hear_imitate_answer_repair_loop.md
 li/prompts/start_italian_micro_conversation.md
 li/prompts/build_from_need_to_speak.md
 li/prompts/listen_repeat_respond_loop.md
+li/prompts/enter_conversation_before_grammar.md
+li/prompts/repair_misunderstanding_in_italian.md
+li/prompts/capture_personal_corpus_entry.md
 cards/001_start_italian_learning_workbench_card.md
+cards/002_enter_conversation_before_grammar_card.md
 ```
+
+## Card 002
+
+Card 002 adds the conversation-before-grammar rule and the practice loop:
+
+```text
+Hear → Imitate → Answer → Repair → Capture
+```
+
+The learner first stays in a small exchange. Grammar enters later to clarify a pattern already used.
 
 ## Use
 
