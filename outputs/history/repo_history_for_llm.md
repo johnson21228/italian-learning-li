@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-06-25T11:25:24Z
+Generated: 2026-06-25T11:50:49Z
 Branch: main
-Snapshot digest: 70bf741
+Snapshot digest: 628fdae
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-83388d2 (HEAD -> main) Add class material image asset practice
+88bbfa4 (HEAD -> main) Register uploaded Italian learning resources
+83388d2 Add class material image asset practice
 4c9240e Standardize LLM repo history snapshot
 4b785ca Add first class Italian greetings corpus
 d082d11 Add conversation-before-grammar Italian learning loop
@@ -29,11 +30,11 @@ M MAP.md
  M SPINE.md
  M outputs/history/repo_history_for_llm.md
  M tools/verify_italian_learning_li.py
-?? cards/006_register_uploaded_italian_learning_resources_card.md
-?? li/prompts/map_resource_to_personal_corpus.md
-?? li/prompts/use_uploaded_resource_for_practice.md
-?? li/source/
-?? source/
+?? cards/007_start_italian_first_chat_mode_card.md
+?? cards/008_cb_overlay_only_default_artifact_card.md
+?? li/prompts/start_chat_in_italian_mode_with_pack.md
+?? li/workflow/cb_overlay_only_default_rule.md
+?? li/workflow/italian_first_chat_mode_rule.md
 ```
 
 ## Tracked files
@@ -51,6 +52,7 @@ cards/002_enter_conversation_before_grammar_card.md
 cards/003_first_class_corpus_greetings_card.md
 cards/004_standardize_llm_repo_history_snapshot_card.md
 cards/005_class_material_image_assets_card.md
+cards/006_register_uploaded_italian_learning_resources_card.md
 dist/italian-learning-li.pack.zip
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
@@ -69,13 +71,20 @@ li/prompts/capture_personal_corpus_entry.md
 li/prompts/create_image_from_class_material.md
 li/prompts/enter_conversation_before_grammar.md
 li/prompts/listen_repeat_respond_loop.md
+li/prompts/map_resource_to_personal_corpus.md
 li/prompts/practice_first_class_dialogue.md
 li/prompts/practice_with_class_image.md
 li/prompts/repair_misunderstanding_in_italian.md
 li/prompts/speak_first_class_italian_aloud.md
 li/prompts/start_italian_micro_conversation.md
+li/prompts/use_uploaded_resource_for_practice.md
+li/source/uploaded_resource_custody_rule.md
 li/workflow/llm_repo_history_snapshot_rule.md
 outputs/history/repo_history_for_llm.md
+source/resources/basic_italian_traveler_resource_summary.md
+source/resources/cortina_conversational_italian_resource_summary.md
+source/resources/italian_learning_resource_index.md
+source/resources/piacere_resource_summary.md
 tools/clean_li_repo_artifacts.py
 tools/export_repo_history_for_llm.py
 tools/verify_italian_learning_li.py

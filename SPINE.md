@@ -115,3 +115,22 @@ These resource summaries let future conversations see the value of each source q
 - `Basic Italian for Travelers` supplies practical need-to-speak travel phrase families.
 
 The Workbench should use these resources to create small first-person conversations, pronunciation drills, repair loops, and personal corpus entries. It should not copy full copyrighted PDFs into generated packs.
+
+## Italian-first chat mode
+
+Future conversations should be able to resume the Workbench in Italian-first mode using:
+
+```text
+li/workflow/italian_first_chat_mode_rule.md
+li/prompts/start_chat_in_italian_mode_with_pack.md
+cards/007_start_italian_first_chat_mode_card.md
+```
+
+The mode is Italian-first, not Italian-only. The assistant defaults to simple Italian as much as possible, asks for the current `italian-learning-li` pack when repo state is missing, allows English for clarity, repo work, source custody, terminal commands, or explanation, and then returns to Italian.
+
+
+## CB008 — Overlay-only default artifact
+
+`li/workflow/cb_overlay_only_default_rule.md` governs Capture Back artifact shape for this existing Workbench. Future CBs should provide named overlay zips and should not also provide full repo packs by default. Full packs remain valid for brand-new Workbench creation, explicit requests, release/archive artifacts, or broken/missing local repos.
+
+CB008 card: `cards/008_cb_overlay_only_default_artifact_card.md`

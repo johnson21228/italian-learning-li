@@ -134,10 +134,24 @@ source/resources/cortina_conversational_italian_resource_summary.md
 source/resources/basic_italian_traveler_resource_summary.md
 li/prompts/use_uploaded_resource_for_practice.md
 li/prompts/map_resource_to_personal_corpus.md
+li/prompts/start_chat_in_italian_mode_with_pack.md
 cards/006_register_uploaded_italian_learning_resources_card.md
+cards/007_start_italian_first_chat_mode_card.md
 ```
 
 These summaries explain how `Piacere!`, `Cortina Conversational Italian in 20 Lessons`, and `Basic Italian for Travelers` contribute to the Workbench. The source PDFs themselves are not blindly copied into the repo; the WB preserves custody notes, value summaries, and practice maps.
+
+## Italian-first session start
+
+Card 007 adds a reusable prompt that asks for the current pack and places a future chat into Italian-first mode:
+
+```text
+li/workflow/italian_first_chat_mode_rule.md
+li/prompts/start_chat_in_italian_mode_with_pack.md
+cards/007_start_italian_first_chat_mode_card.md
+```
+
+The standard posture is: Italian-first, not Italian-only. The assistant should default to simple Italian as much as possible, allow English for clarity or repo/source work, and then return to Italian.
 
 ## Corpus outlook
 
@@ -171,3 +185,11 @@ outputs/history/repo_history_for_llm.md
 ```
 
 It is governed by `li/workflow/llm_repo_history_snapshot_rule.md` and captured by `cards/004_standardize_llm_repo_history_snapshot_card.md`. `tools/export_repo_history_for_llm.py` overwrites this file on each history/pack run.
+
+
+## CB008 — Overlay-only default artifact
+
+- Card: `cards/008_cb_overlay_only_default_artifact_card.md`
+- Rule: `li/workflow/cb_overlay_only_default_rule.md`
+- Default: ongoing CB work in an existing Workbench repo should provide an overlay zip only.
+- Required phrase: Do not also provide a full repo pack by default.

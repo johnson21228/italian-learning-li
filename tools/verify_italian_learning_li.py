@@ -37,6 +37,11 @@ REQUIRED = [
     "cards/005_class_material_image_assets_card.md",
     "assets/class_material/first_class/come_si_chiama_poster.jpeg",
     "li/source/uploaded_resource_custody_rule.md",
+    "li/workflow/italian_first_chat_mode_rule.md",
+    "li/prompts/start_chat_in_italian_mode_with_pack.md",
+    "cards/007_start_italian_first_chat_mode_card.md",
+    "li/workflow/cb_overlay_only_default_rule.md",
+    "cards/008_cb_overlay_only_default_artifact_card.md",
 ]
 
 REPAIR_PHRASES = [
@@ -207,6 +212,35 @@ TOKENS = {
         "source/resources/italian_learning_resource_index.md",
         "The Workbench should preserve a summary and use map",
     ],
+
+    "li/workflow/italian_first_chat_mode_rule.md": [
+        "Italian-first",
+        "not Italian-only",
+        "current `italian-learning-li` pack",
+        "Hear → Imitate → Answer → Repair → Capture",
+    ],
+    "li/prompts/start_chat_in_italian_mode_with_pack.md": [
+        "ask me to upload the current `italian-learning-li` pack",
+        "Italian-first mode",
+        "allow English",
+        "Ciao Steve. Cominciamo in italiano semplice. Come stai?",
+    ],
+    "cards/007_start_italian_first_chat_mode_card.md": [
+        "Start Italian-First Chat Mode",
+        "Italian-first, not Italian-only",
+        "li/prompts/start_chat_in_italian_mode_with_pack.md",
+    ],
+
+    "li/workflow/cb_overlay_only_default_rule.md": [
+        "Do not also provide a full repo pack by default",
+        "creating a brand-new Workbench",
+        "overlay zip",
+    ],
+    "cards/008_cb_overlay_only_default_artifact_card.md": [
+        "CB Overlay-Only Default Artifact",
+        "li/workflow/cb_overlay_only_default_rule.md",
+        "Do not also provide a full repo pack by default",
+    ],
 }
 
 
@@ -249,6 +283,13 @@ def main() -> int:
         "li/prompts/practice_first_class_dialogue.md",
         "cards/006_register_uploaded_italian_learning_resources_card.md",
         "li/source/uploaded_resource_custody_rule.md",
+        "li/workflow/italian_first_chat_mode_rule.md",
+        "li/prompts/start_chat_in_italian_mode_with_pack.md",
+        "li/workflow/cb_overlay_only_default_rule.md",
+        "cards/008_cb_overlay_only_default_artifact_card.md",
+        "cards/007_start_italian_first_chat_mode_card.md",
+        "cards/008_cb_overlay_only_default_artifact_card.md",
+        "li/workflow/cb_overlay_only_default_rule.md",
         "make verify",
     ]:
         if token not in map_text:
@@ -264,6 +305,10 @@ def main() -> int:
         "li/practice/formal_informal_choice_loop.md",
         "li/assets/class_material_image_asset_rule.md",
         "li/corpus/come_si_chiama_image_corpus_entry.md",
+        "li/workflow/italian_first_chat_mode_rule.md",
+        "li/prompts/start_chat_in_italian_mode_with_pack.md",
+        "li/workflow/cb_overlay_only_default_rule.md",
+        "cards/008_cb_overlay_only_default_artifact_card.md",
     ]:
         if token not in spine_text:
             print(f"SPINE.md missing expected orientation token: {token}")

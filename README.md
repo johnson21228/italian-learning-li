@@ -160,3 +160,18 @@ li/source/uploaded_resource_custody_rule.md
 ```
 
 The Workbench stores summaries and use maps, not full copied copyrighted sources.
+
+## Start a future chat in Italian-first mode
+
+Use this prompt when beginning a new conversation with the Workbench:
+
+```text
+li/prompts/start_chat_in_italian_mode_with_pack.md
+```
+
+It asks for the current `italian-learning-li` pack when needed and sets the default posture to Italian-first, not Italian-only. English remains allowed for clarity, repo work, source custody, terminal commands, or explanation.
+
+
+## Overlay-only default artifact
+
+For ongoing Capture Back work in this existing Workbench, the default apply artifact is a named overlay zip. The assistant should not also provide a full repo pack by default. Full packs are reserved for brand-new Workbench creation, explicit requests, release/archive artifacts, or recovery from a broken/missing local repo.
