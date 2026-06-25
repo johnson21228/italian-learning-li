@@ -92,3 +92,26 @@ cards/005_class_material_image_assets_card.md
 ```
 
 A class image must support a phrase family, a first-person learner line, pronunciation, repair, and personal corpus capture. The first image asset supports `Come ti chiami?`, `Mi chiamo Steve.`, and `Come si chiama questo?`.
+
+
+
+## Uploaded learning resources
+
+Uploaded PDFs and learning materials are source resources, governed by:
+
+```text
+li/source/uploaded_resource_custody_rule.md
+source/resources/italian_learning_resource_index.md
+source/resources/piacere_resource_summary.md
+source/resources/cortina_conversational_italian_resource_summary.md
+source/resources/basic_italian_traveler_resource_summary.md
+cards/006_register_uploaded_italian_learning_resources_card.md
+```
+
+These resource summaries let future conversations see the value of each source quickly:
+
+- `Piacere!` supplies a modern open elementary curriculum map;
+- `Cortina Conversational Italian in 20 Lessons` supplies old-school conversational and phonetic drill patterns;
+- `Basic Italian for Travelers` supplies practical need-to-speak travel phrase families.
+
+The Workbench should use these resources to create small first-person conversations, pronunciation drills, repair loops, and personal corpus entries. It should not copy full copyrighted PDFs into generated packs.

@@ -36,6 +36,7 @@ REQUIRED = [
     "li/prompts/practice_with_class_image.md",
     "cards/005_class_material_image_assets_card.md",
     "assets/class_material/first_class/come_si_chiama_poster.jpeg",
+    "li/source/uploaded_resource_custody_rule.md",
 ]
 
 REPAIR_PHRASES = [
@@ -164,6 +165,48 @@ TOKENS = {
         "assets/class_material/first_class/come_si_chiama_poster.jpeg",
         "Come si chiama questo?",
     ],
+
+    "li/source/uploaded_resource_custody_rule.md": [
+        "source/resources/",
+        "Do not extract long passages",
+        "conversation before grammar",
+    ],
+    "source/resources/italian_learning_resource_index.md": [
+        "Piacere!",
+        "Cortina Conversational Italian in 20 Lessons",
+        "Basic Italian for Travelers",
+        "source/resources/piacere_resource_summary.md",
+    ],
+    "source/resources/piacere_resource_summary.md": [
+        "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+        "Saluti e presentazioni",
+        "Conversazione: Mi presento",
+    ],
+    "source/resources/cortina_conversational_italian_resource_summary.md": [
+        "Conversational Italian in 20 Lessons",
+        "phonetic-pronunciation support",
+        "copyright-caution",
+    ],
+    "source/resources/basic_italian_traveler_resource_summary.md": [
+        "Basic Italian for Travelers",
+        "communication strategies",
+        "survival/travel speech",
+    ],
+    "li/prompts/use_uploaded_resource_for_practice.md": [
+        "source/resources/italian_learning_resource_index.md",
+        "Hear → Imitate → Answer → Repair → Capture",
+        "Choose the best resource",
+    ],
+    "li/prompts/map_resource_to_personal_corpus.md": [
+        "resource",
+        "phrase heard",
+        "next phrase wanted",
+    ],
+    "cards/006_register_uploaded_italian_learning_resources_card.md": [
+        "Register Uploaded Italian Learning Resources",
+        "source/resources/italian_learning_resource_index.md",
+        "The Workbench should preserve a summary and use map",
+    ],
 }
 
 
@@ -204,6 +247,8 @@ def main() -> int:
         "li/corpus/first_class_greetings_and_essere_stare.md",
         "li/practice/greeting_response_loop.md",
         "li/prompts/practice_first_class_dialogue.md",
+        "cards/006_register_uploaded_italian_learning_resources_card.md",
+        "li/source/uploaded_resource_custody_rule.md",
         "make verify",
     ]:
         if token not in map_text:

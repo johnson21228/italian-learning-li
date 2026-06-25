@@ -121,6 +121,24 @@ li/prompts/practice_with_class_image.md
 
 This asset supports `Come ti chiami?`, `Mi chiamo Steve.`, `Come si chiama questo?`, and the repair phrase `Non capisco. Puoi ripetere lentamente?`.
 
+
+## Uploaded learning resources
+
+Card 006 registers uploaded Italian learning PDFs as source resources so future conversations can find their value without searching blindly:
+
+```text
+li/source/uploaded_resource_custody_rule.md
+source/resources/italian_learning_resource_index.md
+source/resources/piacere_resource_summary.md
+source/resources/cortina_conversational_italian_resource_summary.md
+source/resources/basic_italian_traveler_resource_summary.md
+li/prompts/use_uploaded_resource_for_practice.md
+li/prompts/map_resource_to_personal_corpus.md
+cards/006_register_uploaded_italian_learning_resources_card.md
+```
+
+These summaries explain how `Piacere!`, `Cortina Conversational Italian in 20 Lessons`, and `Basic Italian for Travelers` contribute to the Workbench. The source PDFs themselves are not blindly copied into the repo; the WB preserves custody notes, value summaries, and practice maps.
+
 ## Corpus outlook
 
 The Workbench grows a personal corpus of encountered Italian:

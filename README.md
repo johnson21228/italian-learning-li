@@ -130,3 +130,33 @@ assets/class_material/first_class/come_si_chiama_poster.jpeg
 ```
 
 It is governed by `li/assets/class_material_image_asset_rule.md` and connected to `li/corpus/come_si_chiama_image_corpus_entry.md`.
+
+
+
+## Uploaded resource index
+
+Uploaded Italian learning PDFs are registered under:
+
+```text
+source/resources/
+```
+
+Start with:
+
+```text
+source/resources/italian_learning_resource_index.md
+```
+
+This index summarizes what each uploaded resource contributes:
+
+- `Piacere!` — modern elementary curriculum and class-aligned beginner sequence;
+- `Cortina Conversational Italian in 20 Lessons` — conversational self-study and phonetic-pronunciation pattern source;
+- `Basic Italian for Travelers` — practical travel phrasebook for immediate need-to-speak situations.
+
+The custody rule is:
+
+```text
+li/source/uploaded_resource_custody_rule.md
+```
+
+The Workbench stores summaries and use maps, not full copied copyrighted sources.
