@@ -43,3 +43,28 @@ The learner should enter conversation before studying grammar. Grammar may clari
 ## Corpus stance
 
 The Workbench should preserve encountered language. A phrase becomes important because it was heard, needed, spoken, misunderstood, repaired, or reused.
+
+
+## First class corpus spine
+
+The first copied class slides become the first external corpus seed for the Workbench. They should be used as conversation material first:
+
+```text
+Ciao.
+Come ti chiami?
+Mi chiamo Steve.
+Come stai?
+Sto bene.
+A presto.
+```
+
+The first class corpus is governed by:
+
+```text
+li/corpus/first_class_greetings_and_essere_stare.md
+li/practice/greeting_response_loop.md
+li/practice/formal_informal_choice_loop.md
+li/practice/name_exchange_loop.md
+```
+
+Grammar from the slides, especially `essere`, `stare`, `tu`, `Lei`, and `voi`, is allowed only as clarification after the learner has spoken a small exchange.

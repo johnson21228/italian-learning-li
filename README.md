@@ -44,6 +44,14 @@ li/prompts/repair_misunderstanding_in_italian.md
 li/prompts/capture_personal_corpus_entry.md
 cards/001_start_italian_learning_workbench_card.md
 cards/002_enter_conversation_before_grammar_card.md
+li/corpus/first_class_greetings_and_essere_stare.md
+li/practice/greeting_response_loop.md
+li/practice/formal_informal_choice_loop.md
+li/practice/name_exchange_loop.md
+li/prompts/practice_first_class_dialogue.md
+li/prompts/build_flashcards_from_first_class_slides.md
+li/prompts/speak_first_class_italian_aloud.md
+cards/003_first_class_corpus_greetings_card.md
 ```
 
 ## Card 002
@@ -55,6 +63,23 @@ Hear → Imitate → Answer → Repair → Capture
 ```
 
 The learner first stays in a small exchange. Grammar enters later to clarify a pattern already used.
+
+## Card 003
+
+Card 003 captures the first copied Italian class slides as a starter corpus. It creates practice material for greetings, checking in, name exchange, formal/informal choice, and first exposure to `essere` and `stare`.
+
+The useful speech comes first:
+
+```text
+Ciao.
+Come ti chiami?
+Mi chiamo Steve.
+Come stai?
+Sto bene.
+A presto.
+```
+
+Then grammar may clarify patterns already used.
 
 ## Use
 

@@ -20,6 +20,14 @@ REQUIRED = [
     "li/prompts/capture_personal_corpus_entry.md",
     "cards/001_start_italian_learning_workbench_card.md",
     "cards/002_enter_conversation_before_grammar_card.md",
+    "cards/003_first_class_corpus_greetings_card.md",
+    "li/corpus/first_class_greetings_and_essere_stare.md",
+    "li/practice/greeting_response_loop.md",
+    "li/practice/formal_informal_choice_loop.md",
+    "li/practice/name_exchange_loop.md",
+    "li/prompts/practice_first_class_dialogue.md",
+    "li/prompts/build_flashcards_from_first_class_slides.md",
+    "li/prompts/speak_first_class_italian_aloud.md",
 ]
 
 REPAIR_PHRASES = [
@@ -71,6 +79,57 @@ TOKENS = {
         "Hear → Imitate → Answer → Repair → Capture",
         "li/domain/conversation_before_grammar_rule.md",
     ] + REPAIR_PHRASES,
+    "cards/003_first_class_corpus_greetings_card.md": [
+        "First Class Corpus",
+        "Greetings and Being in Conversation",
+        "li/corpus/first_class_greetings_and_essere_stare.md",
+        "li/practice/greeting_response_loop.md",
+    ],
+    "li/corpus/first_class_greetings_and_essere_stare.md": [
+        "Come stai?",
+        "Come sta?",
+        "Come va?",
+        "Mi chiamo Steve.",
+        "Tu / Lei / voi",
+        "essere vs stare",
+        "phrase heard",
+        "next phrase wanted",
+    ],
+    "li/practice/greeting_response_loop.md": [
+        "Greeting Response Loop",
+        "Come stai?",
+        "Sto bene.",
+        "Hear → Imitate → Answer → Repair → Capture",
+    ],
+    "li/practice/formal_informal_choice_loop.md": [
+        "Formal / Informal Choice Loop",
+        "Ciao. Come stai?",
+        "Buona sera. Come sta?",
+        "Tu  = one person",
+        "Lei = one person",
+    ],
+    "li/practice/name_exchange_loop.md": [
+        "Name Exchange Loop",
+        "Come ti chiami?",
+        "Mi chiamo Steve.",
+        "Come si chiama?",
+        "Sono il signore Johnson.",
+    ],
+    "li/prompts/practice_first_class_dialogue.md": [
+        "practice the first class dialogue",
+        "Ask me one question at a time",
+        "personal corpus entry",
+    ],
+    "li/prompts/build_flashcards_from_first_class_slides.md": [
+        "Build a small flashcard deck",
+        "formal/informal note",
+        "spoken example",
+    ],
+    "li/prompts/speak_first_class_italian_aloud.md": [
+        "Italian speaking coach",
+        "Speak each phrase slowly",
+        "Mi chiamo Steve.",
+    ],
 }
 
 
@@ -102,6 +161,10 @@ def main() -> int:
         "li/domain/conversation_before_grammar_rule.md",
         "li/practice/hear_imitate_answer_repair_loop.md",
         "cards/002_enter_conversation_before_grammar_card.md",
+        "cards/003_first_class_corpus_greetings_card.md",
+        "li/corpus/first_class_greetings_and_essere_stare.md",
+        "li/practice/greeting_response_loop.md",
+        "li/prompts/practice_first_class_dialogue.md",
         "make verify",
     ]:
         if token not in map_text:
@@ -113,6 +176,8 @@ def main() -> int:
         "li/domain/conversation_before_grammar_rule.md",
         "li/practice/hear_imitate_answer_repair_loop.md",
         "Hear → Imitate → Answer → Repair → Capture",
+        "li/corpus/first_class_greetings_and_essere_stare.md",
+        "li/practice/formal_informal_choice_loop.md",
     ]:
         if token not in spine_text:
             print(f"SPINE.md missing expected orientation token: {token}")

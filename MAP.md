@@ -15,6 +15,10 @@ li/domain/italian_learning_principles.md
 li/domain/childlike_language_acquisition_rule.md
 li/domain/first_person_conversation_rule.md
 li/domain/conversation_before_grammar_rule.md
+li/corpus/first_class_greetings_and_essere_stare.md
+li/practice/greeting_response_loop.md
+li/practice/formal_informal_choice_loop.md
+li/practice/name_exchange_loop.md
 ```
 
 ## Core domain LI
@@ -24,6 +28,10 @@ li/domain/italian_learning_principles.md
 li/domain/childlike_language_acquisition_rule.md
 li/domain/first_person_conversation_rule.md
 li/domain/conversation_before_grammar_rule.md
+li/corpus/first_class_greetings_and_essere_stare.md
+li/practice/greeting_response_loop.md
+li/practice/formal_informal_choice_loop.md
+li/practice/name_exchange_loop.md
 ```
 
 These files define the learning posture: start like a child, stay inside conversation, and use grammar as pattern clarification rather than as the first doorway.
@@ -37,6 +45,9 @@ li/prompts/listen_repeat_respond_loop.md
 li/prompts/enter_conversation_before_grammar.md
 li/prompts/repair_misunderstanding_in_italian.md
 li/prompts/capture_personal_corpus_entry.md
+li/prompts/practice_first_class_dialogue.md
+li/prompts/build_flashcards_from_first_class_slides.md
+li/prompts/speak_first_class_italian_aloud.md
 ```
 
 These prompts begin the learning loop:
@@ -52,6 +63,7 @@ These prompts begin the learning loop:
 ```text
 cards/001_start_italian_learning_workbench_card.md
 cards/002_enter_conversation_before_grammar_card.md
+cards/003_first_class_corpus_greetings_card.md
 ```
 
 The first card captures the initial Workbench direction and gives future cards a stable starting point.
@@ -62,6 +74,22 @@ The second card adds the conversation-before-grammar rule and the required pract
 li/practice/hear_imitate_answer_repair_loop.md
 Hear → Imitate → Answer → Repair → Capture
 ```
+
+## First class corpus
+
+Card 003 turns the copied first-class slides into usable corpus and practice material:
+
+```text
+li/corpus/first_class_greetings_and_essere_stare.md
+li/practice/greeting_response_loop.md
+li/practice/formal_informal_choice_loop.md
+li/practice/name_exchange_loop.md
+li/prompts/practice_first_class_dialogue.md
+li/prompts/build_flashcards_from_first_class_slides.md
+li/prompts/speak_first_class_italian_aloud.md
+```
+
+The corpus covers greetings, leave-taking, `Come stai?`, `Come sta?`, `Come va?`, name exchange, `Tu / Lei / voi`, and first exposure to `essere` and `stare`.
 
 ## Corpus outlook
 
