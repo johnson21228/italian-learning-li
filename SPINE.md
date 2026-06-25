@@ -78,3 +78,17 @@ outputs/history/repo_history_for_llm.md
 ```
 
 This file is a continuity surface, not Git history itself. It is overwritten with the latest snapshot by `tools/export_repo_history_for_llm.py`.
+
+
+## Class material image assets
+
+Images that correspond with class slides, class phrases, or generated visual aids are governed by:
+
+```text
+li/assets/class_material_image_asset_rule.md
+li/corpus/come_si_chiama_image_corpus_entry.md
+assets/class_material/first_class/come_si_chiama_poster.jpeg
+cards/005_class_material_image_assets_card.md
+```
+
+A class image must support a phrase family, a first-person learner line, pronunciation, repair, and personal corpus capture. The first image asset supports `Come ti chiami?`, `Mi chiamo Steve.`, and `Come si chiama questo?`.

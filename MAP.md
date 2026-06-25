@@ -19,6 +19,8 @@ li/corpus/first_class_greetings_and_essere_stare.md
 li/practice/greeting_response_loop.md
 li/practice/formal_informal_choice_loop.md
 li/practice/name_exchange_loop.md
+li/assets/class_material_image_asset_rule.md
+li/corpus/come_si_chiama_image_corpus_entry.md
 ```
 
 ## Core domain LI
@@ -32,6 +34,8 @@ li/corpus/first_class_greetings_and_essere_stare.md
 li/practice/greeting_response_loop.md
 li/practice/formal_informal_choice_loop.md
 li/practice/name_exchange_loop.md
+li/assets/class_material_image_asset_rule.md
+li/corpus/come_si_chiama_image_corpus_entry.md
 ```
 
 These files define the learning posture: start like a child, stay inside conversation, and use grammar as pattern clarification rather than as the first doorway.
@@ -48,6 +52,8 @@ li/prompts/capture_personal_corpus_entry.md
 li/prompts/practice_first_class_dialogue.md
 li/prompts/build_flashcards_from_first_class_slides.md
 li/prompts/speak_first_class_italian_aloud.md
+li/prompts/create_image_from_class_material.md
+li/prompts/practice_with_class_image.md
 ```
 
 These prompts begin the learning loop:
@@ -64,6 +70,8 @@ These prompts begin the learning loop:
 cards/001_start_italian_learning_workbench_card.md
 cards/002_enter_conversation_before_grammar_card.md
 cards/003_first_class_corpus_greetings_card.md
+cards/004_standardize_llm_repo_history_snapshot_card.md
+cards/005_class_material_image_assets_card.md
 ```
 
 The first card captures the initial Workbench direction and gives future cards a stable starting point.
@@ -87,9 +95,31 @@ li/practice/name_exchange_loop.md
 li/prompts/practice_first_class_dialogue.md
 li/prompts/build_flashcards_from_first_class_slides.md
 li/prompts/speak_first_class_italian_aloud.md
+li/prompts/create_image_from_class_material.md
+li/prompts/practice_with_class_image.md
 ```
 
 The corpus covers greetings, leave-taking, `Come stai?`, `Come sta?`, `Come va?`, name exchange, `Tu / Lei / voi`, and first exposure to `essere` and `stare`.
+
+## Class material image assets
+
+Card 005 adds the rule that images from class material are corpus assets, not decoration. The standard location is:
+
+```text
+assets/class_material/
+```
+
+The first image asset is:
+
+```text
+assets/class_material/first_class/come_si_chiama_poster.jpeg
+li/assets/class_material_image_asset_rule.md
+li/corpus/come_si_chiama_image_corpus_entry.md
+li/prompts/create_image_from_class_material.md
+li/prompts/practice_with_class_image.md
+```
+
+This asset supports `Come ti chiami?`, `Mi chiamo Steve.`, `Come si chiama questo?`, and the repair phrase `Non capisco. Puoi ripetere lentamente?`.
 
 ## Corpus outlook
 

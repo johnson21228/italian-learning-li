@@ -113,3 +113,20 @@ outputs/history/repo_history_for_llm.md
 ```
 
 Run `make history` or `make pack` to overwrite it with the latest LLM-readable repo history. Repeated pack runs should not create timestamped history files.
+
+
+## Class material image assets
+
+This Workbench can capture images that correspond with class material. These images live under:
+
+```text
+assets/class_material/
+```
+
+The first image asset is:
+
+```text
+assets/class_material/first_class/come_si_chiama_poster.jpeg
+```
+
+It is governed by `li/assets/class_material_image_asset_rule.md` and connected to `li/corpus/come_si_chiama_image_corpus_entry.md`.

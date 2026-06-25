@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-06-25T11:09:17Z
+Generated: 2026-06-25T11:17:20Z
 Branch: main
-Snapshot digest: dfb26d7
+Snapshot digest: 533838f
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-4b785ca (HEAD -> main) Add first class Italian greetings corpus
+4c9240e (HEAD -> main) Standardize LLM repo history snapshot
+4b785ca Add first class Italian greetings corpus
 d082d11 Add conversation-before-grammar Italian learning loop
 5fcece7 Start Italian learning LI workbench
 ```
@@ -25,18 +26,13 @@ d082d11 Add conversation-before-grammar Italian learning loop
 M MAP.md
  M README.md
  M SPINE.md
- M dist/italian-learning-li.pack.zip
- M tools/clean_li_repo_artifacts.py
- M tools/export_repo_history_for_llm.py
  M tools/verify_italian_learning_li.py
-?? cards/004_standardize_llm_repo_history_snapshot_card.md
-?? li/workflow/
-?? outputs/history/repo_history_for_llm.md
-?? outputs/history/repo_history_for_llm_20260625-102821.md
-?? outputs/history/repo_history_for_llm_20260625-103017.md
-?? outputs/history/repo_history_for_llm_20260625-103044.md
-?? outputs/history/repo_history_for_llm_20260625-104431.md
-?? outputs/history/repo_history_for_llm_20260625-110704.md
+?? assets/
+?? cards/005_class_material_image_assets_card.md
+?? li/assets/
+?? li/corpus/come_si_chiama_image_corpus_entry.md
+?? li/prompts/create_image_from_class_material.md
+?? li/prompts/practice_with_class_image.md
 ```
 
 ## Tracked files
@@ -51,6 +47,7 @@ SPINE.md
 cards/001_start_italian_learning_workbench_card.md
 cards/002_enter_conversation_before_grammar_card.md
 cards/003_first_class_corpus_greetings_card.md
+cards/004_standardize_llm_repo_history_snapshot_card.md
 dist/italian-learning-li.pack.zip
 li/corpus/first_class_greetings_and_essere_stare.md
 li/domain/childlike_language_acquisition_rule.md
@@ -70,8 +67,8 @@ li/prompts/practice_first_class_dialogue.md
 li/prompts/repair_misunderstanding_in_italian.md
 li/prompts/speak_first_class_italian_aloud.md
 li/prompts/start_italian_micro_conversation.md
-outputs/history/repo_history_for_llm_20260625-102252.md
-outputs/history/repo_history_for_llm_20260625-102524.md
+li/workflow/llm_repo_history_snapshot_rule.md
+outputs/history/repo_history_for_llm.md
 tools/clean_li_repo_artifacts.py
 tools/export_repo_history_for_llm.py
 tools/verify_italian_learning_li.py

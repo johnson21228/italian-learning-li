@@ -30,6 +30,12 @@ REQUIRED = [
     "li/prompts/practice_first_class_dialogue.md",
     "li/prompts/build_flashcards_from_first_class_slides.md",
     "li/prompts/speak_first_class_italian_aloud.md",
+    "li/assets/class_material_image_asset_rule.md",
+    "li/corpus/come_si_chiama_image_corpus_entry.md",
+    "li/prompts/create_image_from_class_material.md",
+    "li/prompts/practice_with_class_image.md",
+    "cards/005_class_material_image_assets_card.md",
+    "assets/class_material/first_class/come_si_chiama_poster.jpeg",
 ]
 
 REPAIR_PHRASES = [
@@ -132,6 +138,32 @@ TOKENS = {
         "Speak each phrase slowly",
         "Mi chiamo Steve.",
     ],
+    "li/assets/class_material_image_asset_rule.md": [
+        "class material image assets",
+        "assets/class_material/",
+        "Hear → Imitate → Answer → Repair → Capture",
+    ],
+    "li/corpus/come_si_chiama_image_corpus_entry.md": [
+        "assets/class_material/first_class/come_si_chiama_poster.jpeg",
+        "Come ti chiami?",
+        "Mi chiamo Steve.",
+        "Non capisco. Puoi ripetere lentamente?",
+    ],
+    "li/prompts/create_image_from_class_material.md": [
+        "Create an Italian learning image",
+        "Do not make a generic poster",
+        "Hear → Imitate → Answer → Repair → Capture",
+    ],
+    "li/prompts/practice_with_class_image.md": [
+        "Use the Italian Learning LI",
+        "li/corpus/come_si_chiama_image_corpus_entry.md",
+        "Ask one Italian question at a time",
+    ],
+    "cards/005_class_material_image_assets_card.md": [
+        "Class Material Image Assets",
+        "assets/class_material/first_class/come_si_chiama_poster.jpeg",
+        "Come si chiama questo?",
+    ],
 }
 
 
@@ -164,7 +196,10 @@ def main() -> int:
         "li/practice/hear_imitate_answer_repair_loop.md",
         "cards/002_enter_conversation_before_grammar_card.md",
         "cards/003_first_class_corpus_greetings_card.md",
-    "cards/004_standardize_llm_repo_history_snapshot_card.md",
+        "cards/004_standardize_llm_repo_history_snapshot_card.md",
+        "cards/005_class_material_image_assets_card.md",
+        "li/assets/class_material_image_asset_rule.md",
+        "li/corpus/come_si_chiama_image_corpus_entry.md",
     "li/workflow/llm_repo_history_snapshot_rule.md",
         "li/corpus/first_class_greetings_and_essere_stare.md",
         "li/practice/greeting_response_loop.md",
@@ -182,6 +217,8 @@ def main() -> int:
         "Hear → Imitate → Answer → Repair → Capture",
         "li/corpus/first_class_greetings_and_essere_stare.md",
         "li/practice/formal_informal_choice_loop.md",
+        "li/assets/class_material_image_asset_rule.md",
+        "li/corpus/come_si_chiama_image_corpus_entry.md",
     ]:
         if token not in spine_text:
             print(f"SPINE.md missing expected orientation token: {token}")
