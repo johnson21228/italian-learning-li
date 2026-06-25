@@ -68,3 +68,13 @@ li/practice/name_exchange_loop.md
 ```
 
 Grammar from the slides, especially `essere`, `stare`, `tu`, `Lei`, and `voi`, is allowed only as clarification after the learner has spoken a small exchange.
+
+## LLM continuity snapshot
+
+The Workbench preserves one stable LLM-readable repo history file:
+
+```text
+outputs/history/repo_history_for_llm.md
+```
+
+This file is a continuity surface, not Git history itself. It is overwritten with the latest snapshot by `tools/export_repo_history_for_llm.py`.

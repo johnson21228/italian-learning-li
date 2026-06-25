@@ -21,6 +21,8 @@ REQUIRED = [
     "cards/001_start_italian_learning_workbench_card.md",
     "cards/002_enter_conversation_before_grammar_card.md",
     "cards/003_first_class_corpus_greetings_card.md",
+    "cards/004_standardize_llm_repo_history_snapshot_card.md",
+    "li/workflow/llm_repo_history_snapshot_rule.md",
     "li/corpus/first_class_greetings_and_essere_stare.md",
     "li/practice/greeting_response_loop.md",
     "li/practice/formal_informal_choice_loop.md",
@@ -162,6 +164,8 @@ def main() -> int:
         "li/practice/hear_imitate_answer_repair_loop.md",
         "cards/002_enter_conversation_before_grammar_card.md",
         "cards/003_first_class_corpus_greetings_card.md",
+    "cards/004_standardize_llm_repo_history_snapshot_card.md",
+    "li/workflow/llm_repo_history_snapshot_rule.md",
         "li/corpus/first_class_greetings_and_essere_stare.md",
         "li/practice/greeting_response_loop.md",
         "li/prompts/practice_first_class_dialogue.md",
@@ -182,6 +186,18 @@ def main() -> int:
         if token not in spine_text:
             print(f"SPINE.md missing expected orientation token: {token}")
             return 1
+
+
+    history_rule = Path("li/workflow/llm_repo_history_snapshot_rule.md").read_text(encoding="utf-8")
+    exporter = Path("tools/export_repo_history_for_llm.py").read_text(encoding="utf-8")
+    cleaner = Path("tools/clean_li_repo_artifacts.py").read_text(encoding="utf-8")
+    for label, text in [("history rule", history_rule), ("exporter", exporter), ("cleaner", cleaner), ("MAP", map_text), ("SPINE", spine_text)]:
+        if "outputs/history/repo_history_for_llm.md" not in text:
+            print(f"{label} missing canonical LLM history path")
+            return 1
+    if "repo_history_for_llm_" in exporter:
+        print("exporter still writes timestamped repo_history_for_llm files")
+        return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
     for phrase in REPAIR_PHRASES:

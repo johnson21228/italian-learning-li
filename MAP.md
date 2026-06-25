@@ -113,3 +113,13 @@ make pack
 ```
 
 `make verify` checks the required Workbench files. `make pack` writes a session pack under `dist/`.
+
+## Standard Workbench history snapshot
+
+The canonical LLM-readable repo history snapshot is:
+
+```text
+outputs/history/repo_history_for_llm.md
+```
+
+It is governed by `li/workflow/llm_repo_history_snapshot_rule.md` and captured by `cards/004_standardize_llm_repo_history_snapshot_card.md`. `tools/export_repo_history_for_llm.py` overwrites this file on each history/pack run.

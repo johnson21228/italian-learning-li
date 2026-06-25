@@ -103,3 +103,13 @@ Make a personal corpus entry from today's Italian practice.
 make verify
 make pack
 ```
+
+## LLM repo history snapshot
+
+The standard continuity snapshot lives at:
+
+```text
+outputs/history/repo_history_for_llm.md
+```
+
+Run `make history` or `make pack` to overwrite it with the latest LLM-readable repo history. Repeated pack runs should not create timestamped history files.
