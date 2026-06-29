@@ -244,6 +244,32 @@ TOKENS = {
 }
 
 
+def require_curated_sere_flashcard() -> int:
+    vocab_path = Path("site/js/vocabulary-data.js")
+    image_path = Path("site/images/vocabulary/curated/sere.jpg")
+    text = vocab_path.read_text(encoding="utf-8")
+    required_tokens = [
+        'italian: "sere"',
+        'english: "evenings"',
+        'image: "images/vocabulary/curated/sere.jpg"',
+        'imageAlt: "Italian after-work aperitivo evenings in a warm piazza"',
+        'curated: true',
+        'imageEssence: "Italian after-work aperitivo evenings',
+        'imagePrompt: "Create a simple square flashcard image for the Italian word “sere,” meaning “evenings.”',
+    ]
+    for token in required_tokens:
+        if token not in text:
+            print(f"site/js/vocabulary-data.js missing curated sere token: {token}")
+            return 1
+    if not image_path.exists():
+        print("Missing curated sere image: site/images/vocabulary/curated/sere.jpg")
+        return 1
+    if image_path.read_bytes()[:3] != b"\xff\xd8\xff":
+        print("Curated sere image is not a JPEG file")
+        return 1
+    return 0
+
+
 def require_tokens(path: str, tokens: list[str]) -> int:
     text = Path(path).read_text(encoding="utf-8")
     for token in tokens:
@@ -324,6 +350,9 @@ def main() -> int:
             return 1
     if "repo_history_for_llm_" in exporter:
         print("exporter still writes timestamped repo_history_for_llm files")
+        return 1
+
+    if require_curated_sere_flashcard():
         return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
