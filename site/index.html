@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Italian Classroom Notes</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <p class="eyebrow">Italian Learning LI</p>
+    <h1>Classroom Notes</h1>
+    <p class="lede">Tap Speak to hear Italian. The Italian words are real selectable text.</p>
+  </header>
+
+  <section class="controls" aria-label="Practice controls">
+    <label class="toggle-row">
+      <input id="showEnglish" type="checkbox" checked>
+      <span>Show English</span>
+    </label>
+
+    <label class="voice-row">
+      <span>Italian voice</span>
+      <select id="voiceSelect" aria-label="Italian voice"></select>
+    </label>
+    <p id="voiceStatus" class="voice-status">Loading voices…</p>
+  </section>
+
+  <nav class="tabs" aria-label="Vocabulary tabs">
+    <button class="tab active" type="button" data-tab="nowns">Nowns</button>
+    <button class="tab" type="button" data-tab="verbs">Verbs</button>
+    <button class="tab" type="button" data-tab="other">Other</button>
+  </nav>
+
+  <main>
+    <section id="cards" class="cards" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    Static classroom notes site. Ready for GitHub Pages.
+  </footer>
+
+  <script src="js/vocabulary-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

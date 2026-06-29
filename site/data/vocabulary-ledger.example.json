@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "term": "casa",
+      "english": "house, home",
+      "kind": "nown",
+      "introducedBy": "first class vocabulary",
+      "curated": true,
+      "image": "images/casa.png",
+      "imageEssence": "a warm simple home that helps recall casa",
+      "imagePrompt": "Create a simple friendly image of a home that clearly conveys the Italian noun casa."
+    },
+    {
+      "term": "essere",
+      "english": "to be",
+      "kind": "verb",
+      "introducedBy": "first class essere/stare practice",
+      "curated": false,
+      "image": "images/placeholders/verb.png",
+      "imageEssence": "identity and existence",
+      "imagePrompt": "Create a simple image that conveys the verb essere as identity or being."
+    }
+  ]
+}
