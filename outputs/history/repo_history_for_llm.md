@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-06-29T15:14:50Z
+Generated: 2026-06-29T22:51:58Z
 Branch: main
-Snapshot digest: 65d4385
+Snapshot digest: edb3609
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,24 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-3b73991 (HEAD -> main) Add curated giorno vocabulary image
+d105912 (HEAD -> main, origin/main) Repair vocabulary data after sere curation
+2c9762e Repair hidden flashcard note labels
+4b89371 Remove selectable text banner sentence
+6d78bca Hide flashcard note labels
+dd37aa3 Make flashcard images speak Italian
+982bd60 Add curated sere flashcard image
+184de23 Harden Italian speech playback
+788f57f Replace vocabulary tabs with filters and pagination
+5c151aa Curate studente vocabulary image
+b6773d5 Curate essere vocabulary image
+ab32f60 Curate professoressa vocabulary image
+900fac2 Add verb flashcard placeholders and curation study rule
+f9592a1 Curate signore and signora vocabulary images
+7b6a376 Curate name vocabulary image
+cc7f393 Publish Italian learning site with GitHub Pages
+6555615 Curate evening and night vocabulary images
+568cd5c Render curated vocabulary images in site cards
+3b73991 Add curated giorno vocabulary image
 8686bba Add classroom vocabulary site and curation LI
 194697b Add Italian-first mode and overlay-only CB rule
 88bbfa4 Register uploaded Italian learning resources
@@ -30,13 +47,12 @@ d082d11 Add conversation-before-grammar Italian learning loop
 ```text
 M dist/italian-learning-li.pack.zip
  M outputs/history/repo_history_for_llm.md
- M site/css/app.css
- M site/js/app.js
 ```
 
 ## Tracked files
 
 ```text
+.github/workflows/pages.yml
 HOW_LI_RULES.md
 LLM_READ_FIRST.md
 MAP.md
@@ -69,6 +85,8 @@ li/domain/conversation_before_grammar_rule.md
 li/domain/curated_vocabulary_image_path_rule.md
 li/domain/first_person_conversation_rule.md
 li/domain/italian_learning_principles.md
+li/domain/vocabulary_filter_metadata_rule.md
+li/domain/vocabulary_image_curation_study_loop_rule.md
 li/practice/formal_informal_choice_loop.md
 li/practice/greeting_response_loop.md
 li/practice/hear_imitate_answer_repair_loop.md
@@ -96,7 +114,17 @@ li/workflow/llm_repo_history_snapshot_rule.md
 outputs/history/repo_history_for_llm.md
 site/css/app.css
 site/data/vocabulary-ledger.example.json
+site/images/vocabulary/curated/essere.jpg
 site/images/vocabulary/curated/giorno.png
+site/images/vocabulary/curated/nome.jpg
+site/images/vocabulary/curated/notte.jpg
+site/images/vocabulary/curated/professoressa.jpg
+site/images/vocabulary/curated/sera.jpg
+site/images/vocabulary/curated/sere.jpg
+site/images/vocabulary/curated/signora.jpg
+site/images/vocabulary/curated/signore.jpg
+site/images/vocabulary/curated/studente.jpg
+site/images/vocabulary/placeholders/verb-placeholder.svg
 site/index.html
 site/js/app.js
 site/js/vocabulary-data.js
@@ -107,5 +135,6 @@ source/resources/piacere_resource_summary.md
 tools/apply_curated_giorno_image.py
 tools/clean_li_repo_artifacts.py
 tools/export_repo_history_for_llm.py
+tools/find_next_uncurated_vocabulary_image.py
 tools/verify_italian_learning_li.py
 ```
