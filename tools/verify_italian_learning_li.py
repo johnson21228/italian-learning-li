@@ -261,6 +261,24 @@ def require_curated_sere_flashcard() -> int:
         if token not in text:
             print(f"site/js/vocabulary-data.js missing curated sere token: {token}")
             return 1
+    if text.count('italian: "sere"') != 1:
+        print("site/js/vocabulary-data.js must contain exactly one sere entry")
+        return 1
+    preservation_tokens = [
+        'italian: "nome", english: "name", icon: "🏷️", image: "images/vocabulary/curated/nome.jpg"',
+        'italian: "signore", english: "gentleman; sir", icon: "👨", image: "images/vocabulary/curated/signore.jpg"',
+        'italian: "signora", english: "lady; madam", icon: "👩", image: "images/vocabulary/curated/signora.jpg"',
+        'italian: "professoressa", english: "teacher; professor", icon: "👩‍🏫", image: "images/vocabulary/curated/professoressa.jpg"',
+        'italian: "studente", english: "student", icon: "🧑‍🎓", image: "images/vocabulary/curated/studente.jpg"',
+        'verbs: [',
+        'italian: "essere", english: "to be"',
+        'italian: "io sono", english: "I am"',
+        'italian: "dire", english: "to say"',
+    ]
+    for token in preservation_tokens:
+        if token not in text:
+            print(f"site/js/vocabulary-data.js lost preserved vocabulary token: {token}")
+            return 1
     if not image_path.exists():
         print("Missing curated sere image: site/images/vocabulary/curated/sere.jpg")
         return 1
