@@ -237,90 +237,23 @@ body.hide-english .english { display: none; }
   }
 }
 
-/* Filter-first vocabulary browser. Replaces Nowns/Verbs/Other tabs with scalable chips. */
-.filter-panel {
-  width: min(920px, calc(100vw - 28px));
-  margin: 14px auto 0;
-  display: grid;
-  gap: 10px;
+/* Flashcard image is the speech target; no separate uploaded-image/speak label needed. */
+.image-speak-button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
 }
 
-.filter-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.image-speak-button:focus-visible {
+  outline: 4px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 22px;
 }
 
-.filter-chip,
-.pager-button {
-  min-height: 40px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--ink);
-  padding: 8px 12px;
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.filter-chip[aria-pressed="true"] {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-}
-
-.pager-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0 0;
-}
-
-.result-status {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.pager-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.pager-button:disabled {
-  opacity: .45;
-}
-
-.meta-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.meta-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 22px;
-  border-radius: 999px;
-  padding: 2px 8px;
-  background: rgba(127, 127, 127, .11);
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-@media (max-width: 560px) {
-  .pager-row {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .pager-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+.image-speak-button:active img,
+.image-speak-button:active span {
+  transform: scale(0.985);
 }

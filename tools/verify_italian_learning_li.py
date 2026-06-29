@@ -270,6 +270,33 @@ def require_curated_sere_flashcard() -> int:
     return 0
 
 
+def require_flashcard_image_speaks() -> int:
+    app = Path("site/js/app.js").read_text(encoding="utf-8")
+    css = Path("site/css/app.css").read_text(encoding="utf-8")
+    required_app_tokens = [
+        'document.createElement("button")',
+        'className = "icon image-speak-button"',
+        'icon.addEventListener("click", () => speakItalian(item.italian))',
+        'card.append(icon, italian, english, note);',
+    ]
+    forbidden_app_tokens = [
+        'textContent = "🔊 Speak"',
+        'className = "speak"',
+    ]
+    for token in required_app_tokens:
+        if token not in app:
+            print(f"site/js/app.js missing image-speak token: {token}")
+            return 1
+    for token in forbidden_app_tokens:
+        if token in app:
+            print(f"site/js/app.js still has visible Speak button token: {token}")
+            return 1
+    if ".image-speak-button" not in css:
+        print("site/css/app.css missing image-speak-button styling")
+        return 1
+    return 0
+
+
 def require_tokens(path: str, tokens: list[str]) -> int:
     text = Path(path).read_text(encoding="utf-8")
     for token in tokens:
@@ -353,6 +380,9 @@ def main() -> int:
         return 1
 
     if require_curated_sere_flashcard():
+        return 1
+
+    if require_flashcard_image_speaks():
         return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
