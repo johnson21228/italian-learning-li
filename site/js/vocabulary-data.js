@@ -32,6 +32,20 @@ window.ITALIAN_CLASSROOM_VOCABULARY = {
     { italian: "pronome", english: "pronoun", icon: "🔁", note: "grammar word" },
     { italian: "verbo", english: "verb", icon: "🏃", note: "grammar word" }
   ],
-  verbs: [],
+  verbs: [
+    { italian: "essere", english: "to be", icon: "✨", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "core verb", curated: false },
+    { italian: "io sono", english: "I am", icon: "🙋", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "tu sei", english: "you are", icon: "👉", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "lui è", english: "he is", icon: "👨", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "lei è", english: "she is", icon: "👩", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "noi siamo", english: "we are", icon: "👥", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "voi siete", english: "you all are", icon: "👥", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
+    { italian: "stare", english: "to be; to stay", icon: "🧍", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "core verb", curated: false },
+    { italian: "chiamarsi", english: "to be called; to call oneself", icon: "🏷️", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "introduction verb", curated: false },
+    { italian: "andare", english: "to go", icon: "🚶", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "appears in come va", curated: false },
+    { italian: "capire", english: "to understand", icon: "💡", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "repair verb", curated: false },
+    { italian: "ripetere", english: "to repeat", icon: "🔁", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "repair verb", curated: false },
+    { italian: "dire", english: "to say", icon: "💬", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "repair verb", curated: false },
+  ],
   other: []
 };
