@@ -33,7 +33,7 @@ window.ITALIAN_CLASSROOM_VOCABULARY = {
     { italian: "verbo", english: "verb", icon: "🏃", note: "grammar word" }
   ],
   verbs: [
-    { italian: "essere", english: "to be", icon: "✨", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "core verb", curated: false },
+    { italian: "essere", english: "to be", icon: "✨", image: "images/vocabulary/curated/essere.jpg", imageAlt: "calm person standing with warm glow suggesting presence and identity", note: "core verb", curated: true, imageEssence: "presence, identity, and existence shown through a calm person in a warm simple space", imagePrompt: "Create a square image for a clean, friendly language-learning flashcard. Show the idea of “to be” as presence, identity, and existence: a calm person standing comfortably in a warm simple space, with a soft glow or gentle background that suggests “I am here.” Avoid showing a specific action like running, working, teaching, or walking. No text in the image. No English. No Italian word. Make it simple, warm, and readable at small size on an iPhone website card." },
     { italian: "io sono", english: "I am", icon: "🙋", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
     { italian: "tu sei", english: "you are", icon: "👉", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
     { italian: "lui è", english: "he is", icon: "👨", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "essere form", curated: false },
