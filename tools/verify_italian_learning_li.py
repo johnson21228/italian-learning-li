@@ -270,6 +270,15 @@ def require_curated_sere_flashcard() -> int:
     return 0
 
 
+def require_no_selectable_text_banner() -> int:
+    index = Path("site/index.html").read_text(encoding="utf-8")
+    forbidden = "The Italian words are real selectable text."
+    if forbidden in index:
+        print("site/index.html still contains selectable-text banner sentence")
+        return 1
+    return 0
+
+
 def require_flashcard_notes_hidden() -> int:
     app = Path("site/js/app.js").read_text(encoding="utf-8")
     forbidden_tokens = [
@@ -404,6 +413,9 @@ def main() -> int:
         return 1
 
     if require_flashcard_notes_hidden():
+        return 1
+
+    if require_no_selectable_text_banner():
         return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
