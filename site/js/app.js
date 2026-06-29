@@ -120,11 +120,7 @@ function renderCards() {
     english.className = "english";
     english.textContent = item.english || "";
 
-    const note = document.createElement("div");
-    note.className = "note";
-    note.textContent = item.note || "";
-
-    card.append(icon, italian, english, note);
+    card.append(icon, italian, english);
     cardsEl.appendChild(card);
   });
 }

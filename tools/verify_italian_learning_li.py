@@ -304,11 +304,12 @@ def require_flashcard_image_speaks() -> int:
         'document.createElement("button")',
         'className = "icon image-speak-button"',
         'icon.addEventListener("click", () => speakItalian(item.italian))',
-        'card.append(icon, italian, english, note);',
+        'card.append(icon, italian, english);',
     ]
     forbidden_app_tokens = [
         'textContent = "🔊 Speak"',
         'className = "speak"',
+        'card.append(icon, italian, english, note);',
     ]
     for token in required_app_tokens:
         if token not in app:
