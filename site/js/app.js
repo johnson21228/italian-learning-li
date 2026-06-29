@@ -246,8 +246,30 @@ function speakItalian(text) {
   const voice = selectedVoice();
   if (voice) utterance.voice = voice;
 
+  utterance.onstart = () => {
+    voiceStatusEl.textContent = `Speaking “${text}”${voice ? ` with ${voice.name}` : ""}.`;
+  };
+
+  utterance.onend = () => {
+    const currentVoice = selectedVoice();
+    voiceStatusEl.textContent = currentVoice
+      ? `Using ${currentVoice.name} (${currentVoice.lang}).`
+      : "Using browser default for it-IT.";
+  };
+
+  utterance.onerror = (event) => {
+    voiceStatusEl.textContent = `Speech failed: ${event.error || "unknown error"}. Try clicking Speak again or selecting another Italian voice.`;
+    console.warn("Italian speech failed", event);
+  };
+
+  // Keep a live reference so browsers do not garbage-collect the utterance mid-speech.
+  window.__italianLearningLastUtterance = utterance;
+
   speechSynthesis.cancel();
-  speechSynthesis.speak(utterance);
+  speechSynthesis.resume();
+  window.setTimeout(() => {
+    speechSynthesis.speak(utterance);
+  }, 0);
 }
 
 function renderFilterChips() {
