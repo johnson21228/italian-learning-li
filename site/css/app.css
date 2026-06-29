@@ -157,3 +157,15 @@ body.hide-english .english { display: none; }
   .tab { background: #1f2937; }
   .controls { background: rgba(31,41,55,.72); }
 }
+
+/* Curated vocabulary images: larger review-friendly display. */
+.vocab-card img,
+.vocabulary-card img,
+.card-image,
+.vocab-image,
+.term-image {
+  width: min(100%, 220px);
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+}

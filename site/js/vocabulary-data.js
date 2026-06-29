@@ -1,6 +1,6 @@
 window.ITALIAN_CLASSROOM_VOCABULARY = {
   nowns: [
-    { italian: "giorno", english: "day", icon: "🌅", note: "time" },
+    { italian: "giorno", english: "day", icon: "🌅", image: "images/vocabulary/curated/giorno.png", imageAlt: "warm daytime landscape", note: "time", curated: true, imageEssence: "morning sunlight, clear sky, and the feeling of a new day", imagePrompt: "Create a simple, warm, square vocabulary image for the Italian noun giorno meaning day. It should convey the essence of daytime: morning sunlight, clear sky, and the feeling of a new day. No text in the image. Clean friendly style suitable for a language-learning flashcard website. Square format." },
     { italian: "sera", english: "evening", icon: "🌆", note: "time" },
     { italian: "notte", english: "night", icon: "🌙", note: "time" },
     { italian: "nome", english: "name", icon: "🏷️", note: "people / identity" },
