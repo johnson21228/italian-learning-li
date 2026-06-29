@@ -169,3 +169,70 @@ body.hide-english .english { display: none; }
   object-fit: cover;
   border-radius: 18px;
 }
+
+/* iPhone vocabulary card layout: one wide portrait, two wide landscape. */
+.vocabulary-grid,
+.vocab-grid,
+.term-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.vocab-card,
+.vocabulary-card,
+.term-card {
+  width: 100%;
+}
+
+.vocab-image,
+.vocabulary-image,
+.card-image,
+.term-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+@media (orientation: landscape) and (max-width: 950px) {
+  .vocabulary-grid,
+  .vocab-grid,
+  .term-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Actual vocabulary site layout: one card wide on iPhone portrait, two wide on iPhone landscape. */
+.cards {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.card {
+  width: 100%;
+}
+
+.icon {
+  width: 100%;
+  font-size: 3rem;
+}
+
+.icon img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+@media (orientation: landscape) and (max-width: 950px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

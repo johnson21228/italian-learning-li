@@ -94,8 +94,15 @@ function renderCards() {
 
     const icon = document.createElement("div");
     icon.className = "icon";
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = item.icon || "🔤";
+    if (item.image) {
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.imageAlt || item.italian;
+      img.loading = "lazy";
+      icon.appendChild(img);
+    } else {
+      icon.textContent = item.icon || "🇮🇹";
+    }
 
     const italian = document.createElement("div");
     italian.className = "italian";
