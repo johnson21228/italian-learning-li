@@ -26,11 +26,16 @@
     <p id="voiceStatus" class="voice-status">Loading voices…</p>
   </section>
 
-  <nav class="tabs" aria-label="Vocabulary tabs">
-    <button class="tab active" type="button" data-tab="nowns">Nowns</button>
-    <button class="tab" type="button" data-tab="verbs">Verbs</button>
-    <button class="tab" type="button" data-tab="other">Other</button>
-  </nav>
+  <section class="filter-panel" aria-label="Vocabulary filters">
+    <div id="filterChips" class="filter-chips" role="list" aria-label="Filter vocabulary"></div>
+    <div class="pager-row" aria-live="polite">
+      <p id="resultStatus" class="result-status">Loading vocabulary…</p>
+      <div class="pager-controls" aria-label="Card pagination">
+        <button id="prevPage" class="pager-button" type="button">← Prev</button>
+        <button id="nextPage" class="pager-button" type="button">Next →</button>
+      </div>
+    </div>
+  </section>
 
   <main>
     <section id="cards" class="cards" aria-live="polite"></section>
