@@ -270,6 +270,24 @@ def require_curated_sere_flashcard() -> int:
     return 0
 
 
+def require_flashcard_notes_hidden() -> int:
+    app = Path("site/js/app.js").read_text(encoding="utf-8")
+    forbidden_tokens = [
+        'note.className = "note"',
+        'note.textContent = item.note || ""',
+        'card.append(icon, italian, english, note);',
+    ]
+    required_token = 'card.append(icon, italian, english);'
+    for token in forbidden_tokens:
+        if token in app:
+            print(f"site/js/app.js still renders flashcard note text: {token}")
+            return 1
+    if required_token not in app:
+        print("site/js/app.js missing note-free card append")
+        return 1
+    return 0
+
+
 def require_flashcard_image_speaks() -> int:
     app = Path("site/js/app.js").read_text(encoding="utf-8")
     css = Path("site/css/app.css").read_text(encoding="utf-8")
@@ -383,6 +401,9 @@ def main() -> int:
         return 1
 
     if require_flashcard_image_speaks():
+        return 1
+
+    if require_flashcard_notes_hidden():
         return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
