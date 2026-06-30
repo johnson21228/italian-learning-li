@@ -244,6 +244,35 @@ TOKENS = {
 }
 
 
+def require_curated_amico_flashcard() -> int:
+    vocab_path = Path("site/js/vocabulary-data.js")
+    image_path = Path("site/images/vocabulary/curated/amico.jpg")
+    text = vocab_path.read_text(encoding="utf-8")
+    required_tokens = [
+        'italian: "amico"',
+        'english: "friend"',
+        'image: "images/vocabulary/curated/amico.jpg"',
+        'imageAlt: "two friends smiling together at an outdoor Italian café"',
+        'curated: true',
+        'imageEssence: "warm friendship',
+        'imagePrompt: "Create a simple square flashcard image for the Italian word “amico,” meaning “friend.”',
+    ]
+    for token in required_tokens:
+        if token not in text:
+            print(f"site/js/vocabulary-data.js missing curated amico token: {token}")
+            return 1
+    if text.count('italian: "amico"') != 1:
+        print("site/js/vocabulary-data.js must contain exactly one amico entry")
+        return 1
+    if not image_path.exists():
+        print("Missing curated amico image: site/images/vocabulary/curated/amico.jpg")
+        return 1
+    if image_path.read_bytes()[:3] != b"\xff\xd8\xff":
+        print("Curated amico image is not a JPEG file")
+        return 1
+    return 0
+
+
 def require_curated_sere_flashcard() -> int:
     vocab_path = Path("site/js/vocabulary-data.js")
     image_path = Path("site/images/vocabulary/curated/sere.jpg")
@@ -423,6 +452,9 @@ def main() -> int:
             return 1
     if "repo_history_for_llm_" in exporter:
         print("exporter still writes timestamped repo_history_for_llm files")
+        return 1
+
+    if require_curated_amico_flashcard():
         return 1
 
     if require_curated_sere_flashcard():
