@@ -1,5 +1,73 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import re
+
+
+
+
+def require(condition, message):
+    if not condition:
+        raise SystemExit(message)
+
+def verify_curated_amici_flashcard():
+    """Curated amici flashcard image stays wired exactly once."""
+    repo_root = Path(__file__).resolve().parents[1]
+    data_path = repo_root / "site/js/vocabulary-data.js"
+    text = data_path.read_text(encoding="utf-8")
+
+    entry_matches = re.findall(r'\{[^{}]*italian:\s*"amici"[^{}]*\}', text, flags=re.S)
+    require(len(entry_matches) == 1, 'Expected exactly one vocabulary entry for italian: "amici".')
+
+    entry = entry_matches[0]
+    require('image: "images/vocabulary/curated/amici.jpg"' in entry, 'amici entry must reference curated JPEG image.')
+    require('imageAlt:' in entry, 'amici entry must include imageAlt.')
+    require('curated: true' in entry, 'amici entry must be marked curated: true.')
+    require('imageEssence:' in entry, 'amici entry must include imageEssence.')
+    require('imagePrompt:' in entry, 'amici entry must include imagePrompt.')
+
+    image_path = repo_root / "site/images/vocabulary/curated/amici.jpg"
+    require(image_path.exists(), 'Curated amici JPEG file must exist.')
+    require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), 'Curated amici image must be a real JPEG.')
+
+
+def verify_generic_vocabulary_preservation():
+    """Guard against common curated-image patch regressions."""
+    repo_root = Path(__file__).resolve().parents[1]
+    data_path = repo_root / "site/js/vocabulary-data.js"
+    data = data_path.read_text(encoding="utf-8")
+
+    all_words = re.findall(r'italian:\s*"([^"]+)"', data)
+    duplicates = sorted({word for word in all_words if all_words.count(word) > 1})
+    require(not duplicates, f"Duplicate Italian vocabulary entries found: {duplicates}")
+
+    curated_entries = re.findall(r'\{[^{}]*curated:\s*true[^{}]*\}', data, flags=re.S)
+    for entry in curated_entries:
+        image_match = re.search(r'image:\s*"([^"]+)"', entry)
+        require(image_match, "Every curated entry must include an image path.")
+        image_rel = image_match.group(1)
+        image_path = repo_root / "site" / image_rel.removeprefix("site/")
+        require(image_path.exists(), f"Curated image does not exist: {image_rel}")
+        if image_path.suffix.lower() in {".jpg", ".jpeg"}:
+            require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), f"Curated JPEG is invalid: {image_rel}")
+
+    require(not re.search(r'\bverbs\s*=\s*\[\s*\]', data), "Verbs array must not be accidentally emptied.")
+
+    index = (repo_root / "site/index.html").read_text(encoding="utf-8")
+    app_js = (repo_root / "site/js/app.js").read_text(encoding="utf-8")
+    css = (repo_root / "site/css/app.css").read_text(encoding="utf-8")
+
+    require("Nowns" not in index, "Site must use Nouns, not Nowns.")
+    require("speakItalian" in app_js, "Image tap/click speech behavior must remain wired through speakItalian.")
+    require("imageAlt" in app_js or "vocabulary-image" in app_js or "flashcard" in app_js, "Flashcard image behavior must remain present.")
+    note_labels_hidden = (
+        re.search(r'\\.flashcard-note\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
+        or re.search(r'\\.card-note\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
+        or re.search(r'\\.note-label\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
+        or "flashcard-note" not in app_js
+    )
+    require(note_labels_hidden, "Note labels should remain hidden or not rendered.")
+    require("selectable-text banner" not in index.lower(), "Selectable-text banner sentence must remain removed.")
+
 
 REQUIRED = [
     "MAP.md",
@@ -479,4 +547,51 @@ def main() -> int:
     return 0
 
 if __name__ == "__main__":
+    verify_curated_amici_flashcard()
+    verify_generic_vocabulary_preservation()
     raise SystemExit(main())
+
+
+
+    entry_matches = re.findall(r'\{[^{}]*italian:\s*"amici"[^{}]*\}', text, flags=re.S)
+    require(len(entry_matches) == 1, 'Expected exactly one vocabulary entry for italian: "amici".')
+
+    entry = entry_matches[0]
+    require('image: "images/vocabulary/curated/amici.jpg"' in entry, 'amici entry must reference curated JPEG image.')
+    require('imageAlt:' in entry, 'amici entry must include imageAlt.')
+    require('curated: true' in entry, 'amici entry must be marked curated: true.')
+    require('imageEssence:' in entry, 'amici entry must include imageEssence.')
+    require('imagePrompt:' in entry, 'amici entry must include imagePrompt.')
+
+    image_path = repo_root / "site/images/vocabulary/curated/amici.jpg"
+    require(image_path.exists(), 'Curated amici JPEG file must exist.')
+    require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), 'Curated amici image must be a real JPEG.')
+
+
+
+    all_words = re.findall(r'italian:\s*"([^"]+)"', data)
+    duplicates = sorted({word for word in all_words if all_words.count(word) > 1})
+    require(not duplicates, f"Duplicate Italian vocabulary entries found: {duplicates}")
+
+    curated_entries = re.findall(r'\{[^{}]*curated:\s*true[^{}]*\}', data, flags=re.S)
+    for entry in curated_entries:
+        image_match = re.search(r'image:\s*"([^"]+)"', entry)
+        require(image_match, "Every curated entry must include an image path.")
+        image_rel = image_match.group(1)
+        image_path = repo_root / "site" / image_rel.removeprefix("site/")
+        require(image_path.exists(), f"Curated image does not exist: {image_rel}")
+        if image_path.suffix.lower() in {".jpg", ".jpeg"}:
+            require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), f"Curated JPEG is invalid: {image_rel}")
+
+    require(not re.search(r'\bverbs\s*=\s*\[\s*\]', data), "Verbs array must not be accidentally emptied.")
+
+    index = (repo_root / "site/index.html").read_text(encoding="utf-8")
+    app_js = (repo_root / "site/js/app.js").read_text(encoding="utf-8")
+    css = (repo_root / "site/css/app.css").read_text(encoding="utf-8")
+
+    require("Nowns" not in index, "Site must use Nouns, not Nowns.")
+    require("speakItalian" in app_js, "Image tap/click speech behavior must remain wired through speakItalian.")
+    require("flashcard" in app_js and ("image" in app_js or "imageAlt" in app_js), "Flashcard image behavior must remain present.")
+    require(".flashcard-note" in css and "display: none" in css, "Note labels should remain hidden.")
+    require("selectable-text banner" not in index.lower(), "Selectable-text banner sentence must remain removed.")
+
