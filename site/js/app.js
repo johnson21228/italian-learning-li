@@ -1,5 +1,5 @@
 const state = {
-  activeTab: "nowns",
+  activeTab: "nouns",
   voices: [],
   selectedVoiceURI: localStorage.getItem("italianVoiceURI") || "",
 };
