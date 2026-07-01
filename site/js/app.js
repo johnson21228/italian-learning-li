@@ -292,15 +292,7 @@ function renderCards() {
     const english = document.createElement("div");
     english.className = "english";
     english.textContent = item.english || "";
-    const categoryList = document.createElement("ul");
-    categoryList.className = "categories";
-    categoryList.setAttribute("aria-label", "Flashcard categories");
-    categoriesFor(item).slice(0, 5).forEach((category) => {
-      const chip = document.createElement("li");
-      chip.textContent = category;
-      categoryList.appendChild(chip);
-    });
-    const actions = document.createElement("div");
+const actions = document.createElement("div");
 
     actions.className = "card-actions";
 
@@ -332,7 +324,7 @@ function renderCards() {
 
 
 
-    card.append(icon, italian, english, categoryList, actions);
+    card.append(icon, italian, english, actions);
 
     cardsEl.appendChild(card);
   });

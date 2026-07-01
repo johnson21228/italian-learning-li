@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T13:07:15Z
+Generated: 2026-07-01T13:11:30Z
 Branch: main
-Snapshot digest: b322cad
+Snapshot digest: ccf4492
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-00a0c4c (HEAD -> main, origin/main) Remove category display from flashcards
+d5ed2f8 (HEAD -> main, origin/main) Add Supabase flashcard image store seam
+00a0c4c Remove category display from flashcards
 d63e7a0 Hide per-card category chips
 2ca086b Add Class 1 screenshot flashcards and image prompt button
 750a99d Add flashcard image prompt copy button
@@ -53,20 +54,15 @@ cc7f393 Publish Italian learning site with GitHub Pages
 8686bba Add classroom vocabulary site and curation LI
 194697b Add Italian-first mode and overlay-only CB rule
 88bbfa4 Register uploaded Italian learning resources
-83388d2 Add class material image asset practice
 ```
 
 ## Working tree status
 
 ```text
-M site/index.html
+M dist/italian-learning-li.pack.zip
+ M outputs/history/repo_history_for_llm.md
+ M site/css/app.css
  M site/js/app.js
-?? cards/016_supabase_flashcard_image_store_card.md
-?? docs/
-?? li/domain/supabase_flashcard_image_override_rule.md
-?? site/js/config/
-?? site/js/services/
-?? source/sql/
 ```
 
 ## Tracked files
@@ -103,7 +99,9 @@ cards/012_phrase_flashcard_metadata_card.md
 cards/013_flashcard_category_filter_ui_card.md
 cards/014_class1_screenshot_flashcards_card.md
 cards/015_flashcard_add_no_verifier_churn_card.md
+cards/016_supabase_flashcard_image_store_card.md
 dist/italian-learning-li.pack.zip
+docs/backend/italian_learning_supabase_flashcard_images.md
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
 li/corpus/first_class_greetings_and_essere_stare.md
@@ -118,6 +116,7 @@ li/domain/flashcard_add_no_verifier_churn_rule.md
 li/domain/flashcard_category_filter_rule.md
 li/domain/italian_learning_principles.md
 li/domain/phrase_flashcard_metadata_rule.md
+li/domain/supabase_flashcard_image_override_rule.md
 li/domain/vocabulary_filter_metadata_rule.md
 li/domain/vocabulary_image_curation_study_loop_rule.md
 li/practice/formal_informal_choice_loop.md
@@ -170,11 +169,15 @@ site/images/vocabulary/placeholders/verb-placeholder.svg
 site/images/vocabulary/placeholders/word-placeholder.svg
 site/index.html
 site/js/app.js
+site/js/config/supabase.public.js
+site/js/services/SupabaseClient.js
+site/js/services/SupabaseFlashcardImageStore.js
 site/js/vocabulary-data.js
 source/resources/basic_italian_traveler_resource_summary.md
 source/resources/cortina_conversational_italian_resource_summary.md
 source/resources/italian_learning_resource_index.md
 source/resources/piacere_resource_summary.md
+source/sql/italian_learning_supabase_flashcard_images.sql
 tools/apply_curated_giorno_image.py
 tools/clean_li_repo_artifacts.py
 tools/export_repo_history_for_llm.py

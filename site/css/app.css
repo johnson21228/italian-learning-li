@@ -258,18 +258,6 @@ body.hide-english .english { display: none; }
   transform: scale(0.985);
 }
 
-.categories li {
-  border: 1px solid rgba(24, 74, 58, 0.18);
-  border-radius: 999px;
-  background: rgba(232, 245, 238, 0.92);
-  color: #225445;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1;
-  padding: 0.35rem 0.55rem;
-}
-
-
 /* CB013: category-filtered flashcard UI replaces rigid Nouns / Verbs / Other tabs. */
 .tabs, .tab { display: none !important; }
 .filter-panel { width: min(920px, calc(100vw - 28px)); margin: 14px auto 0; padding: 14px; background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 18px; }
@@ -281,7 +269,6 @@ body.hide-english .english { display: none; }
 .filter-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
 .card { align-content: start; }
 .image-speak-button { cursor: pointer; }
-.categories li { border-radius: 999px; background: var(--accent-soft); color: var(--accent); padding: 4px 8px; font-size: 11px; font-weight: 800; letter-spacing: .01em; }
 @media (prefers-color-scheme: dark) { .filter-panel { background: rgba(31,41,55,.72); } }
 
 .card-actions {
