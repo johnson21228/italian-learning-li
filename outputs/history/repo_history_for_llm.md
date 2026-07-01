@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T11:39:24Z
+Generated: 2026-07-01T11:42:58Z
 Branch: main
-Snapshot digest: 99747c2
+Snapshot digest: 1b26591
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-c673bd9 (HEAD -> main, origin/main) Add curated scuola flashcard image
+271e732 (HEAD -> main) Add Come si chiama phrase flashcard metadata
+c673bd9 (origin/main) Add curated scuola flashcard image
 08d0540 Add curated amici flashcard image
 03b76f4 Bust vocabulary asset cache
 5c49c39 Wire amico curated image data
@@ -53,18 +54,8 @@ d082d11 Add conversation-before-grammar Italian learning loop
 ## Working tree status
 
 ```text
-M MAP.md
- M README.md
- M SPINE.md
+M dist/italian-learning-li.pack.zip
  M outputs/history/repo_history_for_llm.md
- M site/css/app.css
- M site/js/app.js
- M site/js/vocabulary-data.js
- M tools/verify_italian_learning_li.py
-?? .DS_Store
-?? cards/012_phrase_flashcard_metadata_card.md
-?? li/domain/phrase_flashcard_metadata_rule.md
-?? site/images/vocabulary/curated/come-si-chiama.jpg
 ```
 
 ## Tracked files
@@ -92,6 +83,7 @@ cards/007_start_italian_first_chat_mode_card.md
 cards/008_cb_overlay_only_default_artifact_card.md
 cards/009_classroom_vocabulary_curation_contract_card.md
 cards/011_curated_giorno_image_card.md
+cards/012_phrase_flashcard_metadata_card.md
 dist/italian-learning-li.pack.zip
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
@@ -103,6 +95,7 @@ li/domain/conversation_before_grammar_rule.md
 li/domain/curated_vocabulary_image_path_rule.md
 li/domain/first_person_conversation_rule.md
 li/domain/italian_learning_principles.md
+li/domain/phrase_flashcard_metadata_rule.md
 li/domain/vocabulary_filter_metadata_rule.md
 li/domain/vocabulary_image_curation_study_loop_rule.md
 li/practice/formal_informal_choice_loop.md
@@ -134,6 +127,7 @@ site/css/app.css
 site/data/vocabulary-ledger.example.json
 site/images/vocabulary/curated/amici.jpg
 site/images/vocabulary/curated/amico.jpg
+site/images/vocabulary/curated/come-si-chiama.jpg
 site/images/vocabulary/curated/essere.jpg
 site/images/vocabulary/curated/giorno.png
 site/images/vocabulary/curated/nome.jpg
