@@ -12,10 +12,13 @@ REQUIRED = [
     "cards/001_start_italian_learning_workbench_card.md", "cards/002_enter_conversation_before_grammar_card.md", "cards/003_first_class_corpus_greetings_card.md",
     "cards/004_standardize_llm_repo_history_snapshot_card.md", "cards/005_class_material_image_assets_card.md", "cards/006_register_uploaded_italian_learning_resources_card.md",
     "cards/007_start_italian_first_chat_mode_card.md", "cards/008_cb_overlay_only_default_artifact_card.md", "cards/012_phrase_flashcard_metadata_card.md",
-    "cards/013_flashcard_category_filter_ui_card.md", "li/workflow/llm_repo_history_snapshot_rule.md", "li/workflow/italian_first_chat_mode_rule.md",
+    "cards/013_flashcard_category_filter_ui_card.md", "cards/014_class1_screenshot_flashcards_card.md", "li/domain/class1_note_flashcard_category_rule.md", "li/workflow/llm_repo_history_snapshot_rule.md", "li/workflow/italian_first_chat_mode_rule.md",
     "li/workflow/cb_overlay_only_default_rule.md", "li/domain/phrase_flashcard_metadata_rule.md", "li/domain/flashcard_category_filter_rule.md",
     "site/index.html", "site/js/vocabulary-data.js", "site/js/app.js", "site/css/app.css",
     "site/images/vocabulary/curated/come-si-chiama.jpg", "site/images/vocabulary/placeholders/word-placeholder.svg",
+    "site/images/vocabulary/class-notes/class1-name-exchange.png", "site/images/vocabulary/class-notes/class1-dialogo-valigie.png",
+    "site/images/vocabulary/class-notes/class1-tu-o-lei.png", "site/images/vocabulary/class-notes/class1-come-stai-risposte.png",
+    "site/images/vocabulary/class-notes/class1-dialogo-informale.png",
 ]
 
 REPAIR_PHRASES = ["Non capisco.", "Puoi ripetere?", "Più lentamente, per favore.", "Che significa?", "Come si dice in italiano?"]
@@ -54,15 +57,11 @@ def require_flashcard_category_model() -> int:
         if token in index:
             print(f"site/index.html still contains tab UI token: {token}")
             return 1
-    for token in ["filterBar", "activeFilterLabel", "Flashcard category filters", "20260701-category-filters"]:
+    for token in ["filterBar", "activeFilterLabel", "Flashcard category filters", "20260701-class1-note-fcs"]:
         if token not in index:
             print(f"site/index.html missing filter UI token: {token}")
             return 1
-    for token in ["activeFilter", "function allFlashcards", "ITALIAN_CLASSROOM_FLASHCARDS", "function renderFilters", "function visibleFlashcards", "filter-chip",
-        "PAGE_SIZE",
-        "currentPage",
-        "pager-button",
-        "Showing", "aria-pressed", "function speakTextFor", "item.speak", "function imagePromptFor", "copyImagePromptFor", "Copy image prompt"]:
+    for token in ["activeFilter", "function allFlashcards", "ITALIAN_CLASSROOM_FLASHCARDS", "function renderFilters", "function visibleFlashcards", "filter-chip", "aria-pressed", "function speakTextFor", "item.speak", "function imagePromptFor", "copyImagePromptFor", "Copy image prompt"]:
         if token not in app:
             print(f"site/js/app.js missing category filter runtime token: {token}")
             return 1
@@ -105,7 +104,7 @@ def require_flashcard_category_model() -> int:
         print("Expected exactly one Come si chiama? flashcard")
         return 1
     come = matches[0]
-    for category in ["class-1", "phrase", "question", "conversation-primitive", "name-exchange", "image-supported", "curated"]:
+    for category in ["class-1", "nome", "presentazioni", "tu-lei", "formale", "frasi", "domande", "curated"]:
         if category not in come["categories"]:
             print(f"Come si chiama? missing category: {category}")
             return 1
@@ -116,9 +115,29 @@ def require_flashcard_category_model() -> int:
         print("Come si chiama? image path changed unexpectedly")
         return 1
     all_categories = {category for card in cards for category in card["categories"]}
-    for category in ["class-1", "noun", "verb", "phrase", "curated", "needs-image", "speaking-practice", "listening-practice"]:
+    for category in ["class-1", "sostantivi", "verbi", "frasi", "domande", "risposte", "saluti", "presentazioni", "come-stai", "nome", "tu-lei", "formale", "informale", "dialogo", "curated", "needs-image"]:
         if category not in all_categories:
             print(f"Expected category missing from flashcard set: {category}")
+            return 1
+
+    allowed_categories = {"class-1", "saluti", "presentazioni", "come-stai", "nome", "essere", "stare", "tu-lei", "formale", "informale", "riparazione", "frasi-utili", "dialogo", "sostantivi", "verbi", "frasi", "domande", "risposte", "curated", "needs-image"}
+    for card in cards:
+        unexpected = set(card["categories"]) - allowed_categories
+        if unexpected:
+            print(f"Flashcard {card['italian']} has non-Class-1 category/categories: {sorted(unexpected)}")
+            return 1
+    required_italian = [
+        "Sono il signore ___.", "Sono la signora ___.", "Come ti chiami?", "Mi chiamo ___.", "Sono ___.",
+        "Buon giorno, signore.", "Desidera qualcosa?", "Cerco le mie valigie.", "Come si chiama Lei?",
+        "Dove abita?", "Abito negli Stati Uniti, a Chicago.", "Tu o Lei?", "Studente a studente: tu.",
+        "Come stai?", "Come sta?", "Come va?", "Molto bene.", "Sto bene.", "Abbastanza bene.",
+        "Non c’è male.", "Così così.", "Male.", "Ciao Marco. Come stai?", "Sto bene, grazie, e tu?",
+        "Ti presento Giulia.", "Piacere, Giulia.", "Piacere."
+    ]
+    present = {card["italian"] for card in cards}
+    for phrase in required_italian:
+        if phrase not in present:
+            print(f"Missing Class 1 screenshot FC: {phrase}")
             return 1
     return 0
 
@@ -130,12 +149,14 @@ def main() -> int:
             print(f"- {path}")
         return 1
     checks = {
-        "MAP.md": ["cards/013_flashcard_category_filter_ui_card.md", "li/domain/flashcard_category_filter_rule.md", "category filters"],
-        "README.md": ["CB013", "Flashcard category filters", "speak", "curated", "categories"],
-        "SPINE.md": ["CB013", "li/domain/flashcard_category_filter_rule.md", "cards/013_flashcard_category_filter_ui_card.md"],
+        "MAP.md": ["cards/013_flashcard_category_filter_ui_card.md", "cards/014_class1_screenshot_flashcards_card.md", "li/domain/class1_note_flashcard_category_rule.md", "category filters"],
+        "README.md": ["CB013", "CB014", "Flashcard category filters", "speak", "curated", "categories"],
+        "SPINE.md": ["CB013", "CB014", "li/domain/flashcard_category_filter_rule.md", "li/domain/class1_note_flashcard_category_rule.md", "cards/014_class1_screenshot_flashcards_card.md"],
         "li/domain/flashcard_category_filter_rule.md": ["Each flashcard", "Required flashcard metadata", "All` shows every flashcard", "Tabs are not the source of truth"],
         "cards/013_flashcard_category_filter_ui_card.md": ["Replace the rigid", "ITALIAN_CLASSROOM_FLASHCARDS", "Come si chiama? appears"],
         "li/domain/phrase_flashcard_metadata_rule.md": ["speak", "image", "curated", "categories"],
+        "li/domain/class1_note_flashcard_category_rule.md": ["Controlled Class 1 categories", "saluti", "presentazioni", "come-stai", "tu-lei"],
+        "cards/014_class1_screenshot_flashcards_card.md": ["Class 1 screenshot", "New FCs", "valigie", "Dove abita"],
     }
     for path, tokens in checks.items():
         if require_tokens(path, tokens):

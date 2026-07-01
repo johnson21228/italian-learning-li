@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T12:31:44Z
+Generated: 2026-07-01T12:36:44Z
 Branch: main
-Snapshot digest: c8687d1
+Snapshot digest: 0b216b1
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-fc9559f (HEAD -> main, origin/main) Add paged flashcard navigation and avoid verifier churn
+750a99d (HEAD -> main, origin/main) Add flashcard image prompt copy button
+fc9559f Add paged flashcard navigation and avoid verifier churn
 5aa5b5e Replace flashcard tabs with category filters
 c34348c Bust cache for Come si chiama flashcard
 5e2b267 Add Come si chiama phrase flashcard metadata
@@ -53,15 +54,29 @@ cc7f393 Publish Italian learning site with GitHub Pages
 4c9240e Standardize LLM repo history snapshot
 4b785ca Add first class Italian greetings corpus
 d082d11 Add conversation-before-grammar Italian learning loop
-5fcece7 Start Italian learning LI workbench
 ```
 
 ## Working tree status
 
 ```text
-M site/css/app.css
+M MAP.md
+ M README.md
+ M SPINE.md
+ M dist/italian-learning-li.pack.zip
+ M outputs/history/repo_history_for_llm.md
+ M site/css/app.css
+ M site/index.html
  M site/js/app.js
+ M site/js/vocabulary-data.js
  M tools/verify_italian_learning_li.py
+?? assets/class_material/first_class/class1-come-stai-risposte.png
+?? assets/class_material/first_class/class1-dialogo-informale.png
+?? assets/class_material/first_class/class1-dialogo-valigie.png
+?? assets/class_material/first_class/class1-name-exchange.png
+?? assets/class_material/first_class/class1-tu-o-lei.png
+?? cards/014_class1_screenshot_flashcards_card.md
+?? li/domain/class1_note_flashcard_category_rule.md
+?? site/images/vocabulary/class-notes/
 ```
 
 ## Tracked files

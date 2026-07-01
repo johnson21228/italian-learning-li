@@ -224,3 +224,5 @@ site/images/vocabulary/placeholders/word-placeholder.svg
 ```
 
 Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categories`. The site renders `All` plus category filters from flashcard metadata, so one card can belong to multiple learning paths.
+
+- CB014: Class 1 screenshot phrase flashcards and Class 1 note category vocabulary. See `cards/014_class1_screenshot_flashcards_card.md` and `li/domain/class1_note_flashcard_category_rule.md`.

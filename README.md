@@ -203,3 +203,7 @@ site/images/vocabulary/placeholders/word-placeholder.svg
 ```
 
 Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categories`. The site renders `All` plus category filters from flashcard metadata, so one card can belong to multiple learning paths.
+
+## CB014 — Class 1 note flashcards
+
+CB014 adds phrase/dialogue FCs from the collected Class 1 screenshots and tightens filter categories to match the class notes: saluti, presentazioni, come-stai, nome, essere, stare, tu-lei, formale, informale, riparazione, frasi-utili, dialogo, sostantivi, verbi, frasi, domande, risposte, curated, and needs-image.
