@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T13:17:42Z
+Generated: 2026-07-01T18:49:09Z
 Branch: main
-Snapshot digest: 3467296
+Snapshot digest: ef0b71c
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-7e426f6 (HEAD -> main, origin/main) Remove category display from flashcards
+cc27f85 (HEAD -> main, origin/main) Convert pasted flashcard images to JPEG before upload
+7e426f6 Remove category display from flashcards
 d5ed2f8 Add Supabase flashcard image store seam
 00a0c4c Remove category display from flashcards
 d63e7a0 Hide per-card category chips
@@ -53,13 +54,14 @@ cc7f393 Publish Italian learning site with GitHub Pages
 568cd5c Render curated vocabulary images in site cards
 3b73991 Add curated giorno vocabulary image
 8686bba Add classroom vocabulary site and curation LI
-194697b Add Italian-first mode and overlay-only CB rule
 ```
 
 ## Working tree status
 
 ```text
-M site/js/services/SupabaseFlashcardImageStore.js
+M dist/italian-learning-li.pack.zip
+ M outputs/history/repo_history_for_llm.md
+ M site/js/config/supabase.public.js
 ```
 
 ## Tracked files

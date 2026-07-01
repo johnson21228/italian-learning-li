@@ -1,7 +1,7 @@
 export const ITALIAN_LEARNING_SUPABASE_PUBLIC_CONFIG = Object.freeze({
-  enabled: false,
-  supabaseUrl: "https://YOUR_PROJECT_REF.supabase.co",
-  supabasePublishableKey: "YOUR_PUBLISHABLE_KEY",
+  enabled: true,
+  supabaseUrl: "https://xxryucajzimukfabhkuf.supabase.co",
+  supabasePublishableKey: "sb_publishable_VKTr90n1IRzCK7lxm9a99g_xiQlpw7C",
   imageBucket: "flashcard-images",
   imageTable: "flashcard_images",
 });
