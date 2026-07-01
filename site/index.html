@@ -17,6 +17,17 @@
     <label class="voice-row"><span>Italian voice</span><select id="voiceSelect" aria-label="Italian voice"></select></label>
     <p id="voiceStatus" class="voice-status">Loading voices…</p>
   </section>
+  <section class="supabase-auth-panel" aria-label="Curated image upload sign in">
+    <div class="supabase-auth-heading">
+      <h2>Curated image uploads</h2>
+      <p id="supabaseAuthStatus">Checking Supabase sign-in…</p>
+    </div>
+    <div class="supabase-auth-controls">
+      <input id="supabaseAuthEmail" type="email" autocomplete="email" placeholder="Email for sign-in link" aria-label="Email for Supabase sign-in link">
+      <button id="supabaseSignInButton" type="button">Send sign-in link</button>
+      <button id="supabaseSignOutButton" type="button" hidden>Sign out</button>
+    </div>
+  </section>
   <section class="filter-panel" aria-label="Flashcard filters">
     <div class="filter-heading"><h2>Filter FCs</h2><p id="activeFilterLabel">All</p></div>
     <div id="filterBar" class="filter-bar" role="toolbar" aria-label="Flashcard category filters"></div>

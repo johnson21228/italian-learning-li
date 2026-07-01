@@ -2,6 +2,7 @@ const state = {
   activeFilter: "all",
   voices: [],
   selectedVoiceURI: localStorage.getItem("italianVoiceURI") || "",
+  supabaseAuthMessage: "",
 };
 
 const cardsEl = document.getElementById("cards");
@@ -10,6 +11,10 @@ const voiceSelectEl = document.getElementById("voiceSelect");
 const voiceStatusEl = document.getElementById("voiceStatus");
 const filterBarEl = document.getElementById("filterBar");
 const activeFilterLabelEl = document.getElementById("activeFilterLabel");
+const supabaseAuthStatusEl = document.getElementById("supabaseAuthStatus");
+const supabaseAuthEmailEl = document.getElementById("supabaseAuthEmail");
+const supabaseSignInButtonEl = document.getElementById("supabaseSignInButton");
+const supabaseSignOutButtonEl = document.getElementById("supabaseSignOutButton");
 
 function allFlashcards() {
   if (Array.isArray(window.ITALIAN_CLASSROOM_FLASHCARDS)) return window.ITALIAN_CLASSROOM_FLASHCARDS;
@@ -106,9 +111,53 @@ function imageUrlFor(item) {
   return supabaseUrl || item.image || "images/vocabulary/placeholders/word-placeholder.svg";
 }
 
+function isSupabaseSignedIn() {
+  const store = supabaseImageStore();
+  return Boolean(store?.getCurrentUser?.());
+}
+
 function canPasteSupabaseImage() {
   const store = supabaseImageStore();
-  return Boolean(store?.isConfigured?.() && store?.uploadClipboardImageForCard);
+  return Boolean(store?.isConfigured?.() && store?.uploadClipboardImageForCard && isSupabaseSignedIn());
+}
+
+function renderSupabaseAuthStatus() {
+  if (!supabaseAuthStatusEl) return;
+
+  const store = supabaseImageStore();
+  const configured = Boolean(store?.isConfigured?.());
+  const user = store?.getCurrentUser?.() || null;
+
+  if (!configured) {
+    supabaseAuthStatusEl.textContent = "Supabase image uploads are not configured.";
+    if (supabaseAuthEmailEl) supabaseAuthEmailEl.disabled = true;
+    if (supabaseSignInButtonEl) supabaseSignInButtonEl.disabled = true;
+    if (supabaseSignOutButtonEl) supabaseSignOutButtonEl.hidden = true;
+    return;
+  }
+
+  if (user) {
+    const email = user.email || "signed-in user";
+    supabaseAuthStatusEl.textContent = `Signed in as ${email}. Paste image upload is enabled.`;
+    if (supabaseAuthEmailEl) supabaseAuthEmailEl.hidden = true;
+    if (supabaseSignInButtonEl) supabaseSignInButtonEl.hidden = true;
+    if (supabaseSignOutButtonEl) {
+      supabaseSignOutButtonEl.hidden = false;
+      supabaseSignOutButtonEl.disabled = false;
+    }
+    return;
+  }
+
+  supabaseAuthStatusEl.textContent = state.supabaseAuthMessage || "Sign in to upload curated flashcard images.";
+  if (supabaseAuthEmailEl) {
+    supabaseAuthEmailEl.hidden = false;
+    supabaseAuthEmailEl.disabled = false;
+  }
+  if (supabaseSignInButtonEl) {
+    supabaseSignInButtonEl.hidden = false;
+    supabaseSignInButtonEl.disabled = false;
+  }
+  if (supabaseSignOutButtonEl) supabaseSignOutButtonEl.hidden = true;
 }
 
 async function pasteSupabaseImageFor(item, button, imageElement) {
@@ -341,6 +390,48 @@ voiceSelectEl.addEventListener("change", () => {
   voiceStatusEl.textContent = voice ? `Using ${voice.name} (${voice.lang}).` : "Using browser default for it-IT.";
 });
 
+supabaseSignInButtonEl?.addEventListener("click", async () => {
+  const store = supabaseImageStore();
+  if (!store?.signInWithEmail) {
+    alert("Supabase sign-in is not ready yet. Reload the page and try again.");
+    return;
+  }
+
+  const oldText = supabaseSignInButtonEl.textContent;
+  supabaseSignInButtonEl.textContent = "Sending…";
+  supabaseSignInButtonEl.disabled = true;
+
+  try {
+    await store.signInWithEmail(supabaseAuthEmailEl?.value || "");
+    state.supabaseAuthMessage = "Check your email for the Supabase sign-in link.";
+    renderSupabaseAuthStatus();
+  } catch (error) {
+    console.error(error);
+    alert(error?.message || String(error));
+  } finally {
+    supabaseSignInButtonEl.textContent = oldText;
+    supabaseSignInButtonEl.disabled = false;
+  }
+});
+
+supabaseSignOutButtonEl?.addEventListener("click", async () => {
+  const store = supabaseImageStore();
+  if (!store?.signOut) return;
+
+  supabaseSignOutButtonEl.disabled = true;
+  try {
+    await store.signOut();
+    state.supabaseAuthMessage = "Signed out.";
+    renderCards();
+    renderSupabaseAuthStatus();
+  } catch (error) {
+    console.error(error);
+    alert(error?.message || String(error));
+  } finally {
+    supabaseSignOutButtonEl.disabled = false;
+  }
+});
+
 if ("speechSynthesis" in window) {
   refreshVoices();
   speechSynthesis.addEventListener?.("voiceschanged", refreshVoices);
@@ -353,8 +444,10 @@ if ("speechSynthesis" in window) {
 
 
 window.addEventListener("italian-learning:supabase-images-updated", () => {
+  renderSupabaseAuthStatus();
   renderCards();
 });
 
 renderFilters();
+renderSupabaseAuthStatus();
 renderCards();
