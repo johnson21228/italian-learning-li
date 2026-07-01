@@ -85,6 +85,61 @@ function speakTextFor(item) {
   return item.speak || item.spokenItalian || item.italian;
 }
 
+function supabaseImageStore() {
+  return window.ItalianLearningSupabaseImages || null;
+}
+
+function flashcardKeyFor(item) {
+  const store = supabaseImageStore();
+  if (store?.cardKeyFor) return store.cardKeyFor(item);
+  return String(item.key || item.slug || item.italian || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function imageUrlFor(item) {
+  const store = supabaseImageStore();
+  const supabaseUrl = store?.bestImageUrlForCard?.(item);
+  return supabaseUrl || item.image || "images/vocabulary/placeholders/word-placeholder.svg";
+}
+
+function canPasteSupabaseImage() {
+  const store = supabaseImageStore();
+  return Boolean(store?.isConfigured?.() && store?.uploadClipboardImageForCard);
+}
+
+async function pasteSupabaseImageFor(item, button, imageElement) {
+  const store = supabaseImageStore();
+  if (!store?.uploadClipboardImageForCard) {
+    alert("Supabase image upload is not configured yet.");
+    return;
+  }
+
+  const oldText = button.textContent;
+  button.textContent = "Pasting…";
+  button.disabled = true;
+
+  try {
+    const row = await store.uploadClipboardImageForCard(item);
+    if (row?.public_url && imageElement) {
+      imageElement.src = row.public_url;
+    }
+    button.textContent = "Uploaded!";
+  } catch (error) {
+    console.error(error);
+    alert(error?.message || String(error));
+    button.textContent = oldText;
+  } finally {
+    window.setTimeout(() => {
+      button.textContent = oldText;
+      button.disabled = false;
+    }, 1200);
+  }
+}
+
 function imagePromptFor(item) {
   if (item.imagePrompt) return item.imagePrompt;
 
@@ -226,7 +281,7 @@ function renderCards() {
     icon.title = `Hear ${speakText}`;
     icon.addEventListener("click", () => speakItalian(speakText));
     const img = document.createElement("img");
-    img.src = item.image || "images/vocabulary/placeholders/word-placeholder.svg";
+    img.src = imageUrlFor(item);
     img.alt = item.imageAlt || item.italian;
     img.loading = "lazy";
     icon.appendChild(img);
@@ -265,6 +320,17 @@ function renderCards() {
 
     actions.appendChild(promptButton);
 
+    if (canPasteSupabaseImage()) {
+      const pasteButton = document.createElement("button");
+      pasteButton.type = "button";
+      pasteButton.className = "card-action-button";
+      pasteButton.textContent = "Paste Supabase image";
+      pasteButton.setAttribute("aria-label", `Paste Supabase image for ${item.italian}`);
+      pasteButton.addEventListener("click", () => pasteSupabaseImageFor(item, pasteButton, img));
+      actions.appendChild(pasteButton);
+    }
+
+
 
     card.append(icon, italian, english, categoryList, actions);
 
@@ -292,6 +358,11 @@ if ("speechSynthesis" in window) {
   voiceStatusEl.textContent = "Speech synthesis is not available in this browser.";
   voiceSelectEl.disabled = true;
 }
+
+
+window.addEventListener("italian-learning:supabase-images-updated", () => {
+  renderCards();
+});
 
 renderFilters();
 renderCards();
