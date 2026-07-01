@@ -108,6 +108,54 @@ function speakTextFor(item) {
   return item.speak || item.spokenItalian || item.italian;
 }
 
+function imagePromptFor(item) {
+  if (item.imagePrompt) return item.imagePrompt;
+
+  const categories = categoriesFor(item).join(", ");
+  const meaning = item.english ? `The image should support the meaning: "${item.english}".` : "";
+  const note = item.note ? `Instructional note: ${item.note}.` : "";
+
+  return [
+    `Create a simple square Italian flashcard image for "${item.italian}".`,
+    meaning,
+    note,
+    `The Italian word or phrase to support is: ${speakTextFor(item)}.`,
+    categories ? `Categories: ${categories}.` : "",
+    "Use a clear, friendly, beginner-language-learning style.",
+    "No English text.",
+    "Avoid clutter.",
+    "Make the image useful for remembering and speaking the Italian."
+  ].filter(Boolean).join("\n");
+}
+
+async function copyImagePromptFor(item, button) {
+  const prompt = imagePromptFor(item);
+
+  try {
+    await navigator.clipboard.writeText(prompt);
+    const oldText = button.textContent;
+    button.textContent = "Copied!";
+    button.disabled = true;
+    window.setTimeout(() => {
+      button.textContent = oldText;
+      button.disabled = false;
+    }, 1200);
+  } catch {
+    const box = document.createElement("textarea");
+    box.value = prompt;
+    document.body.appendChild(box);
+    box.select();
+    document.execCommand("copy");
+    document.body.removeChild(box);
+
+    const oldText = button.textContent;
+    button.textContent = "Copied!";
+    window.setTimeout(() => {
+      button.textContent = oldText;
+    }, 1200);
+  }
+}
+
 function categoriesFor(item) {
   if (Array.isArray(item.categories) && item.categories.length) return item.categories;
   const fallback = [];
@@ -238,7 +286,19 @@ function renderCards() {
     english.className = "english";
     english.textContent = item.english || "";
 
-    card.append(icon, italian, english);
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+
+    const promptButton = document.createElement("button");
+    promptButton.type = "button";
+    promptButton.className = "card-action-button";
+    promptButton.textContent = "Copy image prompt";
+    promptButton.setAttribute("aria-label", `Copy image prompt for ${item.italian}`);
+    promptButton.addEventListener("click", () => copyImagePromptFor(item, promptButton));
+
+    actions.appendChild(promptButton);
+
+    card.append(icon, italian, english, actions);
     cardsEl.appendChild(card);
   });
 }

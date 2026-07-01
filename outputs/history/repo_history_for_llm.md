@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T12:28:42Z
+Generated: 2026-07-01T12:31:44Z
 Branch: main
-Snapshot digest: d06b228
+Snapshot digest: c8687d1
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-5aa5b5e (HEAD -> main, origin/main) Replace flashcard tabs with category filters
+fc9559f (HEAD -> main, origin/main) Add paged flashcard navigation and avoid verifier churn
+5aa5b5e Replace flashcard tabs with category filters
 c34348c Bust cache for Come si chiama flashcard
 5e2b267 Add Come si chiama phrase flashcard metadata
 b1ae1f4 Add Come si chiama phrase flashcard metadata
@@ -58,13 +59,9 @@ d082d11 Add conversation-before-grammar Italian learning loop
 ## Working tree status
 
 ```text
-M dist/italian-learning-li.pack.zip
- M outputs/history/repo_history_for_llm.md
- M site/css/app.css
+M site/css/app.css
  M site/js/app.js
  M tools/verify_italian_learning_li.py
-?? cards/015_flashcard_add_no_verifier_churn_card.md
-?? li/domain/flashcard_add_no_verifier_churn_rule.md
 ```
 
 ## Tracked files
@@ -94,6 +91,7 @@ cards/009_classroom_vocabulary_curation_contract_card.md
 cards/011_curated_giorno_image_card.md
 cards/012_phrase_flashcard_metadata_card.md
 cards/013_flashcard_category_filter_ui_card.md
+cards/015_flashcard_add_no_verifier_churn_card.md
 dist/italian-learning-li.pack.zip
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
@@ -104,6 +102,7 @@ li/domain/classroom_vocabulary_curation_rule.md
 li/domain/conversation_before_grammar_rule.md
 li/domain/curated_vocabulary_image_path_rule.md
 li/domain/first_person_conversation_rule.md
+li/domain/flashcard_add_no_verifier_churn_rule.md
 li/domain/flashcard_category_filter_rule.md
 li/domain/italian_learning_principles.md
 li/domain/phrase_flashcard_metadata_rule.md

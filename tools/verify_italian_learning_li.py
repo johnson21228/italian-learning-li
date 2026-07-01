@@ -62,7 +62,7 @@ def require_flashcard_category_model() -> int:
         "PAGE_SIZE",
         "currentPage",
         "pager-button",
-        "Showing", "aria-pressed", "function speakTextFor", "item.speak"]:
+        "Showing", "aria-pressed", "function speakTextFor", "item.speak", "function imagePromptFor", "copyImagePromptFor", "Copy image prompt"]:
         if token not in app:
             print(f"site/js/app.js missing category filter runtime token: {token}")
             return 1
@@ -70,7 +70,7 @@ def require_flashcard_category_model() -> int:
         if token in app:
             print(f"site/js/app.js still contains tab runtime token: {token}")
             return 1
-    for token in [".filter-panel", ".filter-bar", ".filter-chip", ".image-speak-button"]:
+    for token in [".filter-panel", ".filter-bar", ".filter-chip", ".image-speak-button", ".card-actions", ".card-action-button"]:
         if token not in css:
             print(f"site/css/app.css missing category filter styling token: {token}")
             return 1

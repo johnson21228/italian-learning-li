@@ -324,3 +324,30 @@ body.hide-english .english { display: none; }
   color: var(--muted);
   font-weight: 700;
 }
+
+.card-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-action-button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  min-height: 36px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.card-action-button:hover {
+  border-color: var(--accent);
+}
+
+.card-action-button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
