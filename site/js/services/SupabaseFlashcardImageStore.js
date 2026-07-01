@@ -3,6 +3,7 @@ import { getSharedSupabaseClient, isSupabasePublicConfigReady } from "./Supabase
 
 const UPDATED_EVENT = "italian-learning:supabase-images-updated";
 const imageRowsByCardKey = new Map();
+let currentUser = null;
 
 function slugify(value) {
   return String(value || "")
@@ -36,6 +37,59 @@ function tableName() {
 
 function dispatchUpdated() {
   window.dispatchEvent(new CustomEvent(UPDATED_EVENT));
+}
+
+function getCurrentUser() {
+  return currentUser;
+}
+
+async function refreshAuthState() {
+  const supabase = client();
+  if (!supabase) {
+    currentUser = null;
+    dispatchUpdated();
+    return null;
+  }
+
+  const { data, error } = await supabase.auth.getUser();
+  if (error) throw error;
+
+  currentUser = data?.user || null;
+  dispatchUpdated();
+  return currentUser;
+}
+
+async function signInWithEmail(email) {
+  const supabase = client();
+  if (!supabase) {
+    throw new Error("Supabase sign-in is not configured.");
+  }
+
+  const cleanEmail = String(email || "").trim();
+  if (!cleanEmail || !cleanEmail.includes("@")) {
+    throw new Error("Enter a valid email address.");
+  }
+
+  const redirectTo = window.location.href.split("#")[0].split("?")[0];
+
+  const { error } = await supabase.auth.signInWithOtp({
+    email: cleanEmail,
+    options: { emailRedirectTo: redirectTo },
+  });
+
+  if (error) throw error;
+  return true;
+}
+
+async function signOut() {
+  const supabase = client();
+  if (!supabase) return;
+
+  const { error } = await supabase.auth.signOut();
+  if (error) throw error;
+
+  currentUser = null;
+  dispatchUpdated();
 }
 
 function bestImageUrlForCard(item = {}) {
@@ -176,6 +230,10 @@ async function uploadClipboardImageForCard(item = {}) {
 window.ItalianLearningSupabaseImages = {
   UPDATED_EVENT,
   isConfigured: configured,
+  getCurrentUser,
+  refreshAuthState,
+  signInWithEmail,
+  signOut,
   cardKeyFor,
   bestImageUrlForCard,
   loadActiveImageRows,
@@ -183,10 +241,19 @@ window.ItalianLearningSupabaseImages = {
 };
 
 // Tell the already-loaded app that the Supabase image service is now available.
-// This lets flashcards re-render and show the Paste Supabase image affordance
-// even before any override image rows have been loaded.
+// This lets the auth panel render and flashcards re-render after sign-in.
 if (configured()) {
   dispatchUpdated();
+
+  refreshAuthState().catch((error) => {
+    console.warn("Italian Learning Supabase auth check failed:", error);
+  });
+
+  const supabase = client();
+  supabase?.auth?.onAuthStateChange?.((_event, session) => {
+    currentUser = session?.user || null;
+    dispatchUpdated();
+  });
 
   loadActiveImageRows().catch((error) => {
     console.warn("Italian Learning Supabase image load failed:", error);
