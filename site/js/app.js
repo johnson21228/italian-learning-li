@@ -1,5 +1,8 @@
+const PAGE_SIZE = 12;
+
 const state = {
   activeFilter: "all",
+  currentPage: 1,
   voices: [],
   selectedVoiceURI: localStorage.getItem("italianVoiceURI") || "",
 };
@@ -10,6 +13,26 @@ const voiceSelectEl = document.getElementById("voiceSelect");
 const voiceStatusEl = document.getElementById("voiceStatus");
 const filterBarEl = document.getElementById("filterBar");
 const activeFilterLabelEl = document.getElementById("activeFilterLabel");
+
+const pagerEl = document.createElement("nav");
+pagerEl.className = "pager";
+pagerEl.setAttribute("aria-label", "Flashcard page navigation");
+
+const prevButtonEl = document.createElement("button");
+prevButtonEl.type = "button";
+prevButtonEl.className = "pager-button";
+prevButtonEl.textContent = "Previous";
+
+const pageStatusEl = document.createElement("span");
+pageStatusEl.className = "pager-status";
+
+const nextButtonEl = document.createElement("button");
+nextButtonEl.type = "button";
+nextButtonEl.className = "pager-button";
+nextButtonEl.textContent = "Next";
+
+pagerEl.append(prevButtonEl, pageStatusEl, nextButtonEl);
+cardsEl.before(pagerEl);
 
 function allFlashcards() {
   if (Array.isArray(window.ITALIAN_CLASSROOM_FLASHCARDS)) return window.ITALIAN_CLASSROOM_FLASHCARDS;
@@ -126,6 +149,7 @@ function renderFilters() {
     button.textContent = `${filterLabel(category)} ${counts.get(category)}`;
     button.addEventListener("click", () => {
       state.activeFilter = category;
+      state.currentPage = 1;
       renderFilters();
       renderCards();
     });
@@ -139,10 +163,44 @@ function visibleFlashcards() {
   return cards.filter((item) => categoriesFor(item).includes(state.activeFilter));
 }
 
+function pageCountFor(data) {
+  return Math.max(1, Math.ceil(data.length / PAGE_SIZE));
+}
+
+function currentPageSlice(data) {
+  const pageCount = pageCountFor(data);
+  if (state.currentPage > pageCount) state.currentPage = pageCount;
+  if (state.currentPage < 1) state.currentPage = 1;
+  const startIndex = (state.currentPage - 1) * PAGE_SIZE;
+  return data.slice(startIndex, startIndex + PAGE_SIZE);
+}
+
+function renderPager(data) {
+  const pageCount = pageCountFor(data);
+  const startNumber = data.length ? ((state.currentPage - 1) * PAGE_SIZE) + 1 : 0;
+  const endNumber = Math.min(state.currentPage * PAGE_SIZE, data.length);
+
+  prevButtonEl.disabled = state.currentPage <= 1;
+  nextButtonEl.disabled = state.currentPage >= pageCount;
+
+  pageStatusEl.textContent = data.length
+    ? `Showing ${startNumber}–${endNumber} of ${data.length} · Page ${state.currentPage} of ${pageCount}`
+    : "No matching FCs";
+
+  pagerEl.hidden = data.length <= PAGE_SIZE;
+}
+
 function renderCards() {
   const data = visibleFlashcards();
+  const pageItems = currentPageSlice(data);
+
   cardsEl.innerHTML = "";
-  if (activeFilterLabelEl) activeFilterLabelEl.textContent = `${filterLabel(state.activeFilter)} · ${data.length} FC${data.length === 1 ? "" : "s"}`;
+  renderPager(data);
+
+  if (activeFilterLabelEl) {
+    activeFilterLabelEl.textContent = `${filterLabel(state.activeFilter)} · ${data.length} FC${data.length === 1 ? "" : "s"}`;
+  }
+
   if (!data.length) {
     const empty = document.createElement("p");
     empty.className = "empty";
@@ -150,40 +208,51 @@ function renderCards() {
     cardsEl.appendChild(empty);
     return;
   }
-  data.forEach((item) => {
+
+  pageItems.forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
+
     const icon = document.createElement("button");
     icon.type = "button";
     icon.className = "icon image-speak-button";
+
     const speakText = speakTextFor(item);
     icon.setAttribute("aria-label", `Hear ${speakText}`);
     icon.title = `Hear ${speakText}`;
     icon.addEventListener("click", () => speakItalian(speakText));
+
     const img = document.createElement("img");
     img.src = item.image || "images/vocabulary/placeholders/word-placeholder.svg";
     img.alt = item.imageAlt || item.italian;
     img.loading = "lazy";
+    img.decoding = "async";
     icon.appendChild(img);
+
     const italian = document.createElement("div");
     italian.className = "italian";
     italian.lang = "it";
     italian.textContent = item.italian;
+
     const english = document.createElement("div");
     english.className = "english";
     english.textContent = item.english || "";
-    const categoryList = document.createElement("ul");
-    categoryList.className = "categories";
-    categoryList.setAttribute("aria-label", "Flashcard categories");
-    categoriesFor(item).slice(0, 5).forEach((category) => {
-      const chip = document.createElement("li");
-      chip.textContent = category;
-      categoryList.appendChild(chip);
-    });
-    card.append(icon, italian, english, categoryList);
+
+    card.append(icon, italian, english);
     cardsEl.appendChild(card);
   });
 }
+
+prevButtonEl.addEventListener("click", () => {
+  state.currentPage -= 1;
+  renderCards();
+});
+
+nextButtonEl.addEventListener("click", () => {
+  state.currentPage += 1;
+  renderCards();
+});
+
 
 showEnglishEl.addEventListener("change", () => {
   document.body.classList.toggle("hide-english", !showEnglishEl.checked);
