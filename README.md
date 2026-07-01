@@ -187,3 +187,19 @@ The classroom notes site can include phrases as flashcards, not only nouns and v
 - language-learning categories.
 
 The first phrase flashcard is `Come si chiama?` in the `Other` tab. It uses the approved class image at `site/images/vocabulary/curated/come-si-chiama.jpg` and is governed by `li/domain/phrase_flashcard_metadata_rule.md`.
+
+## CB013 — Flashcard category filters
+
+Card 013 replaces rigid flashcard tabs with metadata-driven category filters.
+
+```text
+li/domain/flashcard_category_filter_rule.md
+cards/013_flashcard_category_filter_ui_card.md
+site/js/vocabulary-data.js
+site/js/app.js
+site/css/app.css
+site/index.html
+site/images/vocabulary/placeholders/word-placeholder.svg
+```
+
+Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categories`. The site renders `All` plus category filters from flashcard metadata, so one card can belong to multiple learning paths.

@@ -208,3 +208,19 @@ site/images/vocabulary/curated/come-si-chiama.jpg
 ```
 
 New flashcards should include visible Italian text, exact `speak` text, image path, `curated` flag, and language-instruction categories such as `conversation-primitive`, `question`, `name-exchange`, `object-labeling`, `speaking-practice`, and `listening-practice`.
+
+## CB013 — Flashcard category filters
+
+Card 013 replaces rigid flashcard tabs with metadata-driven category filters.
+
+```text
+li/domain/flashcard_category_filter_rule.md
+cards/013_flashcard_category_filter_ui_card.md
+site/js/vocabulary-data.js
+site/js/app.js
+site/css/app.css
+site/index.html
+site/images/vocabulary/placeholders/word-placeholder.svg
+```
+
+Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categories`. The site renders `All` plus category filters from flashcard metadata, so one card can belong to multiple learning paths.

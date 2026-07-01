@@ -1,5 +1,5 @@
 const state = {
-  activeTab: "nowns",
+  activeFilter: "all",
   voices: [],
   selectedVoiceURI: localStorage.getItem("italianVoiceURI") || "",
 };
@@ -8,6 +8,14 @@ const cardsEl = document.getElementById("cards");
 const showEnglishEl = document.getElementById("showEnglish");
 const voiceSelectEl = document.getElementById("voiceSelect");
 const voiceStatusEl = document.getElementById("voiceStatus");
+const filterBarEl = document.getElementById("filterBar");
+const activeFilterLabelEl = document.getElementById("activeFilterLabel");
+
+function allFlashcards() {
+  if (Array.isArray(window.ITALIAN_CLASSROOM_FLASHCARDS)) return window.ITALIAN_CLASSROOM_FLASHCARDS;
+  const grouped = window.ITALIAN_CLASSROOM_VOCABULARY || {};
+  return [...(grouped.nouns || grouped.nowns || []), ...(grouped.verbs || []), ...(grouped.other || [])];
+}
 
 function rankItalianVoice(voice) {
   const name = `${voice.name} ${voice.lang}`.toLowerCase();
@@ -35,7 +43,6 @@ function selectedVoice() {
 function refreshVoices() {
   state.voices = getItalianVoices();
   voiceSelectEl.innerHTML = "";
-
   if (!state.voices.length) {
     const option = document.createElement("option");
     option.textContent = "No Italian voice exposed";
@@ -45,7 +52,6 @@ function refreshVoices() {
     voiceStatusEl.textContent = "No Italian voice is currently exposed by this browser/device. Speech will still request it-IT.";
     return;
   }
-
   voiceSelectEl.disabled = false;
   const best = selectedVoice();
   state.voices.forEach((voice, index) => {
@@ -63,17 +69,16 @@ function speakItalian(text) {
     alert("Speech synthesis is not available in this browser.");
     return;
   }
-
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "it-IT";
   utterance.rate = 0.85;
   utterance.pitch = 1.0;
-
   const voice = selectedVoice();
   if (voice) utterance.voice = voice;
-
+  window.__italianLearningLastUtterance = utterance;
   speechSynthesis.cancel();
-  speechSynthesis.speak(utterance);
+  speechSynthesis.resume();
+  window.setTimeout(() => speechSynthesis.speak(utterance), 0);
 }
 
 function speakTextFor(item) {
@@ -90,22 +95,64 @@ function categoriesFor(item) {
   return fallback;
 }
 
-function renderCards() {
-  const data = window.ITALIAN_CLASSROOM_VOCABULARY[state.activeTab] || [];
-  cardsEl.innerHTML = "";
+function filterLabel(category) {
+  if (category === "all") return "All";
+  return category.split("-").map((part) => part ? part[0].toUpperCase() + part.slice(1) : part).join(" ");
+}
 
+function categoryCounts() {
+  const counts = new Map([["all", allFlashcards().length]]);
+  allFlashcards().forEach((item) => categoriesFor(item).forEach((category) => counts.set(category, (counts.get(category) || 0) + 1)));
+  return counts;
+}
+
+function orderedCategories() {
+  const counts = categoryCounts();
+  const preferred = window.ITALIAN_CLASSROOM_CATEGORY_ORDER || [];
+  const ordered = preferred.filter((category) => counts.has(category));
+  const extras = [...counts.keys()].filter((category) => !ordered.includes(category)).sort((a, b) => a.localeCompare(b));
+  return [...ordered, ...extras];
+}
+
+function renderFilters() {
+  const counts = categoryCounts();
+  filterBarEl.innerHTML = "";
+  orderedCategories().forEach((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "filter-chip";
+    button.dataset.category = category;
+    button.setAttribute("aria-pressed", String(category === state.activeFilter));
+    button.textContent = `${filterLabel(category)} ${counts.get(category)}`;
+    button.addEventListener("click", () => {
+      state.activeFilter = category;
+      renderFilters();
+      renderCards();
+    });
+    filterBarEl.appendChild(button);
+  });
+}
+
+function visibleFlashcards() {
+  const cards = allFlashcards();
+  if (state.activeFilter === "all") return cards;
+  return cards.filter((item) => categoriesFor(item).includes(state.activeFilter));
+}
+
+function renderCards() {
+  const data = visibleFlashcards();
+  cardsEl.innerHTML = "";
+  if (activeFilterLabelEl) activeFilterLabelEl.textContent = `${filterLabel(state.activeFilter)} · ${data.length} FC${data.length === 1 ? "" : "s"}`;
   if (!data.length) {
     const empty = document.createElement("p");
     empty.className = "empty";
-    empty.textContent = `No ${state.activeTab} have been added yet. Add items to site/js/vocabulary-data.js.`;
+    empty.textContent = `No flashcards match ${filterLabel(state.activeFilter)}.`;
     cardsEl.appendChild(empty);
     return;
   }
-
   data.forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
-
     const icon = document.createElement("button");
     icon.type = "button";
     icon.className = "icon image-speak-button";
@@ -113,53 +160,30 @@ function renderCards() {
     icon.setAttribute("aria-label", `Hear ${speakText}`);
     icon.title = `Hear ${speakText}`;
     icon.addEventListener("click", () => speakItalian(speakText));
-
-    if (item.image) {
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.alt = item.imageAlt || item.italian;
-      img.loading = "lazy";
-      icon.appendChild(img);
-    } else {
-      const fallback = document.createElement("span");
-      fallback.textContent = item.icon || "🇮🇹";
-      icon.appendChild(fallback);
-    }
-
+    const img = document.createElement("img");
+    img.src = item.image || "images/vocabulary/placeholders/word-placeholder.svg";
+    img.alt = item.imageAlt || item.italian;
+    img.loading = "lazy";
+    icon.appendChild(img);
     const italian = document.createElement("div");
     italian.className = "italian";
     italian.lang = "it";
     italian.textContent = item.italian;
-
     const english = document.createElement("div");
     english.className = "english";
     english.textContent = item.english || "";
-
-    const categories = categoriesFor(item);
-    if (categories.length) {
-      const categoryList = document.createElement("ul");
-      categoryList.className = "categories";
-      categoryList.setAttribute("aria-label", "Flashcard categories");
-      categories.slice(0, 4).forEach((category) => {
-        const chip = document.createElement("li");
-        chip.textContent = category;
-        categoryList.appendChild(chip);
-      });
-      card.append(icon, italian, english, categoryList);
-    } else {
-      card.append(icon, italian, english);
-    }
+    const categoryList = document.createElement("ul");
+    categoryList.className = "categories";
+    categoryList.setAttribute("aria-label", "Flashcard categories");
+    categoriesFor(item).slice(0, 5).forEach((category) => {
+      const chip = document.createElement("li");
+      chip.textContent = category;
+      categoryList.appendChild(chip);
+    });
+    card.append(icon, italian, english, categoryList);
     cardsEl.appendChild(card);
   });
 }
-
-document.querySelectorAll(".tab").forEach((button) => {
-  button.addEventListener("click", () => {
-    state.activeTab = button.dataset.tab;
-    document.querySelectorAll(".tab").forEach((tab) => tab.classList.toggle("active", tab === button));
-    renderCards();
-  });
-});
 
 showEnglishEl.addEventListener("change", () => {
   document.body.classList.toggle("hide-english", !showEnglishEl.checked);
@@ -182,4 +206,5 @@ if ("speechSynthesis" in window) {
   voiceSelectEl.disabled = true;
 }
 
+renderFilters();
 renderCards();

@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T11:50:36Z
+Generated: 2026-07-01T12:06:57Z
 Branch: main
-Snapshot digest: 68b151f
+Snapshot digest: eb4240f
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-5e2b267 (HEAD -> main, origin/main) Add Come si chiama phrase flashcard metadata
+c34348c (HEAD -> main, origin/main) Bust cache for Come si chiama flashcard
+5e2b267 Add Come si chiama phrase flashcard metadata
 b1ae1f4 Add Come si chiama phrase flashcard metadata
 271e732 Add Come si chiama phrase flashcard metadata
 c673bd9 Add curated scuola flashcard image
@@ -56,7 +57,19 @@ d082d11 Add conversation-before-grammar Italian learning loop
 ## Working tree status
 
 ```text
-M site/index.html
+M MAP.md
+ M README.md
+ M SPINE.md
+ M dist/italian-learning-li.pack.zip
+ M outputs/history/repo_history_for_llm.md
+ M site/css/app.css
+ M site/index.html
+ M site/js/app.js
+ M site/js/vocabulary-data.js
+ M tools/verify_italian_learning_li.py
+?? cards/013_flashcard_category_filter_ui_card.md
+?? li/domain/flashcard_category_filter_rule.md
+?? site/images/vocabulary/placeholders/word-placeholder.svg
 ```
 
 ## Tracked files

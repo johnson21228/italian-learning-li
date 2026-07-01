@@ -4,43 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Italian Classroom Notes</title>
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app.css?v=20260701-category-filters">
 </head>
 <body>
   <header class="app-header">
     <p class="eyebrow">Italian Learning LI</p>
     <h1>Classroom Notes</h1>
-    <p class="lede">Tap image to hear Italian. </p>
+    <p class="lede">Tap a flashcard image to hear Italian. Filter by learning category.</p>
   </header>
-
   <section class="controls" aria-label="Practice controls">
-    <label class="toggle-row">
-      <input id="showEnglish" type="checkbox" checked>
-      <span>Show English</span>
-    </label>
-
-    <label class="voice-row">
-      <span>Italian voice</span>
-      <select id="voiceSelect" aria-label="Italian voice"></select>
-    </label>
+    <label class="toggle-row"><input id="showEnglish" type="checkbox" checked><span>Show English</span></label>
+    <label class="voice-row"><span>Italian voice</span><select id="voiceSelect" aria-label="Italian voice"></select></label>
     <p id="voiceStatus" class="voice-status">Loading voices…</p>
   </section>
-
-  <nav class="tabs" aria-label="Vocabulary tabs">
-    <button class="tab active" type="button" data-tab="nouns">Nouns</button>
-    <button class="tab" type="button" data-tab="verbs">Verbs</button>
-    <button class="tab" type="button" data-tab="other">Other</button>
-  </nav>
-
-  <main>
-    <section id="cards" class="cards" aria-live="polite"></section>
-  </main>
-
-  <footer class="footer">
-    Static classroom notes site. Ready for GitHub Pages.
-  </footer>
-
-  <script src="js/vocabulary-data.js?v=20260701-come-si-chiama"></script>
-  <script src="js/app.js?v=20260701-come-si-chiama"></script>
+  <section class="filter-panel" aria-label="Flashcard filters">
+    <div class="filter-heading"><h2>Filter FCs</h2><p id="activeFilterLabel">All</p></div>
+    <div id="filterBar" class="filter-bar" role="toolbar" aria-label="Flashcard category filters"></div>
+  </section>
+  <main><section id="cards" class="cards" aria-live="polite"></section></main>
+  <footer class="footer">Static classroom notes site. Ready for GitHub Pages.</footer>
+  <script src="js/vocabulary-data.js?v=20260701-category-filters"></script>
+  <script src="js/app.js?v=20260701-category-filters"></script>
 </body>
 </html>

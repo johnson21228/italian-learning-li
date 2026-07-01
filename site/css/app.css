@@ -278,3 +278,19 @@ body.hide-english .english { display: none; }
   line-height: 1;
   padding: 0.35rem 0.55rem;
 }
+
+
+/* CB013: category-filtered flashcard UI replaces rigid Nouns / Verbs / Other tabs. */
+.tabs, .tab { display: none !important; }
+.filter-panel { width: min(920px, calc(100vw - 28px)); margin: 14px auto 0; padding: 14px; background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 18px; }
+.filter-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.filter-heading h2 { margin: 0; font-size: 18px; }
+#activeFilterLabel { margin: 0; color: var(--muted); font-size: 14px; font-weight: 750; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-chip { border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); min-height: 38px; padding: 8px 12px; font-size: 14px; font-weight: 800; }
+.filter-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.card { align-content: start; }
+.image-speak-button { cursor: pointer; }
+.categories { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 0; padding: 0; }
+.categories li { border-radius: 999px; background: var(--accent-soft); color: var(--accent); padding: 4px 8px; font-size: 11px; font-weight: 800; letter-spacing: .01em; }
+@media (prefers-color-scheme: dark) { .filter-panel { background: rgba(31,41,55,.72); } }
