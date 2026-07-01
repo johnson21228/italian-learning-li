@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-06-29T22:51:58Z
+Generated: 2026-07-01T11:39:24Z
 Branch: main
-Snapshot digest: edb3609
+Snapshot digest: 99747c2
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,15 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-d105912 (HEAD -> main, origin/main) Repair vocabulary data after sere curation
+c673bd9 (HEAD -> main, origin/main) Add curated scuola flashcard image
+08d0540 Add curated amici flashcard image
+03b76f4 Bust vocabulary asset cache
+5c49c39 Wire amico curated image data
+693232a Add curated amico flashcard image
+ee28f81 Fix nouns spelling
+e96653f Update flashcard speech instruction
+9b2291d Update Italian learning pack artifact
+d105912 Repair vocabulary data after sere curation
 2c9762e Repair hidden flashcard note labels
 4b89371 Remove selectable text banner sentence
 6d78bca Hide flashcard note labels
@@ -45,8 +53,18 @@ d082d11 Add conversation-before-grammar Italian learning loop
 ## Working tree status
 
 ```text
-M dist/italian-learning-li.pack.zip
+M MAP.md
+ M README.md
+ M SPINE.md
  M outputs/history/repo_history_for_llm.md
+ M site/css/app.css
+ M site/js/app.js
+ M site/js/vocabulary-data.js
+ M tools/verify_italian_learning_li.py
+?? .DS_Store
+?? cards/012_phrase_flashcard_metadata_card.md
+?? li/domain/phrase_flashcard_metadata_rule.md
+?? site/images/vocabulary/curated/come-si-chiama.jpg
 ```
 
 ## Tracked files
@@ -114,11 +132,14 @@ li/workflow/llm_repo_history_snapshot_rule.md
 outputs/history/repo_history_for_llm.md
 site/css/app.css
 site/data/vocabulary-ledger.example.json
+site/images/vocabulary/curated/amici.jpg
+site/images/vocabulary/curated/amico.jpg
 site/images/vocabulary/curated/essere.jpg
 site/images/vocabulary/curated/giorno.png
 site/images/vocabulary/curated/nome.jpg
 site/images/vocabulary/curated/notte.jpg
 site/images/vocabulary/curated/professoressa.jpg
+site/images/vocabulary/curated/scuola.jpg
 site/images/vocabulary/curated/sera.jpg
 site/images/vocabulary/curated/sere.jpg
 site/images/vocabulary/curated/signora.jpg

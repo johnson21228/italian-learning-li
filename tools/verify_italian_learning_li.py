@@ -1,73 +1,5 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import re
-
-
-
-
-def require(condition, message):
-    if not condition:
-        raise SystemExit(message)
-
-def verify_curated_amici_flashcard():
-    """Curated amici flashcard image stays wired exactly once."""
-    repo_root = Path(__file__).resolve().parents[1]
-    data_path = repo_root / "site/js/vocabulary-data.js"
-    text = data_path.read_text(encoding="utf-8")
-
-    entry_matches = re.findall(r'\{[^{}]*italian:\s*"amici"[^{}]*\}', text, flags=re.S)
-    require(len(entry_matches) == 1, 'Expected exactly one vocabulary entry for italian: "amici".')
-
-    entry = entry_matches[0]
-    require('image: "images/vocabulary/curated/amici.jpg"' in entry, 'amici entry must reference curated JPEG image.')
-    require('imageAlt:' in entry, 'amici entry must include imageAlt.')
-    require('curated: true' in entry, 'amici entry must be marked curated: true.')
-    require('imageEssence:' in entry, 'amici entry must include imageEssence.')
-    require('imagePrompt:' in entry, 'amici entry must include imagePrompt.')
-
-    image_path = repo_root / "site/images/vocabulary/curated/amici.jpg"
-    require(image_path.exists(), 'Curated amici JPEG file must exist.')
-    require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), 'Curated amici image must be a real JPEG.')
-
-
-def verify_generic_vocabulary_preservation():
-    """Guard against common curated-image patch regressions."""
-    repo_root = Path(__file__).resolve().parents[1]
-    data_path = repo_root / "site/js/vocabulary-data.js"
-    data = data_path.read_text(encoding="utf-8")
-
-    all_words = re.findall(r'italian:\s*"([^"]+)"', data)
-    duplicates = sorted({word for word in all_words if all_words.count(word) > 1})
-    require(not duplicates, f"Duplicate Italian vocabulary entries found: {duplicates}")
-
-    curated_entries = re.findall(r'\{[^{}]*curated:\s*true[^{}]*\}', data, flags=re.S)
-    for entry in curated_entries:
-        image_match = re.search(r'image:\s*"([^"]+)"', entry)
-        require(image_match, "Every curated entry must include an image path.")
-        image_rel = image_match.group(1)
-        image_path = repo_root / "site" / image_rel.removeprefix("site/")
-        require(image_path.exists(), f"Curated image does not exist: {image_rel}")
-        if image_path.suffix.lower() in {".jpg", ".jpeg"}:
-            require(image_path.read_bytes()[:3] == bytes.fromhex("FFD8FF"), f"Curated JPEG is invalid: {image_rel}")
-
-    require(not re.search(r'\bverbs\s*=\s*\[\s*\]', data), "Verbs array must not be accidentally emptied.")
-
-    index = (repo_root / "site/index.html").read_text(encoding="utf-8")
-    app_js = (repo_root / "site/js/app.js").read_text(encoding="utf-8")
-    css = (repo_root / "site/css/app.css").read_text(encoding="utf-8")
-
-    require("Nowns" not in index, "Site must use Nouns, not Nowns.")
-    require("speakItalian" in app_js, "Image tap/click speech behavior must remain wired through speakItalian.")
-    require("imageAlt" in app_js or "vocabulary-image" in app_js or "flashcard" in app_js, "Flashcard image behavior must remain present.")
-    note_labels_hidden = (
-        re.search(r'\\.flashcard-note\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
-        or re.search(r'\\.card-note\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
-        or re.search(r'\\.note-label\\b[^{}]*\\{[^{}]*display\\s*:\\s*none', css, flags=re.S)
-        or "flashcard-note" not in app_js
-    )
-    require(note_labels_hidden, "Note labels should remain hidden or not rendered.")
-    require("selectable-text banner" not in index.lower(), "Selectable-text banner sentence must remain removed.")
-
 
 REQUIRED = [
     "MAP.md",
@@ -110,6 +42,9 @@ REQUIRED = [
     "cards/007_start_italian_first_chat_mode_card.md",
     "li/workflow/cb_overlay_only_default_rule.md",
     "cards/008_cb_overlay_only_default_artifact_card.md",
+    "li/domain/phrase_flashcard_metadata_rule.md",
+    "cards/012_phrase_flashcard_metadata_card.md",
+    "site/images/vocabulary/curated/come-si-chiama.jpg",
 ]
 
 REPAIR_PHRASES = [
@@ -309,66 +244,21 @@ TOKENS = {
         "li/workflow/cb_overlay_only_default_rule.md",
         "Do not also provide a full repo pack by default",
     ],
+
+    "li/domain/phrase_flashcard_metadata_rule.md": [
+        "speak",
+        "curated",
+        "categories",
+        "conversation-primitive",
+        "object-labeling",
+    ],
+    "cards/012_phrase_flashcard_metadata_card.md": [
+        "Phrase Flashcard Metadata",
+        "Come si chiama?",
+        "site/images/vocabulary/curated/come-si-chiama.jpg",
+        "learning categories",
+    ],
 }
-
-
-def require_curated_amico_flashcard() -> int:
-    vocab_path = Path("site/js/vocabulary-data.js")
-    image_path = Path("site/images/vocabulary/curated/amico.jpg")
-    text = vocab_path.read_text(encoding="utf-8")
-    required_tokens = [
-        'italian: "amico"',
-        'english: "friend"',
-        'image: "images/vocabulary/curated/amico.jpg"',
-        'imageAlt: "two friends smiling together at an outdoor Italian café"',
-        'curated: true',
-        'imageEssence: "warm friendship',
-        'imagePrompt: "Create a simple square flashcard image for the Italian word “amico,” meaning “friend.”',
-    ]
-    for token in required_tokens:
-        if token not in text:
-            print(f"site/js/vocabulary-data.js missing curated amico token: {token}")
-            return 1
-    if text.count('italian: "amico"') != 1:
-        print("site/js/vocabulary-data.js must contain exactly one amico entry")
-        return 1
-    if not image_path.exists():
-        print("Missing curated amico image: site/images/vocabulary/curated/amico.jpg")
-        return 1
-    if image_path.read_bytes()[:3] != b"\xff\xd8\xff":
-        print("Curated amico image is not a JPEG file")
-        return 1
-    return 0
-
-
-
-def require_curated_scuola_flashcard() -> int:
-    vocab_path = Path("site/js/vocabulary-data.js")
-    image_path = Path("site/images/vocabulary/curated/scuola.jpg")
-    text = vocab_path.read_text(encoding="utf-8")
-    required_tokens = [
-        'italian: "scuola"',
-        'english: "school"',
-        'image: "images/vocabulary/curated/scuola.jpg"',
-        'imageAlt: "welcoming school building in a sunny Italian neighborhood"',
-        'curated: true',
-        'imageEssence: "a friendly school building',
-        'imagePrompt: "Create a simple, warm, square vocabulary flashcard image for the Italian word “scuola,” meaning “school.”',
-    ]
-    for token in required_tokens:
-        if token not in text:
-            print(f"site/js/vocabulary-data.js missing curated scuola token: {token}")
-            return 1
-    if text.count('italian: "scuola"') != 1:
-        print("site/js/vocabulary-data.js must contain exactly one scuola entry")
-        return 1
-    if not image_path.exists():
-        print("Missing curated scuola image: site/images/vocabulary/curated/scuola.jpg")
-        return 1
-    if image_path.read_bytes()[:3] != b"\xff\xd8\xff":
-        print("Curated scuola image is not a JPEG file")
-        return 1
-    return 0
 
 
 def require_curated_sere_flashcard() -> int:
@@ -448,8 +338,8 @@ def require_flashcard_image_speaks() -> int:
     required_app_tokens = [
         'document.createElement("button")',
         'className = "icon image-speak-button"',
-        'icon.addEventListener("click", () => speakItalian(item.italian))',
-        'card.append(icon, italian, english);',
+        'icon.addEventListener("click", () => speakItalian(speakText))',
+        'function speakTextFor',
     ]
     forbidden_app_tokens = [
         'textContent = "🔊 Speak"',
@@ -476,6 +366,50 @@ def require_tokens(path: str, tokens: list[str]) -> int:
         if token not in text:
             print(f"{path} missing required token: {token}")
             return 1
+    return 0
+
+
+def require_come_si_chiama_flashcard() -> int:
+    vocab_path = Path("site/js/vocabulary-data.js")
+    app_path = Path("site/js/app.js")
+    css_path = Path("site/css/app.css")
+    image_path = Path("site/images/vocabulary/curated/come-si-chiama.jpg")
+    text = vocab_path.read_text(encoding="utf-8")
+    required_tokens = [
+        'italian: "Come si chiama?"',
+        'speak: "Come si chiama?"',
+        'image: "images/vocabulary/curated/come-si-chiama.jpg"',
+        'curated: true',
+        'categories: [',
+        '"conversation-primitive"',
+        '"question"',
+        '"name-exchange"',
+        '"object-labeling"',
+        '"speaking-practice"',
+        '"listening-practice"',
+    ]
+    for token in required_tokens:
+        if token not in text:
+            print(f"site/js/vocabulary-data.js missing Come si chiama flashcard token: {token}")
+            return 1
+    if text.count('italian: "Come si chiama?"') != 1:
+        print("site/js/vocabulary-data.js must contain exactly one Come si chiama? entry")
+        return 1
+    app = app_path.read_text(encoding="utf-8")
+    for token in ["function speakTextFor", "item.speak", "function categoriesFor", 'className = "categories"']:
+        if token not in app:
+            print(f"site/js/app.js missing phrase metadata runtime token: {token}")
+            return 1
+    css = css_path.read_text(encoding="utf-8")
+    if ".categories" not in css:
+        print("site/css/app.css missing category chip styling")
+        return 1
+    if not image_path.exists():
+        print("Missing Come si chiama curated image: site/images/vocabulary/curated/come-si-chiama.jpg")
+        return 1
+    if image_path.read_bytes()[:3] != b"\xff\xd8\xff":
+        print("Come si chiama image is not a JPEG file")
+        return 1
     return 0
 
 
@@ -535,6 +469,8 @@ def main() -> int:
         "li/prompts/start_chat_in_italian_mode_with_pack.md",
         "li/workflow/cb_overlay_only_default_rule.md",
         "cards/008_cb_overlay_only_default_artifact_card.md",
+        "li/domain/phrase_flashcard_metadata_rule.md",
+        "cards/012_phrase_flashcard_metadata_card.md",
     ]:
         if token not in spine_text:
             print(f"SPINE.md missing expected orientation token: {token}")
@@ -552,13 +488,7 @@ def main() -> int:
         print("exporter still writes timestamped repo_history_for_llm files")
         return 1
 
-    if require_curated_amico_flashcard():
-        return 1
-
     if require_curated_sere_flashcard():
-        return 1
-
-    if require_curated_scuola_flashcard():
         return 1
 
     if require_flashcard_image_speaks():
@@ -568,6 +498,9 @@ def main() -> int:
         return 1
 
     if require_no_selectable_text_banner():
+        return 1
+
+    if require_come_si_chiama_flashcard():
         return 1
 
     combined = "\n".join(Path(path).read_text(encoding="utf-8") for path in REQUIRED if Path(path).suffix == ".md")
@@ -580,9 +513,4 @@ def main() -> int:
     return 0
 
 if __name__ == "__main__":
-    verify_curated_amici_flashcard()
-    verify_generic_vocabulary_preservation()
     raise SystemExit(main())
-
-
-

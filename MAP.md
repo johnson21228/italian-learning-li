@@ -193,3 +193,18 @@ It is governed by `li/workflow/llm_repo_history_snapshot_rule.md` and captured b
 - Rule: `li/workflow/cb_overlay_only_default_rule.md`
 - Default: ongoing CB work in an existing Workbench repo should provide an overlay zip only.
 - Required phrase: Do not also provide a full repo pack by default.
+
+## Phrase flashcard metadata
+
+Card 012 adds phrase flashcard metadata for the classroom notes website:
+
+```text
+li/domain/phrase_flashcard_metadata_rule.md
+cards/012_phrase_flashcard_metadata_card.md
+site/js/vocabulary-data.js
+site/js/app.js
+site/css/app.css
+site/images/vocabulary/curated/come-si-chiama.jpg
+```
+
+New flashcards should include visible Italian text, exact `speak` text, image path, `curated` flag, and language-instruction categories such as `conversation-primitive`, `question`, `name-exchange`, `object-labeling`, `speaking-practice`, and `listening-practice`.

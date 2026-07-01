@@ -175,3 +175,15 @@ It asks for the current `italian-learning-li` pack when needed and sets the defa
 ## Overlay-only default artifact
 
 For ongoing Capture Back work in this existing Workbench, the default apply artifact is a named overlay zip. The assistant should not also provide a full repo pack by default. Full packs are reserved for brand-new Workbench creation, explicit requests, release/archive artifacts, or recovery from a broken/missing local repo.
+
+## Phrase flashcards
+
+The classroom notes site can include phrases as flashcards, not only nouns and verbs. New flashcards should include:
+
+- visible Italian text;
+- exact `speak` text for speech synthesis;
+- an image;
+- a `curated` flag;
+- language-learning categories.
+
+The first phrase flashcard is `Come si chiama?` in the `Other` tab. It uses the approved class image at `site/images/vocabulary/curated/come-si-chiama.jpg` and is governed by `li/domain/phrase_flashcard_metadata_rule.md`.

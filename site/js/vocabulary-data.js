@@ -1,5 +1,5 @@
 window.ITALIAN_CLASSROOM_VOCABULARY = {
-  nouns: [
+  nowns: [
     { italian: "giorno", english: "day", icon: "🌅", image: "images/vocabulary/curated/giorno.png", imageAlt: "warm daytime landscape", note: "time", curated: true, imageEssence: "morning sunlight, clear sky, and the feeling of a new day", imagePrompt: "Create a simple, warm, square vocabulary image for the Italian noun giorno meaning day. It should convey the essence of daytime: morning sunlight, clear sky, and the feeling of a new day. No text in the image. Clean friendly style suitable for a language-learning flashcard website. Square format." },
     { italian: "sera", english: "evening", icon: "🌆", image: "images/vocabulary/curated/sera.jpg", imageAlt: "warm evening village at sunset", note: "time", curated: true, imageEssence: "soft sunset light, deepening sky, calm atmosphere, and the feeling of the day winding down", imagePrompt: "Create a square JPEG image for a clean, friendly language-learning flashcard. Show the idea of evening with warm sunset light, a deepening blue sky, soft orange glow near the horizon, and a quiet peaceful village or landscape as the day winds down. No text in the image. No English. No Italian word. Make it simple, warm, and readable at small size on an iPhone website card." },
     { italian: "sere", english: "evenings", icon: "🌆", image: "images/vocabulary/curated/sere.jpg", imageAlt: "Italian after-work aperitivo evenings in a warm piazza", note: "time", curated: true, imageEssence: "Italian after-work aperitivo evenings, outdoor café tables, warm sunset light, piazza glow, calm social ritual, and the day winding down", imagePrompt: "Create a simple square flashcard image for the Italian word “sere,” meaning “evenings.” Show the feeling of several Italian evenings after work: people relaxing at outdoor café tables for aperitivo, small glasses and light snacks on the tables, warm golden light, glowing shop windows, a quiet piazza, and a blue-orange sky fading into night. The scene should suggest the recurring ritual of evenings — not one specific night — with a calm, social, after-work atmosphere. Style: warm, friendly, realistic-illustration style for a language-learning flashcard. Keep it simple and uncluttered, with strong visual meaning. No text, no labels, no watermark." },
@@ -10,11 +10,11 @@ window.ITALIAN_CLASSROOM_VOCABULARY = {
     { italian: "professoressa", english: "teacher; professor", icon: "👩‍🏫", image: "images/vocabulary/curated/professoressa.jpg", imageAlt: "female teacher in a warm classroom with books and blank board", note: "person", curated: true, imageEssence: "friendly female teacher or professor in a simple classroom setting, ready to teach", imagePrompt: "Create a square image for a clean, friendly language-learning flashcard. Show the idea of a female teacher or professor with a warm adult woman in a simple classroom or study setting, smiling gently and ready to teach. Include subtle classroom cues like books, a desk, or a blank board, but no readable writing. No text in the image. No English. No Italian word. Make it simple, warm, and readable at small size on an iPhone website card." },
     { italian: "studente", english: "student", icon: "🧑‍🎓", image: "images/vocabulary/curated/studente.jpg", imageAlt: "student holding books in a warm classroom", note: "person", curated: true, imageEssence: "friendly young adult learner with books in a warm classroom or study setting, ready to learn", imagePrompt: "Create a square image for a clean, friendly language-learning flashcard. Show the idea of a student with a friendly young adult learner holding a notebook or books in a warm classroom or study setting, looking ready to learn. Keep the scene simple and focused on learning. No readable writing anywhere. No text in the image. No English. No Italian word. Make it simple, warm, and readable at small size on an iPhone website card." },
     { italian: "studenti", english: "students", icon: "👥", note: "people" },
-    { italian: "amico", english: "friend", icon: "🤝", image: "images/vocabulary/curated/amico.jpg", imageAlt: "two friends smiling together at an outdoor Italian café", note: "person", curated: true, imageEssence: "warm friendship, two people smiling together, relaxed outdoor café, kindness, trust, and companionship", imagePrompt: "Create a simple square flashcard image for the Italian word “amico,” meaning “friend.” Show two friends sharing a warm, relaxed moment together at an outdoor café in an Italian town square. They should be smiling naturally, close enough to show trust and companionship, with warm sunlight, simple café cups or snacks, and a friendly Mediterranean atmosphere. Style: warm, friendly, realistic-illustration style for a language-learning flashcard. Keep it simple and uncluttered, with strong visual meaning. No text, no labels, no watermark." },
-    { italian: "amici", english: "friends", icon: "👥", image: "images/vocabulary/curated/amici.jpg", imageAlt: "three smiling friends together in a warm Italian courtyard", note: "people", curated: true, imageEssence: "a small group of happy friends close together, smiling warmly, with a friendly social feeling that clearly communicates friendship", imagePrompt: "Create a simple, warm, square vocabulary flashcard image for the Italian word amici, meaning friends. Show three friendly people close together, smiling and clearly enjoying each other’s company in a bright Italian courtyard. Use a warm, friendly, readable style that works well at small iPhone flashcard size. No text, no labels, no watermark." },
+    { italian: "amico", english: "friend", icon: "🤝", note: "person" },
+    { italian: "amici", english: "friends", icon: "👥", note: "people" },
     { italian: "classe", english: "class; classroom", icon: "🏫", note: "school" },
     { italian: "casa", english: "house; home", icon: "🏠", note: "place" },
-    { italian: "scuola", english: "school", icon: "🏫", image: "images/vocabulary/curated/scuola.jpg", imageAlt: "welcoming school building in a sunny Italian neighborhood", note: "place", curated: true, imageEssence: "a friendly school building, warm learning atmosphere, students arriving, clear sense of school and education", imagePrompt: "Create a simple, warm, square vocabulary flashcard image for the Italian word “scuola,” meaning “school.” Show a friendly small school building in a sunny Italian town or neighborhood, with a welcoming entrance, a few simple school details such as backpacks or children arriving, and a warm learning atmosphere. The image should clearly communicate “school” at a glance. Style: warm, friendly, simple, readable at small iPhone flashcard size, language-learning flashcard illustration. No text, no signs, no labels, no watermark, no readable writing anywhere." },
+    { italian: "scuola", english: "school", icon: "🏫", note: "place" },
     { italian: "libro", english: "book", icon: "📖", note: "object" },
     { italian: "gatto", english: "cat", icon: "🐈", note: "animal" },
     { italian: "tavolo", english: "table", icon: "🪑", note: "object" },
@@ -48,5 +48,33 @@ window.ITALIAN_CLASSROOM_VOCABULARY = {
     { italian: "ripetere", english: "to repeat", icon: "🔁", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "repair verb", curated: false },
     { italian: "dire", english: "to say", icon: "💬", image: "images/vocabulary/placeholders/verb-placeholder.svg", imageAlt: "verb placeholder", note: "repair verb", curated: false },
   ],
-  other: []
+  other: [
+    {
+      italian: "Come si chiama?",
+      english: "What is it called? / What is his or her name?",
+      speak: "Come si chiama?",
+      icon: "💬",
+      image: "images/vocabulary/curated/come-si-chiama.jpg",
+      imageAlt: "conversation poster for asking what someone or something is called",
+      note: "conversation primitive / name exchange",
+      partOfSpeech: "phrase",
+      communicativeFunction: "ask-name-or-label",
+      introducedBy: "class image: Come si chiama poster",
+      categories: [
+        "conversation-primitive",
+        "question",
+        "name-exchange",
+        "third-person",
+        "object-labeling",
+        "class-1",
+        "speaking-practice",
+        "listening-practice",
+        "image-supported",
+        "curated"
+      ],
+      curated: true,
+      imageEssence: "asking what a person, animal, or object is called in a friendly classroom conversation",
+      imagePrompt: "Use the approved Come si chiama class poster as the flashcard image. It should support the phrase Come si chiama? as a conversation primitive for asking a name or label. No new generated image is required."
+    }
+  ]
 };

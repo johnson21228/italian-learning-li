@@ -1,5 +1,5 @@
 const state = {
-  activeTab: "nouns",
+  activeTab: "nowns",
   voices: [],
   selectedVoiceURI: localStorage.getItem("italianVoiceURI") || "",
 };
@@ -76,6 +76,20 @@ function speakItalian(text) {
   speechSynthesis.speak(utterance);
 }
 
+function speakTextFor(item) {
+  return item.speak || item.spokenItalian || item.italian;
+}
+
+function categoriesFor(item) {
+  if (Array.isArray(item.categories) && item.categories.length) return item.categories;
+  const fallback = [];
+  if (item.partOfSpeech) fallback.push(item.partOfSpeech);
+  if (item.communicativeFunction) fallback.push(item.communicativeFunction);
+  if (item.note) fallback.push(item.note);
+  if (item.curated) fallback.push("curated");
+  return fallback;
+}
+
 function renderCards() {
   const data = window.ITALIAN_CLASSROOM_VOCABULARY[state.activeTab] || [];
   cardsEl.innerHTML = "";
@@ -95,9 +109,10 @@ function renderCards() {
     const icon = document.createElement("button");
     icon.type = "button";
     icon.className = "icon image-speak-button";
-    icon.setAttribute("aria-label", `Hear ${item.italian}`);
-    icon.title = `Hear ${item.italian}`;
-    icon.addEventListener("click", () => speakItalian(item.italian));
+    const speakText = speakTextFor(item);
+    icon.setAttribute("aria-label", `Hear ${speakText}`);
+    icon.title = `Hear ${speakText}`;
+    icon.addEventListener("click", () => speakItalian(speakText));
 
     if (item.image) {
       const img = document.createElement("img");
@@ -120,7 +135,20 @@ function renderCards() {
     english.className = "english";
     english.textContent = item.english || "";
 
-    card.append(icon, italian, english);
+    const categories = categoriesFor(item);
+    if (categories.length) {
+      const categoryList = document.createElement("ul");
+      categoryList.className = "categories";
+      categoryList.setAttribute("aria-label", "Flashcard categories");
+      categories.slice(0, 4).forEach((category) => {
+        const chip = document.createElement("li");
+        chip.textContent = category;
+        categoryList.appendChild(chip);
+      });
+      card.append(icon, italian, english, categoryList);
+    } else {
+      card.append(icon, italian, english);
+    }
     cardsEl.appendChild(card);
   });
 }

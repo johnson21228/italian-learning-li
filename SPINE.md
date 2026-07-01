@@ -134,3 +134,20 @@ The mode is Italian-first, not Italian-only. The assistant defaults to simple It
 `li/workflow/cb_overlay_only_default_rule.md` governs Capture Back artifact shape for this existing Workbench. Future CBs should provide named overlay zips and should not also provide full repo packs by default. Full packs remain valid for brand-new Workbench creation, explicit requests, release/archive artifacts, or broken/missing local repos.
 
 CB008 card: `cards/008_cb_overlay_only_default_artifact_card.md`
+
+## Phrase flashcards and categories
+
+The website supports phrase flashcards as first-class practice objects. New flashcards are governed by:
+
+```text
+li/domain/phrase_flashcard_metadata_rule.md
+cards/012_phrase_flashcard_metadata_card.md
+```
+
+The first phrase flashcard is `Come si chiama?`, using the class image at:
+
+```text
+site/images/vocabulary/curated/come-si-chiama.jpg
+```
+
+Each new flashcard should have exact `speak` text, an image, a `curated` flag, and language-instruction categories. Categories should describe communicative use: `conversation-primitive`, `question`, `name-exchange`, `object-labeling`, `speaking-practice`, `listening-practice`, and `class-1`.
