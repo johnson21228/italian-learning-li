@@ -182,7 +182,12 @@ window.ItalianLearningSupabaseImages = {
   uploadClipboardImageForCard,
 };
 
+// Tell the already-loaded app that the Supabase image service is now available.
+// This lets flashcards re-render and show the Paste Supabase image affordance
+// even before any override image rows have been loaded.
 if (configured()) {
+  dispatchUpdated();
+
   loadActiveImageRows().catch((error) => {
     console.warn("Italian Learning Supabase image load failed:", error);
   });
