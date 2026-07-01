@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T12:42:13Z
+Generated: 2026-07-01T12:57:19Z
 Branch: main
-Snapshot digest: d5b55f7
+Snapshot digest: 87ff133
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-2ca086b (HEAD -> main, origin/main) Add Class 1 screenshot flashcards and image prompt button
+d63e7a0 (HEAD -> main, origin/main) Hide per-card category chips
+2ca086b Add Class 1 screenshot flashcards and image prompt button
 750a99d Add flashcard image prompt copy button
 fc9559f Add paged flashcard navigation and avoid verifier churn
 5aa5b5e Replace flashcard tabs with category filters
@@ -53,13 +54,12 @@ cc7f393 Publish Italian learning site with GitHub Pages
 88bbfa4 Register uploaded Italian learning resources
 83388d2 Add class material image asset practice
 4c9240e Standardize LLM repo history snapshot
-4b785ca Add first class Italian greetings corpus
 ```
 
 ## Working tree status
 
 ```text
-M site/css/app.css
+[clean]
 ```
 
 ## Tracked files
