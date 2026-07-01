@@ -83,11 +83,30 @@ async function readClipboardImageBlob() {
   throw new Error("No image was found on the clipboard.");
 }
 
-function extensionForMimeType(type) {
-  if (type === "image/jpeg") return "jpg";
-  if (type === "image/webp") return "webp";
-  if (type === "image/png") return "png";
-  return "png";
+async function convertImageBlobToJpeg(blob, quality = 0.9) {
+  const bitmap = await createImageBitmap(blob);
+  const canvas = document.createElement("canvas");
+  canvas.width = bitmap.width;
+  canvas.height = bitmap.height;
+
+  const context = canvas.getContext("2d");
+
+  // JPEG has no transparency. Flatten transparent PNG/WebP pixels onto white.
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(bitmap, 0, 0);
+
+  bitmap.close?.();
+
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob((jpegBlob) => {
+      if (!jpegBlob) {
+        reject(new Error("Could not convert clipboard image to JPEG."));
+        return;
+      }
+      resolve(jpegBlob);
+    }, "image/jpeg", quality);
+  });
 }
 
 async function uploadClipboardImageForCard(item = {}) {
@@ -104,11 +123,13 @@ async function uploadClipboardImageForCard(item = {}) {
     throw new Error("Sign in before uploading flashcard images.");
   }
 
-  const blob = await readClipboardImageBlob();
+  const clipboardBlob = await readClipboardImageBlob();
+  const jpegBlob = await convertImageBlobToJpeg(clipboardBlob, 0.9);
+
   const key = cardKeyFor(item);
-  const ext = extensionForMimeType(blob.type);
+  const ext = "jpg";
   const storagePath = `${user.id}/vocabulary/${key}/${Date.now()}.${ext}`;
-  const file = new File([blob], `${key}.${ext}`, { type: blob.type || "image/png" });
+  const file = new File([jpegBlob], `${key}.${ext}`, { type: "image/jpeg" });
 
   const { error: uploadError } = await supabase.storage
     .from(bucketName())
