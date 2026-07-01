@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T12:36:44Z
+Generated: 2026-07-01T12:42:13Z
 Branch: main
-Snapshot digest: 0b216b1
+Snapshot digest: d5b55f7
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,8 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-750a99d (HEAD -> main, origin/main) Add flashcard image prompt copy button
+2ca086b (HEAD -> main, origin/main) Add Class 1 screenshot flashcards and image prompt button
+750a99d Add flashcard image prompt copy button
 fc9559f Add paged flashcard navigation and avoid verifier churn
 5aa5b5e Replace flashcard tabs with category filters
 c34348c Bust cache for Come si chiama flashcard
@@ -53,30 +54,12 @@ cc7f393 Publish Italian learning site with GitHub Pages
 83388d2 Add class material image asset practice
 4c9240e Standardize LLM repo history snapshot
 4b785ca Add first class Italian greetings corpus
-d082d11 Add conversation-before-grammar Italian learning loop
 ```
 
 ## Working tree status
 
 ```text
-M MAP.md
- M README.md
- M SPINE.md
- M dist/italian-learning-li.pack.zip
- M outputs/history/repo_history_for_llm.md
- M site/css/app.css
- M site/index.html
- M site/js/app.js
- M site/js/vocabulary-data.js
- M tools/verify_italian_learning_li.py
-?? assets/class_material/first_class/class1-come-stai-risposte.png
-?? assets/class_material/first_class/class1-dialogo-informale.png
-?? assets/class_material/first_class/class1-dialogo-valigie.png
-?? assets/class_material/first_class/class1-name-exchange.png
-?? assets/class_material/first_class/class1-tu-o-lei.png
-?? cards/014_class1_screenshot_flashcards_card.md
-?? li/domain/class1_note_flashcard_category_rule.md
-?? site/images/vocabulary/class-notes/
+M site/css/app.css
 ```
 
 ## Tracked files
@@ -89,6 +72,11 @@ MAP.md
 Makefile
 README.md
 SPINE.md
+assets/class_material/first_class/class1-come-stai-risposte.png
+assets/class_material/first_class/class1-dialogo-informale.png
+assets/class_material/first_class/class1-dialogo-valigie.png
+assets/class_material/first_class/class1-name-exchange.png
+assets/class_material/first_class/class1-tu-o-lei.png
 assets/class_material/first_class/come_si_chiama_poster.jpeg
 captures/CAPTURE_BACK_CLASSROOM_NOTES_VOCAB_SITE_LI.md
 captures/CAPTURE_BACK_CLASSROOM_VOCABULARY_CURATION_CONTRACT.md
@@ -106,12 +94,14 @@ cards/009_classroom_vocabulary_curation_contract_card.md
 cards/011_curated_giorno_image_card.md
 cards/012_phrase_flashcard_metadata_card.md
 cards/013_flashcard_category_filter_ui_card.md
+cards/014_class1_screenshot_flashcards_card.md
 cards/015_flashcard_add_no_verifier_churn_card.md
 dist/italian-learning-li.pack.zip
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
 li/corpus/first_class_greetings_and_essere_stare.md
 li/domain/childlike_language_acquisition_rule.md
+li/domain/class1_note_flashcard_category_rule.md
 li/domain/classroom_notes_vocabulary_site_goal.md
 li/domain/classroom_vocabulary_curation_rule.md
 li/domain/conversation_before_grammar_rule.md
@@ -150,6 +140,11 @@ li/workflow/llm_repo_history_snapshot_rule.md
 outputs/history/repo_history_for_llm.md
 site/css/app.css
 site/data/vocabulary-ledger.example.json
+site/images/vocabulary/class-notes/class1-come-stai-risposte.png
+site/images/vocabulary/class-notes/class1-dialogo-informale.png
+site/images/vocabulary/class-notes/class1-dialogo-valigie.png
+site/images/vocabulary/class-notes/class1-name-exchange.png
+site/images/vocabulary/class-notes/class1-tu-o-lei.png
 site/images/vocabulary/curated/amici.jpg
 site/images/vocabulary/curated/amico.jpg
 site/images/vocabulary/curated/come-si-chiama.jpg
