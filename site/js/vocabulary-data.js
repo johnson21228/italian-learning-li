@@ -1546,6 +1546,885 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
       "dialogo"
     ],
     "curated": true
+  },
+  {
+    "id": "alfabeto",
+    "italian": "alfabeto",
+    "english": "alphabet",
+    "speak": "alfabeto",
+    "icon": "🔤",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "language / class; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "persona",
+    "italian": "persona",
+    "english": "person",
+    "speak": "persona",
+    "icon": "🧍",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "person; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "persone",
+    "italian": "persone",
+    "english": "people",
+    "speak": "persone",
+    "icon": "👥",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "people; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "famiglia",
+    "italian": "famiglia",
+    "english": "family",
+    "speak": "famiglia",
+    "icon": "👨‍👩‍👧‍👦",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "madre",
+    "italian": "madre",
+    "english": "mother",
+    "speak": "madre",
+    "icon": "👩",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "padre",
+    "italian": "padre",
+    "english": "father",
+    "speak": "padre",
+    "icon": "👨",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "nonna",
+    "italian": "nonna",
+    "english": "grandmother",
+    "speak": "nonna",
+    "icon": "👵",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "nonno",
+    "italian": "nonno",
+    "english": "grandfather",
+    "speak": "nonno",
+    "icon": "👴",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "zia",
+    "italian": "zia",
+    "english": "aunt",
+    "speak": "zia",
+    "icon": "👩",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "zio",
+    "italian": "zio",
+    "english": "uncle",
+    "speak": "zio",
+    "icon": "👨",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "figlio",
+    "italian": "figlio",
+    "english": "son",
+    "speak": "figlio",
+    "icon": "👦",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "figlia",
+    "italian": "figlia",
+    "english": "daughter",
+    "speak": "figlia",
+    "icon": "👧",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "fratello",
+    "italian": "fratello",
+    "english": "brother",
+    "speak": "fratello",
+    "icon": "👦",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "sorella",
+    "italian": "sorella",
+    "english": "sister",
+    "speak": "sorella",
+    "icon": "👧",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "cugino",
+    "italian": "cugino",
+    "english": "male cousin",
+    "speak": "cugino",
+    "icon": "🧑",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "cugina",
+    "italian": "cugina",
+    "english": "female cousin",
+    "speak": "cugina",
+    "icon": "🧑",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "marito",
+    "italian": "marito",
+    "english": "husband",
+    "speak": "marito",
+    "icon": "👨",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "moglie",
+    "italian": "moglie",
+    "english": "wife",
+    "speak": "moglie",
+    "icon": "👩",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "family; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "luglio",
+    "italian": "luglio",
+    "english": "July",
+    "speak": "luglio",
+    "icon": "📅",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "calendar; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "settimana",
+    "italian": "settimana",
+    "english": "week",
+    "speak": "settimana",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "calendar; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lunedi",
+    "italian": "lunedì",
+    "english": "Monday",
+    "speak": "lunedì",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "martedi",
+    "italian": "martedì",
+    "english": "Tuesday",
+    "speak": "martedì",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mercoledi",
+    "italian": "mercoledì",
+    "english": "Wednesday",
+    "speak": "mercoledì",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "giovedi",
+    "italian": "giovedì",
+    "english": "Thursday",
+    "speak": "giovedì",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "venerdi",
+    "italian": "venerdì",
+    "english": "Friday",
+    "speak": "venerdì",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "sabato",
+    "italian": "sabato",
+    "english": "Saturday",
+    "speak": "sabato",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "domenica",
+    "italian": "domenica",
+    "english": "Sunday",
+    "speak": "domenica",
+    "icon": "🗓️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "day of week; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lavagna",
+    "italian": "lavagna",
+    "english": "blackboard; board",
+    "speak": "lavagna",
+    "icon": "🧑‍🏫",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "classroom; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "numero",
+    "italian": "numero",
+    "english": "number",
+    "speak": "numero",
+    "icon": "🔢",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "classroom / numbers; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "stati-uniti",
+    "italian": "Stati Uniti",
+    "english": "United States",
+    "speak": "Stati Uniti",
+    "icon": "🇺🇸",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "place name; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "canada",
+    "italian": "Canada",
+    "english": "Canada",
+    "speak": "Canada",
+    "icon": "🇨🇦",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "place name; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "belgio",
+    "italian": "Belgio",
+    "english": "Belgium",
+    "speak": "Belgio",
+    "icon": "🇧🇪",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "place name; from July 1 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "guardare",
+    "italian": "guardare",
+    "english": "to look; to watch",
+    "speak": "guardare",
+    "icon": "👀",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "classroom command / Guardate; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "ascoltare",
+    "italian": "ascoltare",
+    "english": "to listen",
+    "speak": "ascoltare",
+    "icon": "👂",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "classroom command / Ascoltate; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "parlare",
+    "italian": "parlare",
+    "english": "to speak",
+    "speak": "parlare",
+    "icon": "🗣️",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "classroom command / Parlate; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "scrivere",
+    "italian": "scrivere",
+    "english": "to write",
+    "speak": "scrivere",
+    "icon": "✍️",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "classroom command / Scrivete; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "abitare",
+    "italian": "abitare",
+    "english": "to live; to reside",
+    "speak": "abitare",
+    "icon": "🏠",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "family / place verb; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "provare",
+    "italian": "provare",
+    "english": "to try",
+    "speak": "provare",
+    "icon": "✅",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "classroom activity / Proviamo; from July 1 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "buona-sera",
+    "italian": "buona sera",
+    "english": "good evening",
+    "speak": "buona sera",
+    "icon": "🌆",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "greeting; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "saluti",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "no",
+    "italian": "no",
+    "english": "no",
+    "speak": "no",
+    "icon": "❌",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "risposte",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "per-favore",
+    "italian": "per favore",
+    "english": "please",
+    "speak": "per favore",
+    "icon": "🙏",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "grazie",
+    "italian": "grazie",
+    "english": "thank you",
+    "speak": "grazie",
+    "icon": "🙏",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "prego",
+    "italian": "prego",
+    "english": "you are welcome; please",
+    "speak": "prego",
+    "icon": "🤲",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mi-dispiace",
+    "italian": "mi dispiace",
+    "english": "I am sorry",
+    "speak": "mi dispiace",
+    "icon": "😔",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "permesso",
+    "italian": "permesso",
+    "english": "excuse me; may I pass",
+    "speak": "permesso",
+    "icon": "🚪",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "posso",
+    "italian": "posso",
+    "english": "may I; can I",
+    "speak": "posso",
+    "icon": "🙋",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy / permission; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "scusate",
+    "italian": "scusate",
+    "english": "excuse me; sorry",
+    "speak": "scusate",
+    "icon": "🙇",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "va-bene",
+    "italian": "va bene",
+    "english": "okay; all right",
+    "speak": "va bene",
+    "icon": "👌",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "risposte",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "buon-appetito",
+    "italian": "buon appetito",
+    "english": "enjoy your meal",
+    "speak": "buon appetito",
+    "icon": "🍽️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "salute",
+    "italian": "salute",
+    "english": "bless you; health; cheers",
+    "speak": "salute",
+    "icon": "💚",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "courtesy; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi-utili",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "alla-lavagna",
+    "italian": "alla lavagna",
+    "english": "at the board",
+    "speak": "alla lavagna",
+    "icon": "🧑‍🏫",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "classroom phrase; from July 1 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
   }
 ];
 

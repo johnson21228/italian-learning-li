@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="verb placeholder">
-  <rect width="512" height="512" rx="48" fill="#f6efe3"/>
-  <circle cx="256" cy="190" r="70" fill="#d8c3a5"/>
-  <path d="M160 360c24-56 168-56 192 0" fill="none" stroke="#9b7b58" stroke-width="28" stroke-linecap="round"/>
-  <path d="M176 132h160" stroke="#9b7b58" stroke-width="20" stroke-linecap="round"/>
-  <path d="M176 420h160" stroke="#9b7b58" stroke-width="20" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title>Verb placeholder</title>
+  <desc>A simple placeholder image for an Italian vocabulary verb flashcard.</desc>
+  <rect width="512" height="512" rx="64" fill="#eef3f6"/>
+  <circle cx="176" cy="180" r="48" fill="#9fb7c8"/>
+  <path d="M218 218c48 8 84 40 104 88" fill="none" stroke="#6f8fa3" stroke-width="28" stroke-linecap="round"/>
+  <path d="M320 308l44-18-14 48" fill="none" stroke="#6f8fa3" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M142 382h228" stroke="#6f8fa3" stroke-width="18" stroke-linecap="round"/>
 </svg>
