@@ -2425,6 +2425,824 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
       "needs-image"
     ],
     "curated": false
+  },
+  {
+    "id": "cameriera",
+    "italian": "cameriera",
+    "english": "waitress",
+    "speak": "cameriera",
+    "icon": "👩‍🍳",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "vacation / service; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "passaporto",
+    "italian": "passaporto",
+    "english": "passport",
+    "speak": "passaporto",
+    "icon": "🛂",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "travel; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "camera",
+    "italian": "camera",
+    "english": "room; bedroom",
+    "speak": "camera",
+    "icon": "🛏️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "hotel / room; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "specchio",
+    "italian": "specchio",
+    "english": "mirror",
+    "speak": "specchio",
+    "icon": "🪞",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bathroom / room; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lampada",
+    "italian": "lampada",
+    "english": "lamp",
+    "speak": "lampada",
+    "icon": "💡",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "room; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lavabo",
+    "italian": "lavabo",
+    "english": "sink; washbasin",
+    "speak": "lavabo",
+    "icon": "🚰",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bathroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "asciugamano",
+    "italian": "asciugamano",
+    "english": "towel",
+    "speak": "asciugamano",
+    "icon": "🧻",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bathroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "doccia",
+    "italian": "doccia",
+    "english": "shower",
+    "speak": "doccia",
+    "icon": "🚿",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bathroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "cassettone",
+    "italian": "cassettone",
+    "english": "dresser; chest of drawers",
+    "speak": "cassettone",
+    "icon": "🗄️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "room; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "cuscino",
+    "italian": "cuscino",
+    "english": "pillow",
+    "speak": "cuscino",
+    "icon": "🛏️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bedroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "letto",
+    "italian": "letto",
+    "english": "bed",
+    "speak": "letto",
+    "icon": "🛏️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bedroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "divano",
+    "italian": "divano",
+    "english": "sofa; couch",
+    "speak": "divano",
+    "icon": "🛋️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "room; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "sofa",
+    "italian": "sofà",
+    "english": "sofa; couch",
+    "speak": "sofà",
+    "icon": "🛋️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "room / alternate word; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "coperta",
+    "italian": "coperta",
+    "english": "blanket",
+    "speak": "coperta",
+    "icon": "🛌",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bedroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lenzuolo",
+    "italian": "lenzuolo",
+    "english": "sheet",
+    "speak": "lenzuolo",
+    "icon": "🛌",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "bedroom; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "vacanza",
+    "italian": "vacanza",
+    "english": "vacation",
+    "speak": "vacanza",
+    "icon": "🏖️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "travel; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "arrivo",
+    "italian": "arrivo",
+    "english": "arrival",
+    "speak": "arrivo",
+    "icon": "🧳",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "travel; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "compleanno",
+    "italian": "compleanno",
+    "english": "birthday",
+    "speak": "compleanno",
+    "icon": "🎂",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "question practice; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "zaino",
+    "italian": "zaino",
+    "english": "backpack",
+    "speak": "zaino",
+    "icon": "🎒",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "question practice; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "gelato",
+    "italian": "gelato",
+    "english": "ice cream",
+    "speak": "gelato",
+    "icon": "🍨",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "question practice; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "ora",
+    "italian": "ora",
+    "english": "hour; time",
+    "speak": "ora",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "ore",
+    "italian": "ore",
+    "english": "hours; o'clock",
+    "speak": "ore",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mattina",
+    "italian": "mattina",
+    "english": "morning",
+    "speak": "mattina",
+    "icon": "🌅",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "pomeriggio",
+    "italian": "pomeriggio",
+    "english": "afternoon",
+    "speak": "pomeriggio",
+    "icon": "🌤️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mezzogiorno",
+    "italian": "mezzogiorno",
+    "english": "noon",
+    "speak": "mezzogiorno",
+    "icon": "☀️",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mezzanotte",
+    "italian": "mezzanotte",
+    "english": "midnight",
+    "speak": "mezzanotte",
+    "icon": "🌙",
+    "image": "images/vocabulary/placeholders/noun-placeholder.svg",
+    "imageAlt": "vocabulary placeholder",
+    "note": "time; from July 8 class screenshots",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-1",
+      "sostantivi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "mangiare",
+    "italian": "mangiare",
+    "english": "to eat",
+    "speak": "mangiare",
+    "icon": "🍽️",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "question practice / mangia; from July 8 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "lavorare",
+    "italian": "lavorare",
+    "english": "to work",
+    "speak": "lavorare",
+    "icon": "💼",
+    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
+    "imageAlt": "verb placeholder",
+    "note": "question practice / lavori; from July 8 class screenshots",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-1",
+      "verbi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "come",
+    "italian": "come",
+    "english": "how; what",
+    "speak": "come",
+    "icon": "❓",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "quando",
+    "italian": "quando",
+    "english": "when",
+    "speak": "quando",
+    "icon": "📅",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "dove",
+    "italian": "dove",
+    "english": "where",
+    "speak": "dove",
+    "icon": "📍",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "quanti",
+    "italian": "quanti",
+    "english": "how many",
+    "speak": "quanti",
+    "icon": "🔢",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "perche",
+    "italian": "perché",
+    "english": "why; because",
+    "speak": "perché",
+    "icon": "❓",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "chi",
+    "italian": "chi",
+    "english": "who",
+    "speak": "chi",
+    "icon": "👤",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "che",
+    "italian": "che",
+    "english": "what; which; that",
+    "speak": "che",
+    "icon": "❓",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "cosa",
+    "italian": "cosa",
+    "english": "what; thing",
+    "speak": "cosa",
+    "icon": "❓",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question word; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "che-cosa",
+    "italian": "che cosa",
+    "english": "what",
+    "speak": "che cosa",
+    "icon": "❓",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "con-chi",
+    "italian": "con chi",
+    "english": "with whom",
+    "speak": "con chi",
+    "icon": "👥",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "question phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "che-ora-e",
+    "italian": "che ora è",
+    "english": "what time is it",
+    "speak": "che ora è",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time question; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "che-ore-sono",
+    "italian": "che ore sono",
+    "english": "what time is it",
+    "speak": "che ore sono",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time question; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "domande",
+      "frasi",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "sono-le",
+    "italian": "sono le",
+    "english": "it is; they are",
+    "speak": "sono le",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time answer starter; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "luna-e-mezzo",
+    "italian": "l’una e mezzo",
+    "english": "one thirty",
+    "speak": "l’una e mezzo",
+    "icon": "🕜",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "meno-un-quarto",
+    "italian": "meno un quarto",
+    "english": "minus a quarter; quarter to",
+    "speak": "meno un quarto",
+    "icon": "🕘",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "e-venticinque",
+    "italian": "e venticinque",
+    "english": "twenty-five past",
+    "speak": "e venticinque",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "e-quaranta",
+    "italian": "e quaranta",
+    "english": "forty past",
+    "speak": "e quaranta",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "meno-venti",
+    "italian": "meno venti",
+    "english": "twenty to",
+    "speak": "meno venti",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
+  },
+  {
+    "id": "e-mezzo",
+    "italian": "e mezzo",
+    "english": "and a half",
+    "speak": "e mezzo",
+    "icon": "🕐",
+    "image": "images/vocabulary/placeholders/word-placeholder.svg",
+    "imageAlt": "word placeholder",
+    "note": "time phrase; from July 8 class screenshots",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-1",
+      "frasi",
+      "risposte",
+      "needs-image"
+    ],
+    "curated": false
   }
 ];
 
