@@ -1,8 +1,8 @@
 # Repository History for LLM
 
-Generated: 2026-07-01T19:30:00Z
+Generated: 2026-07-29T14:54:08Z
 Branch: main
-Snapshot digest: 4951b56
+Snapshot digest: 10fcf6f
 Canonical path: outputs/history/repo_history_for_llm.md
 
 This file is the stable Italian Learning Workbench continuity snapshot. It is not Git history itself; it is an LLM-readable export derived from the current repository state. The file is overwritten by `tools/export_repo_history_for_llm.py` on each history/pack run so future sessions have one standard place to recover recent direction, accepted LI changes, cards, prompts, and open workbench state.
@@ -14,7 +14,11 @@ The Italian Learning LI starts from childlike language acquisition, first-person
 ## Recent commits
 
 ```text
-7a3448a (HEAD -> main, origin/main) Wire Supabase sign-in helpers
+421e041 (HEAD -> main) Add July 22 Italian lesson workflow
+f480265 (origin/main) Add July 8 class screenshot vocabulary
+a354ec7 Add July 1 class screenshot vocabulary
+7a8a71d Add Supabase auth helpers to image store
+7a3448a Wire Supabase sign-in helpers
 e8dafc2 Wire Supabase sign-in helpers
 485131c Add Supabase sign-in controls for image uploads
 458f0f4 Show Supabase paste affordance when service is ready
@@ -50,16 +54,13 @@ dd37aa3 Make flashcard images speak Italian
 788f57f Replace vocabulary tabs with filters and pagination
 5c151aa Curate studente vocabulary image
 b6773d5 Curate essere vocabulary image
-ab32f60 Curate professoressa vocabulary image
-900fac2 Add verb flashcard placeholders and curation study rule
-f9592a1 Curate signore and signora vocabulary images
-7b6a376 Curate name vocabulary image
 ```
 
 ## Working tree status
 
 ```text
-M site/js/services/SupabaseFlashcardImageStore.js
+M dist/italian-learning-li.pack.zip
+ M outputs/history/repo_history_for_llm.md
 ```
 
 ## Tracked files
@@ -78,9 +79,21 @@ assets/class_material/first_class/class1-dialogo-valigie.png
 assets/class_material/first_class/class1-name-exchange.png
 assets/class_material/first_class/class1-tu-o-lei.png
 assets/class_material/first_class/come_si_chiama_poster.jpeg
+assets/class_material/july_22/clips/andare-table.png
+assets/class_material/july_22/clips/il-cameriere.png
+assets/class_material/july_22/clips/la-cameriera.png
+assets/class_material/july_22/clips/menu-courses.png
+assets/class_material/july_22/clips/ordering-prompt.png
+assets/class_material/july_22/clips/places-slide.png
+assets/class_material/july_22/clips/restaurant-objects-slide.png
+assets/class_material/july_22/clips/restaurant-useful-phrases.png
+assets/class_material/july_22/clips/taxi-phrases.png
 captures/CAPTURE_BACK_CLASSROOM_NOTES_VOCAB_SITE_LI.md
 captures/CAPTURE_BACK_CLASSROOM_VOCABULARY_CURATION_CONTRACT.md
 captures/CAPTURE_BACK_CURATED_GIORNO_IMAGE.md
+captures/CAPTURE_BACK_JULY_01_CLASS_SCREENSHOT_VOCABULARY.md
+captures/CAPTURE_BACK_JULY_08_CLASS_SCREENSHOT_VOCABULARY.md
+captures/CAPTURE_BACK_JULY_22_MARKDOWN_LESSON.md
 cards/001_start_italian_learning_workbench_card.md
 cards/002_classroom_notes_vocabulary_site_card.md
 cards/002_enter_conversation_before_grammar_card.md
@@ -102,6 +115,9 @@ docs/backend/italian_learning_supabase_flashcard_images.md
 li/assets/class_material_image_asset_rule.md
 li/corpus/come_si_chiama_image_corpus_entry.md
 li/corpus/first_class_greetings_and_essere_stare.md
+li/corpus/july_01_class_screenshot_vocabulary.md
+li/corpus/july_08_class_screenshot_vocabulary.md
+li/corpus/july_22_restaurant_places_and_movement_lesson.md
 li/domain/childlike_language_acquisition_rule.md
 li/domain/class1_note_flashcard_category_rule.md
 li/domain/classroom_notes_vocabulary_site_goal.md
@@ -116,6 +132,7 @@ li/domain/phrase_flashcard_metadata_rule.md
 li/domain/supabase_flashcard_image_override_rule.md
 li/domain/vocabulary_filter_metadata_rule.md
 li/domain/vocabulary_image_curation_study_loop_rule.md
+li/flashcards/july_22_visual_flashcards.md
 li/practice/formal_informal_choice_loop.md
 li/practice/greeting_response_loop.md
 li/practice/hear_imitate_answer_repair_loop.md
@@ -140,9 +157,20 @@ li/source/uploaded_resource_custody_rule.md
 li/workflow/cb_overlay_only_default_rule.md
 li/workflow/italian_first_chat_mode_rule.md
 li/workflow/llm_repo_history_snapshot_rule.md
+li/workflow/weekly_screenshot_lesson_capture_rule.md
 outputs/history/repo_history_for_llm.md
 site/css/app.css
+site/css/lesson.css
 site/data/vocabulary-ledger.example.json
+site/images/class-lessons/2026-07-22/andare-table.png
+site/images/class-lessons/2026-07-22/il-cameriere.png
+site/images/class-lessons/2026-07-22/la-cameriera.png
+site/images/class-lessons/2026-07-22/menu-courses.png
+site/images/class-lessons/2026-07-22/ordering-prompt.png
+site/images/class-lessons/2026-07-22/places-slide.png
+site/images/class-lessons/2026-07-22/restaurant-objects-slide.png
+site/images/class-lessons/2026-07-22/restaurant-useful-phrases.png
+site/images/class-lessons/2026-07-22/taxi-phrases.png
 site/images/vocabulary/class-notes/class1-come-stai-risposte.png
 site/images/vocabulary/class-notes/class1-dialogo-informale.png
 site/images/vocabulary/class-notes/class1-dialogo-valigie.png
@@ -162,6 +190,7 @@ site/images/vocabulary/curated/sere.jpg
 site/images/vocabulary/curated/signora.jpg
 site/images/vocabulary/curated/signore.jpg
 site/images/vocabulary/curated/studente.jpg
+site/images/vocabulary/placeholders/noun-placeholder.svg
 site/images/vocabulary/placeholders/verb-placeholder.svg
 site/images/vocabulary/placeholders/word-placeholder.svg
 site/index.html
@@ -170,14 +199,18 @@ site/js/config/supabase.public.js
 site/js/services/SupabaseClient.js
 site/js/services/SupabaseFlashcardImageStore.js
 site/js/vocabulary-data.js
+site/lessons/2026-07-22.html
+site/lessons/index.html
 source/resources/basic_italian_traveler_resource_summary.md
 source/resources/cortina_conversational_italian_resource_summary.md
 source/resources/italian_learning_resource_index.md
 source/resources/piacere_resource_summary.md
 source/sql/italian_learning_supabase_flashcard_images.sql
+templates/weekly_screenshot_lesson/README.md
 tools/apply_curated_giorno_image.py
 tools/clean_li_repo_artifacts.py
 tools/export_repo_history_for_llm.py
 tools/find_next_uncurated_vocabulary_image.py
 tools/verify_italian_learning_li.py
+tools/verify_weekly_class_lessons.py
 ```
