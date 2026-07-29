@@ -171,3 +171,16 @@ Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categorie
 - CB014 records that Class 1 screenshot notes become FCs with controlled Class 1 note categories.
 
 CB014 authority files: `li/domain/class1_note_flashcard_category_rule.md` and `cards/014_class1_screenshot_flashcards_card.md`.
+
+## July 22 lesson reconstruction
+
+`li/corpus/july_22_restaurant_places_and_movement_lesson.md` reconstructs the
+supplied class screenshots as a speaking lesson. It connects `avere`,
+restaurant and taxi needs, places, `andare`, and `venire`, while labeling the
+difference between visible screenshot evidence and learner-recalled material.
+The paired `li/flashcards/july_22_visual_flashcards.md` uses exact screenshot
+crops for visual recall without presenting generated imagery as class evidence.
+
+`li/workflow/weekly_screenshot_lesson_capture_rule.md` governs the repeatable
+path from each new week's screenshots to Markdown lesson, visual review,
+static-site lesson, human acknowledgment, and Git incorporation.

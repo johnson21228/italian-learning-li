@@ -5,6 +5,7 @@ PACK_PATH := dist/$(REPO_NAME).pack.zip
 
 verify:
 	python3 tools/verify_italian_learning_li.py
+	python3 tools/verify_weekly_class_lessons.py
 
 history:
 	python3 tools/export_repo_history_for_llm.py

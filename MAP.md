@@ -226,3 +226,28 @@ site/images/vocabulary/placeholders/word-placeholder.svg
 Each FC should carry `speak`, `image`, `curated`, `partOfSpeech`, and `categories`. The site renders `All` plus category filters from flashcard metadata, so one card can belong to multiple learning paths.
 
 - CB014: Class 1 screenshot phrase flashcards and Class 1 note category vocabulary. See `cards/014_class1_screenshot_flashcards_card.md` and `li/domain/class1_note_flashcard_category_rule.md`.
+
+## July 22 Markdown lesson
+
+The proposed screenshot-informed lesson reconstruction is:
+
+```text
+li/corpus/july_22_restaurant_places_and_movement_lesson.md
+li/flashcards/july_22_visual_flashcards.md
+assets/class_material/july_22/clips/
+captures/CAPTURE_BACK_JULY_22_MARKDOWN_LESSON.md
+```
+
+It connects restaurant language, places, taxi phrases, `andare`, and `venire`
+through short usable exchanges before conjugation clarification.
+
+The proposed site and reusable weekly protocol are:
+
+```text
+site/lessons/index.html
+site/lessons/2026-07-22.html
+site/images/class-lessons/2026-07-22/
+li/workflow/weekly_screenshot_lesson_capture_rule.md
+templates/weekly_screenshot_lesson/README.md
+tools/verify_weekly_class_lessons.py
+```
