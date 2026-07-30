@@ -224,3 +224,9 @@ shown by its own visible affordance.
 The public site is a generative flashcard practice projection. Weekly lessons,
 crops, and their provenance remain Workbench knowledge and do not automatically
 become a separate published Lessons surface.
+
+## Handout-derived practice boundary
+
+External handouts may inform short, transformed flashcard candidates with
+page-level provenance. Source PDFs remain outside Git, packs, and publication.
+The site separates `From Class` and `From Handouts`.

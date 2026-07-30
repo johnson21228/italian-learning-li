@@ -288,3 +288,10 @@ conjugated-verb, complement, and complete-sentence speech controls.
 `captures/CAPTURE_BACK_REMOVE_PUBLISHED_LESSONS_SURFACE.md` proposes removing
 the Lessons navigation and published lesson artifacts while retaining lesson
 knowledge and source custody inside the Workbench.
+
+## Handout flashcard candidates
+
+`source/resources/handout_flashcard_derivation_manifest.md` records external
+source identity without storing PDFs. `li/flashcards/from_handouts_candidates.json`
+holds transformed candidates. `captures/CAPTURE_BACK_HANDOUT_FLASHCARD_CANDIDATES.md`
+is proposed for review.

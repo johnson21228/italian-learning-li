@@ -1,5 +1,7 @@
 const registry = window.ITALIAN_GENERATIVE_FLASHCARD_REGISTRY;
+const handoutRegistry = window.ITALIAN_HANDOUT_FLASHCARD_CANDIDATES;
 const state = {
+  activeView: "class",
   round: 0,
   cards: [],
   complementDecks: new Map(),
@@ -13,6 +15,8 @@ const voiceStatusEl = document.getElementById("voiceStatus");
 const roundStatusEl = document.getElementById("roundStatus");
 const pendingStatusEl = document.getElementById("pendingStatus");
 const newRoundButtonEl = document.getElementById("newRoundButton");
+const classTabEl = document.getElementById("classTab");
+const handoutTabEl = document.getElementById("handoutTab");
 
 function shuffled(items) {
   const result = [...items];
@@ -121,9 +125,24 @@ function renderPart(part) {
   return cell;
 }
 
+function handoutVisualParts(item) {
+  return [{role: "object", icon: item.icon, alt: item.italian, label: item.italian, speak: item.italian}];
+}
+
+function activeCards() {
+  if (state.activeView === "handouts") {
+    return handoutRegistry.cards.map((item) => ({
+      ...item,
+      speak: item.italian,
+      visualParts: handoutVisualParts(item),
+    }));
+  }
+  return state.cards;
+}
+
 function renderCards() {
   cardsEl.innerHTML = "";
-  state.cards.forEach((item) => {
+  activeCards().forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
     const visual = document.createElement("div");
@@ -146,11 +165,23 @@ function renderCards() {
     english.className = "english";
     english.textContent = item.english;
     card.append(visual, italian, english);
+    if (item.source) {
+      const source = handoutRegistry.sources.find((entry) => entry.key === item.source);
+      const provenance = document.createElement("p");
+      provenance.className = "source-note";
+      provenance.textContent = `${source.title} · PDF p. ${item.page} · ${item.derivation}`;
+      card.append(provenance);
+    }
     cardsEl.append(card);
   });
   document.body.classList.toggle("hide-english", !showEnglishEl.checked);
-  roundStatusEl.textContent = `Giro ${state.round}: ${state.cards.length} carte · ${registry.verbs.length} verbi attivi.`;
-  pendingStatusEl.textContent = `${registry.pendingVerbs.length} verbi attendono paradigmi e complementi verificati.`;
+  if (state.activeView === "handouts") {
+    roundStatusEl.textContent = `${handoutRegistry.cards.length} candidate da tre handout.`;
+    pendingStatusEl.textContent = "PDF esterni · frasi brevi o trasformate · provenienza visibile.";
+  } else {
+    roundStatusEl.textContent = `Giro ${state.round}: ${state.cards.length} carte · ${registry.verbs.length} verbi attivi.`;
+    pendingStatusEl.textContent = `${registry.pendingVerbs.length} verbi attendono paradigmi e complementi verificati.`;
+  }
 }
 
 function newRound() {
@@ -159,6 +190,19 @@ function newRound() {
   renderCards();
 }
 
+function setView(view) {
+  state.activeView = view;
+  const handouts = view === "handouts";
+  classTabEl.classList.toggle("active", !handouts);
+  handoutTabEl.classList.toggle("active", handouts);
+  classTabEl.setAttribute("aria-pressed", String(!handouts));
+  handoutTabEl.setAttribute("aria-pressed", String(handouts));
+  newRoundButtonEl.hidden = handouts;
+  renderCards();
+}
+
+classTabEl.addEventListener("click", () => setView("class"));
+handoutTabEl.addEventListener("click", () => setView("handouts"));
 newRoundButtonEl.addEventListener("click", newRound);
 showEnglishEl.addEventListener("change", renderCards);
 voiceSelectEl.addEventListener("change", () => {

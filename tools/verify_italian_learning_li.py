@@ -8,6 +8,10 @@ REQUIRED = [
     "li/domain/generative_flashcard_system_rule.md",
     "captures/CAPTURE_BACK_GENERATIVE_FLASHCARD_SYSTEM.md",
     "captures/CAPTURE_BACK_SENSITIVE_SPEECH_TARGETS.md",
+    "captures/CAPTURE_BACK_HANDOUT_FLASHCARD_CANDIDATES.md",
+    "source/resources/handout_flashcard_derivation_manifest.md",
+    "li/flashcards/from_handouts_candidates.json",
+    "site/js/handout-flashcard-data.js",
     "site/index.html", "site/js/app.js", "site/js/vocabulary-data.js",
     "site/css/app.css",
 ]
@@ -37,7 +41,7 @@ def main():
         if token.lower() in combined:
             print(f"Removed site surface remains: {token}")
             return 1
-    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "20260730-sensitive-speech-v1"]:
+    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "20260730-handout-tabs-v1"]:
         if token not in index + app:
             print(f"Generative runtime token missing: {token}")
             return 1
@@ -56,6 +60,46 @@ def main():
     for token in [".visual-part::after", ".sentence-speak", ":focus-visible", ":active"]:
         if token not in css:
             print(f"Speech affordance CSS missing: {token}")
+            return 1
+    for token in ["From Class", "From Handouts", "handoutTab", "handout-flashcard-data.js"]:
+        if token not in index + app:
+            print(f"Handout view token missing: {token}")
+            return 1
+    handouts = json.loads(Path("li/flashcards/from_handouts_candidates.json").read_text())
+    if handouts.get("schema") != "italian-handout-candidate-registry/v2":
+        print("Handout candidate schema mismatch.")
+        return 1
+    if len(handouts.get("sources", [])) != 3 or len(handouts.get("cards", [])) != 18:
+        print("Expected three handout sources and eighteen candidate cards.")
+        return 1
+    lexicon = handouts.get("lexiconCandidates", [])
+    if len(lexicon) != 112:
+        print(f"Expected 112 lexical candidates; found {len(lexicon)}.")
+        return 1
+    counts = {
+        part: sum(item["partOfSpeech"] == part for item in lexicon)
+        for part in {"verb", "noun", "expression"}
+    }
+    if counts != {"verb": 20, "noun": 72, "expression": 20}:
+        print(f"Lexical candidate type counts mismatch: {counts}")
+        return 1
+    if any(item.get("status") != "candidate" for item in lexicon):
+        print("Lexical entries must remain candidates.")
+        return 1
+    if any(source.get("storedInRepository") for source in handouts["sources"]):
+        print("External handout PDF was incorrectly marked as stored.")
+        return 1
+    if {card.get("source") for card in handouts["cards"]} != {"piacere", "cortina", "traveler"}:
+        print("Handout source coverage mismatch.")
+        return 1
+    for card in handouts["cards"]:
+        for field in ["id", "italian", "english", "icon", "source", "page", "derivation"]:
+            if not card.get(field):
+                print(f"Handout candidate metadata missing: {card.get('id')}:{field}")
+                return 1
+    for pdf in Path(".").rglob("*.pdf"):
+        if "dist" not in pdf.parts:
+            print(f"Unexpected PDF stored in Workbench: {pdf}")
             return 1
     registry = load_registry()
     if registry.get("schema") != "italian-generative-flashcards/v1":
