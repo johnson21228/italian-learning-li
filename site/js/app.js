@@ -54,9 +54,9 @@ function buildRound() {
         subject: subject.key,
         complement: complement.key,
         visualParts: [
-          {role: "subject", image: subject.image, alt: `Subject ${subject.italian}`},
-          {role: "verb", image: verb.image, icon: verb.icon, alt: `Verb ${verb.infinitive}`, label: verb.infinitive},
-          {role: "object", icon: complement.icon, alt: complement.label, label: complement.label},
+          {role: "subject", image: subject.image, alt: `Subject ${subject.italian}`, speak: subject.italian},
+          {role: "verb", image: verb.image, icon: verb.icon, alt: `Conjugated verb ${form.form}`, label: form.form, speak: form.form},
+          {role: "object", icon: complement.icon, alt: complement.label, label: complement.label, speak: complement.phrase},
         ],
       });
     });
@@ -95,8 +95,11 @@ function speakItalian(text) {
 }
 
 function renderPart(part) {
-  const cell = document.createElement("span");
+  const cell = document.createElement("button");
+  cell.type = "button";
   cell.className = `visual-part ${part.role}`;
+  cell.setAttribute("aria-label", `Hear ${part.speak}`);
+  cell.addEventListener("click", () => speakItalian(part.speak));
   if (part.image) {
     const image = document.createElement("img");
     image.src = part.image;
@@ -123,20 +126,26 @@ function renderCards() {
   state.cards.forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
-    const button = document.createElement("button");
-    button.className = "visual";
-    button.type = "button";
-    button.setAttribute("aria-label", `Hear ${item.italian}`);
-    button.addEventListener("click", () => speakItalian(item.speak));
-    item.visualParts.forEach((part) => button.append(renderPart(part)));
-    const italian = document.createElement("p");
-    italian.className = "italian";
+    const visual = document.createElement("div");
+    visual.className = "visual";
+    item.visualParts.forEach((part) => visual.append(renderPart(part)));
+    const italian = document.createElement("button");
+    italian.type = "button";
+    italian.className = "italian sentence-speak";
     italian.lang = "it";
-    italian.textContent = item.italian;
+    italian.setAttribute("aria-label", `Hear complete sentence: ${item.italian}`);
+    italian.addEventListener("click", () => speakItalian(item.speak));
+    const speaker = document.createElement("span");
+    speaker.className = "speaker-affordance";
+    speaker.setAttribute("aria-hidden", "true");
+    speaker.textContent = "🔊";
+    const sentence = document.createElement("span");
+    sentence.textContent = item.italian;
+    italian.append(speaker, sentence);
     const english = document.createElement("p");
     english.className = "english";
     english.textContent = item.english;
-    card.append(button, italian, english);
+    card.append(visual, italian, english);
     cardsEl.append(card);
   });
   document.body.classList.toggle("hide-english", !showEnglishEl.checked);

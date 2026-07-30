@@ -7,6 +7,7 @@ REQUIRED = [
     "LLM_READ_FIRST.md", "SPINE.md", "MAP.md", "HOW_LI_RULES.md",
     "li/domain/generative_flashcard_system_rule.md",
     "captures/CAPTURE_BACK_GENERATIVE_FLASHCARD_SYSTEM.md",
+    "captures/CAPTURE_BACK_SENSITIVE_SPEECH_TARGETS.md",
     "site/index.html", "site/js/app.js", "site/js/vocabulary-data.js",
     "site/css/app.css",
 ]
@@ -36,9 +37,25 @@ def main():
         if token.lower() in combined:
             print(f"Removed site surface remains: {token}")
             return 1
-    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "20260730-generative-system-v1"]:
+    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "20260730-sensitive-speech-v1"]:
         if token not in index + app:
             print(f"Generative runtime token missing: {token}")
+            return 1
+    speech_tokens = [
+        'part.speak', 'Hear complete sentence', 'speaker-affordance',
+        'cell.addEventListener("click"', 'italian.addEventListener("click"',
+    ]
+    for token in speech_tokens:
+        if token not in app:
+            print(f"Sensitive speech target missing: {token}")
+            return 1
+    if 'document.createElement("button")' not in app:
+        print("Sensitive speech targets must use native buttons.")
+        return 1
+    css = Path("site/css/app.css").read_text()
+    for token in [".visual-part::after", ".sentence-speak", ":focus-visible", ":active"]:
+        if token not in css:
+            print(f"Speech affordance CSS missing: {token}")
             return 1
     registry = load_registry()
     if registry.get("schema") != "italian-generative-flashcards/v1":

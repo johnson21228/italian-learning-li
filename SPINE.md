@@ -211,3 +211,9 @@ Generated practice uses admitted paradigms and typed class-derived complements. 
 ## Generative flashcard system
 
 Generated practice uses admitted paradigms and typed class-derived complements. Every six-card verb round uses each conjugation once and a distinct complement on every card. Pending verbs cannot bypass the admission gate.
+
+## Sensitive speech targets
+
+Generated cards expose four accessible speech targets: subject, conjugated
+verb, complement, and complete sentence. Each target speaks only the language
+shown by its own visible affordance.

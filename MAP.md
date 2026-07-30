@@ -274,3 +274,9 @@ filterable tap-to-hear cards.
 ## Generative flashcard system
 
 `li/domain/generative_flashcard_system_rule.md` governs the generator-only site projection. `captures/CAPTURE_BACK_GENERATIVE_FLASHCARD_SYSTEM.md` is proposed for review.
+
+## Sensitive speech targets
+
+`li/domain/generative_flashcard_system_rule.md` governs independent subject,
+conjugated-verb, complement, and complete-sentence speech controls.
+`captures/CAPTURE_BACK_SENSITIVE_SPEECH_TARGETS.md` is proposed for review.

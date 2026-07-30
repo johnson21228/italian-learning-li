@@ -56,3 +56,16 @@ assets, and Capture Backs.
 
 Filters, image-prompt generation, and authenticated image mutation are outside
 this focused practice projection.
+
+## Speech-target interaction rule
+
+Every generated card exposes four independent, visible speech targets:
+
+1. the subject image speaks the Italian subject;
+2. the verb image or icon speaks the conjugated form shown on that card;
+3. the complement image or icon speaks its exact Italian phrase;
+4. the bordered sentence control speaks the complete assembled sentence.
+
+Each target must be a keyboard-accessible button with a visible speaker
+affordance, focus state, pressed state, and an accessible label. A container
+must not hide several semantic speech targets behind one undifferentiated tap.
