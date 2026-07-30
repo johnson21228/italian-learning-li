@@ -15,7 +15,7 @@ receive screenshots and learner recollection
 → create privacy-safe exact crops
 → write conversation-first Markdown lesson
 → write paired visual Markdown flashcards
-→ create/update static site lesson
+→ update the governed generative flashcard inputs when appropriate
 → verify links, assets, and Workbench integrity
 → return complete diff and visual evidence
 → obtain human acknowledgment
@@ -43,8 +43,8 @@ Do not silently turn inference into classroom transcription.
   desktop material.
 - AI-generated imagery must never be represented as a screenshot crop.
 - Workbench custody lives under `assets/class_material/<week>/`.
-- Site copies live under `site/images/class-lessons/<YYYY-MM-DD>/`.
-- Derived site copies must match their Workbench-custody source bytes.
+- Classroom crops do not enter the published site merely because they exist.
+- A separately reviewed flashcard visual may be promoted through the generative-card protocol.
 
 ## Learning rule
 
@@ -60,22 +60,15 @@ Every lesson should include:
 - a short retrieval exercise;
 - provenance notes.
 
-## Site rule
+## Published-site boundary
 
-Create:
+The published site is the focused generative flashcard practice surface. Weekly
+Markdown lessons and privacy-safe crops remain governed Workbench material; they
+do not create a Lessons button, lesson index, dated lesson page, lesson-only
+stylesheet, or published class-lesson image directory.
 
-```text
-site/lessons/<YYYY-MM-DD>.html
-```
-
-Add one entry to:
-
-```text
-site/lessons/index.html
-```
-
-The page must work as static HTML under the existing GitHub Pages deployment.
-It must not require a server or build step.
+Promotion of particular lesson evidence into generated flashcards requires its
+own reviewed Capture Back and must preserve provenance.
 
 ## Capture Back boundary
 

@@ -217,3 +217,10 @@ Generated practice uses admitted paradigms and typed class-derived complements. 
 Generated cards expose four accessible speech targets: subject, conjugated
 verb, complement, and complete sentence. Each target speaks only the language
 shown by its own visible affordance.
+
+
+## Published-site lesson boundary
+
+The public site is a generative flashcard practice projection. Weekly lessons,
+crops, and their provenance remain Workbench knowledge and do not automatically
+become a separate published Lessons surface.

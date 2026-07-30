@@ -241,16 +241,17 @@ captures/CAPTURE_BACK_JULY_22_MARKDOWN_LESSON.md
 It connects restaurant language, places, taxi phrases, `andare`, and `venire`
 through short usable exchanges before conjugation clarification.
 
-The proposed site and reusable weekly protocol are:
+The reusable weekly protocol remains:
 
 ```text
-site/lessons/index.html
-site/lessons/2026-07-22.html
-site/images/class-lessons/2026-07-22/
 li/workflow/weekly_screenshot_lesson_capture_rule.md
 templates/weekly_screenshot_lesson/README.md
 tools/verify_weekly_class_lessons.py
 ```
+
+The published lesson index, dated lesson pages, lesson-only stylesheet, and
+class-lesson image copies are removed from the focused flashcard site.
+Workbench-custody Markdown and crops remain preserved.
 ## July 22 interactive flashcard correction
 
 `captures/CAPTURE_BACK_JULY_22_INTERACTIVE_FLASHCARDS.md` proposes routing the
@@ -280,3 +281,10 @@ filterable tap-to-hear cards.
 `li/domain/generative_flashcard_system_rule.md` governs independent subject,
 conjugated-verb, complement, and complete-sentence speech controls.
 `captures/CAPTURE_BACK_SENSITIVE_SPEECH_TARGETS.md` is proposed for review.
+
+
+## Published Lessons surface removal
+
+`captures/CAPTURE_BACK_REMOVE_PUBLISHED_LESSONS_SURFACE.md` proposes removing
+the Lessons navigation and published lesson artifacts while retaining lesson
+knowledge and source custody inside the Workbench.

@@ -18,8 +18,6 @@ pre-existing dirty paths:
 li/corpus/<date>_<topic>_lesson.md
 li/flashcards/<date>_visual_flashcards.md
 assets/class_material/<date>/clips/
-site/images/class-lessons/<date>/
-site/lessons/<date>.html
 captures/CAPTURE_BACK_<DATE>_<TOPIC>.md
 ```
 
@@ -27,10 +25,10 @@ captures/CAPTURE_BACK_<DATE>_<TOPIC>.md
 
 - [ ] visible text is separated from reconstruction;
 - [ ] exact crops contain no participant identity or meeting secrets;
-- [ ] Workbench and site image copies match;
+- [ ] Workbench custody retains the privacy-safe source crops;
 - [ ] the lesson starts with useful speech;
-- [ ] every image link resolves;
-- [ ] site lesson is linked from the lesson index;
+- [ ] every Markdown image link resolves;
+- [ ] no lesson-only published-site surface was introduced;
 - [ ] Workbench verification passes;
 - [ ] pre-existing changes remain explicit;
 - [ ] human acknowledgment is still pending;
