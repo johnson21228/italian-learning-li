@@ -251,3 +251,18 @@ li/workflow/weekly_screenshot_lesson_capture_rule.md
 templates/weekly_screenshot_lesson/README.md
 tools/verify_weekly_class_lessons.py
 ```
+## July 22 interactive flashcard correction
+
+`captures/CAPTURE_BACK_JULY_22_INTERACTIVE_FLASHCARDS.md` proposes routing the
+July 22 evidence into the site's real interactive flashcard data source so the
+learner can see the image, read the Italian, and tap to hear it.
+
+## July 17 screenshot flashcards
+
+`captures/CAPTURE_BACK_JULY_17_CONVERSATION_AND_CONJUGATION_FLASHCARDS.md` proposes 23 interactive question and conjugation cards from the learner-identified July 17 class screenshots.
+
+## Composable avere, bere, and mangiare flashcard pilot
+
+`captures/CAPTURE_BACK_COMPOSABLE_BERE_FLASHCARD_PILOT.md` proposes runtime
+assembly of labeled subject, reusable verb action, and labeled class-vocabulary object into
+filterable tap-to-hear cards.

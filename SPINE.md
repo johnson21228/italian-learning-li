@@ -184,3 +184,22 @@ crops for visual recall without presenting generated imagery as class evidence.
 `li/workflow/weekly_screenshot_lesson_capture_rule.md` governs the repeatable
 path from each new week's screenshots to Markdown lesson, visual review,
 static-site lesson, human acknowledgment, and Git incorporation.
+## July 22 interactive flashcard correction
+
+The proposed correction in
+`captures/CAPTURE_BACK_JULY_22_INTERACTIVE_FLASHCARDS.md` distinguishes the
+Markdown visual deck from the site's executable flashcard surface. July 22
+practice must enter `ITALIAN_CLASSROOM_FLASHCARDS` to provide image, readable
+Italian, tap-to-hear speech, and topic filters.
+
+## July 17 screenshot flashcards
+
+The proposed 23-card batch preserves the supplied class evidence as interactive
+question and verb-table cards while recording the discrepancy between the
+learner-identified class date and screenshot filenames.
+
+## Composable avere, bere, and mangiare flashcard pilot
+
+`captures/CAPTURE_BACK_COMPOSABLE_BERE_FLASHCARD_PILOT.md` proposes runtime
+assembly of labeled subject, reusable verb action, and labeled class-vocabulary object into
+filterable tap-to-hear cards.

@@ -1,5 +1,29 @@
 window.ITALIAN_CLASSROOM_CATEGORY_ORDER = [
   "all",
+  "class-july-17",
+  "class-july-22",
+  "cibo",
+  "avere",
+  "bere",
+  "mangiare",
+  "bevande",
+  "io",
+  "tu",
+  "lui-lei-lei",
+  "noi",
+  "voi",
+  "loro",
+  "acqua",
+  "te",
+  "caffe",
+  "succo-arancia",
+  "vino",
+  "ristorante",
+  "luoghi",
+  "movimento",
+  "taxi",
+  "andare",
+  "venire",
   "class-1",
   "saluti",
   "presentazioni",
@@ -758,17 +782,19 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to be; to stay",
     "speak": "stare",
     "icon": "🧍",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/stare.png",
+    "imageAlt": "A person calmly staying in place while other people move past",
     "note": "core verb",
+    "imageEssence": "one calm person remaining in the same place while movement passes around them",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"stare\".\nThe image should support the meaning: \"to be; to stay\".\nInstructional note: core verb.\nThe Italian word or phrase to support is: stare.\nCategories: class-1, stare, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow one person calmly remaining in the same welcoming place while movement passes around them. No written words, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "stare",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "chiamarsi",
@@ -776,18 +802,20 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to be called; to call oneself",
     "speak": "chiamarsi",
     "icon": "🏷️",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/chiamarsi.png",
+    "imageAlt": "Two people introducing themselves with blank name tags",
     "note": "introduction verb",
+    "imageEssence": "two people introducing themselves and gesturing toward their own identities",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"chiamarsi\".\nThe image should support the meaning: \"to be called; to call oneself\".\nInstructional note: introduction verb.\nThe Italian word or phrase to support is: chiamarsi.\nCategories: class-1, nome, presentazioni, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow two friendly people introducing themselves, each gesturing naturally toward their own chest, with blank name-tag shapes containing no writing. No written words, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "nome",
       "presentazioni",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "andare",
@@ -795,17 +823,19 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to go",
     "speak": "andare",
     "icon": "🚶",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/andare.png",
+    "imageAlt": "A traveler going away toward a destination along an Italian street",
     "note": "appears in come va",
+    "imageEssence": "a traveler visibly departing and moving forward toward a destination",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"andare\".\nThe image should support the meaning: \"to go\".\nInstructional note: appears in come va.\nThe Italian word or phrase to support is: andare.\nCategories: class-1, come-stai, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow one friendly traveler clearly departing from the foreground along an Italian street toward a visible destination, with a simple forward path and strong sense of going away. No written words, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "come-stai",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "capire",
@@ -813,18 +843,20 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to understand",
     "speak": "capire",
     "icon": "💡",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/capire.png",
+    "imageAlt": "A learner changing from puzzled to clear understanding",
     "note": "repair verb",
+    "imageEssence": "a learner moving from confusion to a clear moment of understanding",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"capire\".\nThe image should support the meaning: \"to understand\".\nInstructional note: repair verb.\nThe Italian word or phrase to support is: capire.\nCategories: class-1, riparazione, frasi-utili, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow a learner’s expression changing from puzzled to clearly understanding during a friendly conversation, using a simple visual cue such as a softly glowing lightbulb without symbols or writing. No written words, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "riparazione",
       "frasi-utili",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "ripetere",
@@ -832,18 +864,20 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to repeat",
     "speak": "ripetere",
     "icon": "🔁",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/ripetere.png",
+    "imageAlt": "A speaker repeating the same sound-wave message twice",
     "note": "repair verb",
+    "imageEssence": "the same spoken message appearing twice for a listening learner",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"ripetere\".\nThe image should support the meaning: \"to repeat\".\nInstructional note: repair verb.\nThe Italian word or phrase to support is: ripetere.\nCategories: class-1, riparazione, frasi-utili, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow a friendly speaker saying something twice to a listening learner, represented by two matching simple speech bubbles containing the same non-text sound-wave marks. No written words, letters, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "riparazione",
       "frasi-utili",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "dire",
@@ -851,18 +885,20 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to say",
     "speak": "dire",
     "icon": "💬",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/dire.png",
+    "imageAlt": "One person saying something to another with a sound-wave speech bubble",
     "note": "repair verb",
+    "imageEssence": "one person clearly saying a spoken message to another",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"dire\".\nThe image should support the meaning: \"to say\".\nInstructional note: repair verb.\nThe Italian word or phrase to support is: dire.\nCategories: class-1, riparazione, frasi-utili, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow one friendly person clearly saying something to another, with a single clean speech bubble containing only simple sound-wave marks. No written words, letters, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "riparazione",
       "frasi-utili",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "come-si-chiama",
@@ -2097,16 +2133,18 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to look; to watch",
     "speak": "guardare",
     "icon": "👀",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/guardare.png",
+    "imageAlt": "A learner deliberately looking at a butterfly on a flower",
     "note": "classroom command / Guardate; from July 1 class screenshots",
+    "imageEssence": "a learner’s focused gaze directed toward one clear object",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"guardare\".\nThe image should support the meaning: \"to look; to watch\".\nInstructional note: classroom command / Guardate; from July 1 class screenshots.\nThe Italian word or phrase to support is: guardare.\nCategories: class-1, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow a learner deliberately looking at and watching one clear object, with gaze direction visually obvious and the eyes unobstructed. No written words, letters, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "ascoltare",
@@ -2114,16 +2152,18 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
     "english": "to listen",
     "speak": "ascoltare",
     "icon": "👂",
-    "image": "images/vocabulary/placeholders/verb-placeholder.svg",
-    "imageAlt": "verb placeholder",
+    "image": "images/vocabulary/curated/ascoltare.png",
+    "imageAlt": "A learner attentively listening to a speaker and visible sound waves",
     "note": "classroom command / Ascoltate; from July 1 class screenshots",
+    "imageEssence": "an attentive learner focusing on sound from a friendly speaker",
+    "imagePrompt": "Create a simple square Italian flashcard image for \"ascoltare\".\nThe image should support the meaning: \"to listen\".\nInstructional note: classroom command / Ascoltate; from July 1 class screenshots.\nThe Italian word or phrase to support is: ascoltare.\nCategories: class-1, verbi, needs-image.\nUse a clear, friendly, beginner-language-learning style.\nNo English text.\nAvoid clutter.\nMake the image useful for remembering and speaking the Italian.\nShow a learner attentively listening to a friendly speaker, with the listener’s ear and focused posture clearly emphasized and subtle sound waves between them. No written words, letters, labels, watermark, or logo.",
     "partOfSpeech": "verb",
     "categories": [
       "class-1",
       "verbi",
-      "needs-image"
+      "curated"
     ],
-    "curated": false
+    "curated": true
   },
   {
     "id": "parlare",
@@ -3243,6 +3283,1296 @@ window.ITALIAN_CLASSROOM_FLASHCARDS = [
       "needs-image"
     ],
     "curated": false
+  },
+  {
+    "id": "july22-il-cameriere",
+    "italian": "il cameriere",
+    "english": "the waiter",
+    "speak": "il cameriere",
+    "icon": "🍽️",
+    "image": "images/class-lessons/2026-07-22/il-cameriere.png",
+    "imageAlt": "Waiter carrying a platter in the July 22 class slide",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "sostantivi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-la-cameriera",
+    "italian": "la cameriera",
+    "english": "the waitress",
+    "speak": "la cameriera",
+    "icon": "☕",
+    "image": "images/class-lessons/2026-07-22/la-cameriera.png",
+    "imageAlt": "Waitress carrying drinks in the July 22 class slide",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "noun",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "sostantivi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-oggetti-del-ristorante",
+    "italian": "un bicchiere · un coltello · un cucchiaio · una forchetta",
+    "english": "a glass · a knife · a spoon · a fork",
+    "speak": "un bicchiere, un coltello, un cucchiaio, una forchetta",
+    "icon": "🍴",
+    "image": "images/class-lessons/2026-07-22/restaurant-objects-slide.png",
+    "imageAlt": "July 22 class slide showing restaurant people and table objects",
+    "note": "July 22 class screenshot; grouped retrieval card",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "sostantivi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-portate",
+    "italian": "l’antipasto · il primo · il secondo · il contorno · il dolce",
+    "english": "starter · first course · second course · side dish · dessert",
+    "speak": "l’antipasto, il primo, il secondo, il contorno, il dolce",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-22/menu-courses.png",
+    "imageAlt": "July 22 class material showing the courses of an Italian meal",
+    "note": "July 22 class screenshot; grouped retrieval card",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-cosa-ordini",
+    "italian": "Cosa ordini da mangiare e da bere?",
+    "english": "What are you ordering to eat and drink?",
+    "speak": "Cosa ordini da mangiare e da bere?",
+    "icon": "📝",
+    "image": "images/class-lessons/2026-07-22/ordering-prompt.png",
+    "imageAlt": "July 22 class prompt asking what the learner orders",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "frasi",
+      "domande",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-vorrei",
+    "italian": "Vorrei un primo e un bicchiere d’acqua.",
+    "english": "I would like a first course and a glass of water.",
+    "speak": "Vorrei un primo e un bicchiere d’acqua.",
+    "icon": "🥤",
+    "image": "images/class-lessons/2026-07-22/ordering-prompt.png",
+    "imageAlt": "July 22 restaurant ordering prompt",
+    "note": "practice response reconstructed from July 22 material",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "frasi",
+      "risposte",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-il-conto",
+    "italian": "Il conto, per piacere.",
+    "english": "The check, please.",
+    "speak": "Il conto, per piacere.",
+    "icon": "🧾",
+    "image": "images/class-lessons/2026-07-22/restaurant-useful-phrases.png",
+    "imageAlt": "July 22 class slide with useful restaurant phrases",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "ristorante",
+      "frasi",
+      "frasi-utili",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-i-luoghi",
+    "italian": "il cinema · il negozio · il mercato · la banca",
+    "english": "cinema · shop · market · bank",
+    "speak": "il cinema, il negozio, il mercato, la banca",
+    "icon": "🏙️",
+    "image": "images/class-lessons/2026-07-22/places-slide.png",
+    "imageAlt": "July 22 class slide showing labeled places",
+    "note": "Only visibly labeled places are spoken",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "luoghi",
+      "sostantivi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-dove-vai",
+    "italian": "Dove vai?",
+    "english": "Where are you going?",
+    "speak": "Dove vai?",
+    "icon": "❓",
+    "image": "images/class-lessons/2026-07-22/places-slide.png",
+    "imageAlt": "July 22 places slide used to ask where someone is going",
+    "note": "movement practice from July 22 material",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "luoghi",
+      "movimento",
+      "andare",
+      "frasi",
+      "domande",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-vado-al-mercato",
+    "italian": "Vado al mercato.",
+    "english": "I’m going to the market.",
+    "speak": "Vado al mercato.",
+    "icon": "🛒",
+    "image": "images/class-lessons/2026-07-22/places-slide.png",
+    "imageAlt": "July 22 places slide including the market",
+    "note": "conversation-first andare practice",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "luoghi",
+      "movimento",
+      "andare",
+      "frasi",
+      "risposte",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-andare",
+    "italian": "vado · vai · va · andiamo · andate · vanno",
+    "english": "present tense of andare — to go",
+    "speak": "vado, vai, va, andiamo, andate, vanno",
+    "icon": "➡️",
+    "image": "images/class-lessons/2026-07-22/andare-table.png",
+    "imageAlt": "July 22 class conjugation table for andare",
+    "note": "exact visible conjugation table",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "andare",
+      "verbi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-vieni-con-noi",
+    "italian": "Vieni con noi? Sì, vengo.",
+    "english": "Are you coming with us? Yes, I’m coming.",
+    "speak": "Vieni con noi? Sì, vengo.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "venire recalled by learner; reconstructed practice exchange with generated mnemonic image",
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark.",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "frasi",
+      "dialogo",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-venire-io-vengo",
+    "italian": "Io vengo al ristorante.",
+    "english": "I come / I’m coming to the restaurant.",
+    "speak": "Io vengo al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "io vengo; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-venire-tu-vieni",
+    "italian": "Tu vieni al ristorante.",
+    "english": "You come / You’re coming to the restaurant.",
+    "speak": "Tu vieni al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "tu vieni; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-venire-lei-viene",
+    "italian": "Lei viene al ristorante.",
+    "english": "She comes / She’s coming to the restaurant.",
+    "speak": "Lei viene al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "Lei viene; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-venire-noi-veniamo",
+    "italian": "Noi veniamo al ristorante.",
+    "english": "We come / We’re coming to the restaurant.",
+    "speak": "Noi veniamo al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "noi veniamo; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-venire-voi-venite",
+    "italian": "Voi venite al ristorante.",
+    "english": "You all come / You’re all coming to the restaurant.",
+    "speak": "Voi venite al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "voi venite; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-venire-loro-vengono",
+    "italian": "Loro vengono al ristorante.",
+    "english": "They come / They’re coming to the restaurant.",
+    "speak": "Loro vengono al ristorante.",
+    "icon": "👋",
+    "image": "images/vocabulary/curated/venire-coming.png",
+    "imageAlt": "People coming toward one shared café in an Italian piazza",
+    "note": "loro vengono; standard Italian reconstruction from learner-recalled venire topic",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-22",
+      "movimento",
+      "venire",
+      "verbi",
+      "frasi",
+      "curated"
+    ],
+    "curated": true,
+    "imageEssence": "several people coming from different directions toward one welcoming shared destination",
+    "imagePrompt": "Create a square beginner Italian flashcard illustration showing several people coming from different directions toward one shared welcoming destination in an Italian piazza. No text, labels, logos, or watermark."
+  },
+  {
+    "id": "july22-ho-bisogno-di-un-taxi",
+    "italian": "Ho bisogno di un taxi.",
+    "english": "I need a taxi.",
+    "speak": "Ho bisogno di un taxi.",
+    "icon": "🚕",
+    "image": "images/class-lessons/2026-07-22/taxi-phrases.png",
+    "imageAlt": "July 22 class slide with useful taxi phrases",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "taxi",
+      "frasi",
+      "frasi-utili",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-alla-stazione",
+    "italian": "Alla stazione, per favore.",
+    "english": "To the station, please.",
+    "speak": "Alla stazione, per favore.",
+    "icon": "🚉",
+    "image": "images/class-lessons/2026-07-22/taxi-phrases.png",
+    "imageAlt": "July 22 class slide with taxi destinations",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "taxi",
+      "movimento",
+      "frasi",
+      "risposte",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july22-quanto-le-devo",
+    "italian": "Quanto le devo?",
+    "english": "How much do I owe you?",
+    "speak": "Quanto le devo?",
+    "icon": "💶",
+    "image": "images/class-lessons/2026-07-22/taxi-phrases.png",
+    "imageAlt": "July 22 class slide with useful taxi phrases",
+    "note": "July 22 class screenshot",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-22",
+      "taxi",
+      "frasi",
+      "domande",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-quando-compleanno",
+    "italian": "Quando è il tuo compleanno?",
+    "english": "When is your birthday?",
+    "speak": "Quando è il tuo compleanno?",
+    "icon": "🎂",
+    "image": "images/class-lessons/2026-07-17/questions.png",
+    "imageAlt": "Class slide with five personal conversation questions",
+    "note": "July 17 learner-identified class; screenshot filename dated July 15",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-17",
+      "domande",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-che-giorno-oggi",
+    "italian": "Che giorno è oggi?",
+    "english": "What day is today?",
+    "speak": "Che giorno è oggi?",
+    "icon": "📅",
+    "image": "images/class-lessons/2026-07-17/questions.png",
+    "imageAlt": "Class slide with five personal conversation questions",
+    "note": "July 17 learner-identified class; screenshot filename dated July 15",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-17",
+      "domande",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-giorni-non-lavori",
+    "italian": "Che giorni non lavori?",
+    "english": "Which days do you not work?",
+    "speak": "Che giorni non lavori?",
+    "icon": "🗓️",
+    "image": "images/class-lessons/2026-07-17/questions.png",
+    "imageAlt": "Class slide with five personal conversation questions",
+    "note": "July 17 learner-identified class; screenshot filename dated July 15",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-17",
+      "domande",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-dove-abiti",
+    "italian": "Dove abiti?",
+    "english": "Where do you live?",
+    "speak": "Dove abiti?",
+    "icon": "🏠",
+    "image": "images/class-lessons/2026-07-17/questions.png",
+    "imageAlt": "Class slide with five personal conversation questions",
+    "note": "July 17 learner-identified class; screenshot filename dated July 15",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-17",
+      "domande",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-quando-studi-italiano",
+    "italian": "Quando studi l’italiano?",
+    "english": "When do you study Italian?",
+    "speak": "Quando studi l’italiano?",
+    "icon": "📚",
+    "image": "images/class-lessons/2026-07-17/questions.png",
+    "imageAlt": "Class slide with five personal conversation questions",
+    "note": "July 17 learner-identified class; screenshot filename dated July 15",
+    "partOfSpeech": "phrase",
+    "categories": [
+      "class-july-17",
+      "domande",
+      "frasi",
+      "curated"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-avere-io-ho",
+    "italian": "Io ho fame.",
+    "english": "I am hungry.",
+    "speak": "Io ho fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "io ho; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "io",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "io",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/io.svg",
+        "alt": "Subject icon for io"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-avere-tu-hai",
+    "italian": "Tu hai fame.",
+    "english": "You are hungry.",
+    "speak": "Tu hai fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "tu hai; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "tu",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "tu",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/tu.svg",
+        "alt": "Subject icon for tu"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-avere-lei-ha",
+    "italian": "Lei ha fame.",
+    "english": "She is hungry.",
+    "speak": "Lei ha fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "Lei ha; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "lui-lei-lei",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "lui-lei-lei",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/lui-lei-lei.svg",
+        "alt": "Subject icon for lui-lei-lei"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-avere-noi-abbiamo",
+    "italian": "Noi abbiamo fame.",
+    "english": "We are hungry.",
+    "speak": "Noi abbiamo fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "noi abbiamo; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "noi",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "noi",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/noi.svg",
+        "alt": "Subject icon for noi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-avere-voi-avete",
+    "italian": "Voi avete fame.",
+    "english": "You all are hungry.",
+    "speak": "Voi avete fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "voi avete; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "voi",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "voi",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/voi.svg",
+        "alt": "Subject icon for voi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-avere-loro-hanno",
+    "italian": "Loro hanno fame.",
+    "english": "They are hungry.",
+    "speak": "Loro hanno fame.",
+    "icon": "🤲",
+    "image": "images/class-lessons/2026-07-17/avere-table.png",
+    "imageAlt": "Class conjugation table for avere",
+    "note": "loro hanno; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "avere",
+      "verbi",
+      "frasi",
+      "curated",
+      "loro",
+      "fame"
+    ],
+    "curated": true,
+    "subject": "loro",
+    "object": "fame",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/loro.svg",
+        "alt": "Subject icon for loro"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/avere-action.png",
+        "alt": "Corpus-grounded emblem for avere: hunger, thirst, and possession",
+        "label": "avere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/conditions/fame.svg",
+        "alt": "Visual for fame",
+        "label": "fame"
+      }
+    ]
+  },
+  {
+    "id": "july17-bere-io-bevo",
+    "italian": "Io bevo acqua.",
+    "english": "I drink water.",
+    "speak": "Io bevo acqua.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "io bevo; practice sentence built from the visible class conjugation",
+    "subject": "io",
+    "object": "acqua",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/io.svg",
+        "alt": "Subject icon for io"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/acqua.svg",
+        "alt": "Visual for acqua",
+        "label": "acqua"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "io",
+      "acqua",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-bere-tu-bevi",
+    "italian": "Tu bevi il tè.",
+    "english": "You drink tea.",
+    "speak": "Tu bevi il tè.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "tu bevi; practice sentence built from the visible class conjugation",
+    "subject": "tu",
+    "object": "te",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/tu.svg",
+        "alt": "Subject icon for tu"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/te.svg",
+        "alt": "Visual for te",
+        "label": "tè"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "tu",
+      "te",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-bere-lei-beve",
+    "italian": "Lei beve il caffè.",
+    "english": "She drinks coffee.",
+    "speak": "Lei beve il caffè.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "Lei beve; practice sentence built from the visible class conjugation",
+    "subject": "lui-lei-lei",
+    "object": "caffe",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/lui-lei-lei.svg",
+        "alt": "Subject icon for lui-lei-lei"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/caffe.svg",
+        "alt": "Visual for caffe",
+        "label": "caffè"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "lui-lei-lei",
+      "caffe",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-bere-noi-beviamo",
+    "italian": "Noi beviamo il succo d’arancia.",
+    "english": "We drink orange juice.",
+    "speak": "Noi beviamo il succo d’arancia.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "noi beviamo; practice sentence built from the visible class conjugation",
+    "subject": "noi",
+    "object": "succo-arancia",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/noi.svg",
+        "alt": "Subject icon for noi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/succo-arancia.svg",
+        "alt": "Visual for succo-arancia",
+        "label": "succo d’arancia"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "noi",
+      "succo-arancia",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-bere-voi-bevete",
+    "italian": "Voi bevete il vino.",
+    "english": "You all drink wine.",
+    "speak": "Voi bevete il vino.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "voi bevete; practice sentence built from the visible class conjugation",
+    "subject": "voi",
+    "object": "vino",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/voi.svg",
+        "alt": "Subject icon for voi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/vino.svg",
+        "alt": "Visual for vino",
+        "label": "vino"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "voi",
+      "vino",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-bere-loro-bevono",
+    "italian": "Loro bevono acqua.",
+    "english": "They drink water.",
+    "speak": "Loro bevono acqua.",
+    "icon": "🥛",
+    "image": "images/class-lessons/2026-07-17/bere-table.png",
+    "imageAlt": "Class conjugation table for bere",
+    "note": "loro bevono; practice sentence built from the visible class conjugation",
+    "subject": "loro",
+    "object": "acqua",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/loro.svg",
+        "alt": "Subject icon for loro"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/bere-action.png",
+        "alt": "Neutral hand tilting a glass to represent bere in every conjugation",
+        "label": "bere"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/drinks/acqua.svg",
+        "alt": "Visual for acqua",
+        "label": "acqua"
+      }
+    ],
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "bere",
+      "verbi",
+      "frasi",
+      "curated",
+      "loro",
+      "acqua",
+      "bevande"
+    ],
+    "curated": true
+  },
+  {
+    "id": "july17-mangiare-io-mangio",
+    "italian": "Io mangio la pasta.",
+    "english": "I eat pasta.",
+    "speak": "Io mangio la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "io mangio; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "io",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "io",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/io.svg",
+        "alt": "Subject icon for io"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
+  },
+  {
+    "id": "july17-mangiare-tu-mangi",
+    "italian": "Tu mangi la pasta.",
+    "english": "You eat pasta.",
+    "speak": "Tu mangi la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "tu mangi; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "tu",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "tu",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/tu.svg",
+        "alt": "Subject icon for tu"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
+  },
+  {
+    "id": "july17-mangiare-lei-mangia",
+    "italian": "Lei mangia la pasta.",
+    "english": "She eats pasta.",
+    "speak": "Lei mangia la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "Lei mangia; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "lui-lei-lei",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "lui-lei-lei",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/lui-lei-lei.svg",
+        "alt": "Subject icon for lui-lei-lei"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
+  },
+  {
+    "id": "july17-mangiare-noi-mangiamo",
+    "italian": "Noi mangiamo la pasta.",
+    "english": "We eat pasta.",
+    "speak": "Noi mangiamo la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "noi mangiamo; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "noi",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "noi",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/noi.svg",
+        "alt": "Subject icon for noi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
+  },
+  {
+    "id": "july17-mangiare-voi-mangiate",
+    "italian": "Voi mangiate la pasta.",
+    "english": "You all eat pasta.",
+    "speak": "Voi mangiate la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "voi mangiate; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "voi",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "voi",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/voi.svg",
+        "alt": "Subject icon for voi"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
+  },
+  {
+    "id": "july17-mangiare-loro-mangiano",
+    "italian": "Loro mangiano la pasta.",
+    "english": "They eat pasta.",
+    "speak": "Loro mangiano la pasta.",
+    "icon": "🍝",
+    "image": "images/class-lessons/2026-07-17/mangiare-table.png",
+    "imageAlt": "Class conjugation table for mangiare",
+    "note": "loro mangiano; practice sentence built from the visible class conjugation",
+    "partOfSpeech": "verb",
+    "categories": [
+      "class-july-17",
+      "cibo",
+      "mangiare",
+      "verbi",
+      "frasi",
+      "curated",
+      "loro",
+      "pasta"
+    ],
+    "curated": true,
+    "subject": "loro",
+    "object": "pasta",
+    "visualParts": [
+      {
+        "role": "subject",
+        "image": "images/grammar-subjects/loro.svg",
+        "alt": "Subject icon for loro"
+      },
+      {
+        "role": "verb",
+        "image": "images/vocabulary/curated/mangiare-action.png",
+        "alt": "Neutral hand lifting pasta on a fork to represent mangiare in every conjugation",
+        "label": "mangiare"
+      },
+      {
+        "role": "object",
+        "image": "images/vocabulary/curated/foods/pasta.svg",
+        "alt": "Visual for pasta",
+        "label": "pasta"
+      }
+    ]
   }
 ];
 

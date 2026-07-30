@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title id="title">Fame</title>
+  <rect width="240" height="240" rx="36" fill="#fff8ef"/>
+  <ellipse cx="120" cy="154" rx="78" ry="35" fill="#f7f1e8" stroke="#9aa6a1" stroke-width="7"/>
+  <ellipse cx="120" cy="149" rx="48" ry="16" fill="#fff8ef" stroke="#d8cbb9" stroke-width="4"/>
+  <path d="M70 84c18-22 82-22 100 0" fill="none" stroke="#e2a72e" stroke-width="12" stroke-linecap="round"/>
+  <path d="M83 103h74" stroke="#e2a72e" stroke-width="8" stroke-linecap="round" stroke-dasharray="7 12"/>
+</svg>

@@ -245,6 +245,32 @@ function categoriesFor(item) {
 function filterLabel(category) {
   const labels = {
     all: "All",
+    "class-july-17": "July 17",
+    "class-july-22": "July 22",
+    cibo: "Cibo",
+    avere: "Avere",
+    bere: "Bere",
+    mangiare: "Mangiare",
+    bevande: "Bevande",
+    io: "Io",
+    tu: "Tu",
+    "lui-lei-lei": "Lui / Lei / Lei",
+    noi: "Noi",
+    voi: "Voi",
+    loro: "Loro",
+    acqua: "Acqua",
+    te: "Tè",
+    caffe: "Caffè",
+    "succo-arancia": "Succo d’arancia",
+    vino: "Vino",
+    pasta: "Pasta",
+    fame: "Fame",
+    ristorante: "Ristorante",
+    luoghi: "Luoghi",
+    movimento: "Movimento",
+    taxi: "Taxi",
+    andare: "Andare",
+    venire: "Venire",
     "class-1": "Class 1",
     saluti: "Saluti",
     presentazioni: "Presentazioni",
@@ -333,7 +359,30 @@ function renderCards() {
     img.src = imageUrlFor(item);
     img.alt = item.imageAlt || item.italian;
     img.loading = "lazy";
-    icon.appendChild(img);
+    if (Array.isArray(item.visualParts) && item.visualParts.length) {
+      const visual = document.createElement("div");
+      visual.className = "composite-visual";
+      item.visualParts.forEach((part) => {
+        const partCell = document.createElement("span");
+        partCell.className = `composite-cell composite-${part.role || "part"}`;
+        const partImage = document.createElement("img");
+        partImage.className = "composite-part";
+        partImage.src = part.image;
+        partImage.alt = part.alt || part.role || "";
+        partImage.loading = "lazy";
+        partCell.appendChild(partImage);
+        if (part.label) {
+          const partLabel = document.createElement("span");
+          partLabel.className = "composite-label";
+          partLabel.textContent = part.label;
+          partCell.appendChild(partLabel);
+        }
+        visual.appendChild(partCell);
+      });
+      icon.appendChild(visual);
+    } else {
+      icon.appendChild(img);
+    }
     const italian = document.createElement("div");
     italian.className = "italian";
     italian.lang = "it";

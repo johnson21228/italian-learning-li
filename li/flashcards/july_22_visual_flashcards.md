@@ -169,25 +169,19 @@ vanno
 
 ## Venire
 
-No complete `venire` table is visible in the supplied screenshots. This card
-therefore remains text-only rather than using a misleading image.
+![Generated mnemonic showing people coming toward one shared destination](../../site/images/vocabulary/curated/venire-coming.png)
 
-Start with:
-
-```text
-Vieni con noi?
-Sì, vengo.
-```
-
-Then clarify:
+No complete `venire` table is visible in the supplied screenshots. This is a
+newly generated practice mnemonic, not classroom evidence. The site reuses it
+across six small listening and retrieval cards:
 
 ```text
-vengo
-vieni
-viene
-veniamo
-venite
-vengono
+Io vengo al ristorante.
+Tu vieni al ristorante.
+Lei viene al ristorante.
+Noi veniamo al ristorante.
+Voi venite al ristorante.
+Loro vengono al ristorante.
 ```
 
 ---

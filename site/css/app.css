@@ -368,3 +368,50 @@ body.hide-english .english { display: none; }
   .supabase-auth-panel { background: rgba(31,41,55,.72); }
 }
 
+/* Composable grammar cards: subject + verb evidence + class vocabulary object. */
+.composite-visual {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.icon .composite-part {
+  display: block;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff8ef;
+}
+
+.icon .composite-verb {
+  object-fit: cover;
+}
+
+.composite-cell {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+.composite-label {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 12px);
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 248, 239, .94);
+  color: #1f6f5b;
+  font-size: clamp(.68rem, 2vw, .9rem);
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(31, 111, 91, .18);
+}
