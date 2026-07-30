@@ -3,43 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Italian Classroom Notes</title>
-  <link rel="stylesheet" href="css/app.css?v=20260730-labeled-avere-bere-mangiare">
+  <title>Italian Generative Flashcards</title>
+  <link rel="stylesheet" href="css/app.css?v=20260730-generative-system-v1">
 </head>
 <body>
   <header class="app-header">
     <p class="eyebrow">Italian Learning LI</p>
-    <h1>Classroom Notes</h1>
-    <p class="lede">See the image, read the Italian, and tap the image to hear it. Filter by class or topic.</p>
+    <h1>Flashcard generative</h1>
+    <p class="lede">Ogni verbo usa sei coniugazioni e sei complementi diversi dalla classe.</p>
     <nav class="site-nav" aria-label="Italian learning navigation">
       <a href="index.html" aria-current="page">Flashcards</a>
       <a href="lessons/index.html">Lessons</a>
     </nav>
   </header>
   <section class="controls" aria-label="Practice controls">
-    <label class="toggle-row"><input id="showEnglish" type="checkbox" checked><span>Show English</span></label>
-    <label class="voice-row"><span>Italian voice</span><select id="voiceSelect" aria-label="Italian voice"></select></label>
-    <p id="voiceStatus" class="voice-status">Loading voices…</p>
+    <button id="newRoundButton" type="button">Nuovo giro</button>
+    <label><input id="showEnglish" type="checkbox" checked> Show English</label>
+    <label>Italian voice <select id="voiceSelect"></select></label>
+    <p id="voiceStatus">Loading voices…</p>
   </section>
-  <section class="supabase-auth-panel" aria-label="Curated image upload sign in">
-    <div class="supabase-auth-heading">
-      <h2>Curated image uploads</h2>
-      <p id="supabaseAuthStatus">Checking Supabase sign-in…</p>
-    </div>
-    <div class="supabase-auth-controls">
-      <input id="supabaseAuthEmail" type="email" autocomplete="email" placeholder="Email for sign-in link" aria-label="Email for Supabase sign-in link">
-      <button id="supabaseSignInButton" type="button">Send sign-in link</button>
-      <button id="supabaseSignOutButton" type="button" hidden>Sign out</button>
-    </div>
-  </section>
-  <section class="filter-panel" aria-label="Flashcard filters">
-    <div class="filter-heading"><h2>Filter FCs</h2><p id="activeFilterLabel">All</p></div>
-    <div id="filterBar" class="filter-bar" role="toolbar" aria-label="Flashcard category filters"></div>
+  <section class="readiness" aria-live="polite">
+    <strong id="roundStatus"></strong>
+    <span id="pendingStatus"></span>
   </section>
   <main><section id="cards" class="cards" aria-live="polite"></section></main>
-  <footer class="footer">Static classroom notes site. Ready for GitHub Pages.</footer>
-  <script src="js/vocabulary-data.js?v=20260730-labeled-avere-bere-mangiare"></script>
-  <script src="js/app.js?v=20260730-labeled-avere-bere-mangiare"></script>
-  <script type="module" src="js/services/SupabaseFlashcardImageStore.js?v=20260701-supabase-images"></script>
+  <footer class="footer">Typed class-derived practice. Tap a card to hear Italian.</footer>
+  <script src="js/vocabulary-data.js?v=20260730-generative-system-v1"></script>
+  <script src="js/app.js?v=20260730-generative-system-v1"></script>
 </body>
 </html>

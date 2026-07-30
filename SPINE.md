@@ -203,3 +203,11 @@ learner-identified class date and screenshot filenames.
 `captures/CAPTURE_BACK_COMPOSABLE_BERE_FLASHCARD_PILOT.md` proposes runtime
 assembly of labeled subject, reusable verb action, and labeled class-vocabulary object into
 filterable tap-to-hear cards.
+
+## Generative flashcard system
+
+Generated practice uses admitted paradigms and typed class-derived complements. Every six-card verb round uses each conjugation once and a distinct complement on every card. Pending verbs cannot bypass the admission gate.
+
+## Generative flashcard system
+
+Generated practice uses admitted paradigms and typed class-derived complements. Every six-card verb round uses each conjugation once and a distinct complement on every card. Pending verbs cannot bypass the admission gate.

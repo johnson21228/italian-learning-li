@@ -266,3 +266,11 @@ learner can see the image, read the Italian, and tap to hear it.
 `captures/CAPTURE_BACK_COMPOSABLE_BERE_FLASHCARD_PILOT.md` proposes runtime
 assembly of labeled subject, reusable verb action, and labeled class-vocabulary object into
 filterable tap-to-hear cards.
+
+## Generative flashcard system
+
+`li/domain/generative_flashcard_system_rule.md` governs the generator-only site projection. `captures/CAPTURE_BACK_GENERATIVE_FLASHCARD_SYSTEM.md` is proposed for review.
+
+## Generative flashcard system
+
+`li/domain/generative_flashcard_system_rule.md` governs the generator-only site projection. `captures/CAPTURE_BACK_GENERATIVE_FLASHCARD_SYSTEM.md` is proposed for review.
