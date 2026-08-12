@@ -112,7 +112,7 @@ def main():
     expected_verbs = {
         "essere", "stare", "chiamarsi", "andare", "capire", "ripetere",
         "dire", "guardare", "ascoltare", "parlare", "scrivere", "abitare",
-        "provare", "mangiare", "lavorare", "venire", "avere", "bere",
+        "provare", "mangiare", "lavorare", "venire", "avere", "bere", "fare",
     }
     verbs = registry["verbs"]
     if {verb["key"] for verb in verbs} != expected_verbs:
@@ -141,7 +141,7 @@ def main():
             print(f"Verb provenance missing: {verb['key']}")
             return 1
         round_sentences = {
-            f"{subjects[index]['italian']} {verb['forms'][index]['form']} {complements[index]['phrase']}."
+            f"{verb['forms'][index]['form']} {complements[index]['phrase']}."
             for index in range(6)
         }
         if len(round_sentences) != 6:

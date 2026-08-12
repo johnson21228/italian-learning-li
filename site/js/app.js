@@ -48,7 +48,7 @@ function buildRound() {
     registry.subjects.forEach((subject, index) => {
       const form = verb.forms[index];
       const complement = complements[index];
-      const italian = `${subject.italian} ${form.form} ${complement.phrase}.`;
+      const italian = `${form.form} ${complement.phrase}.`;
       cards.push({
         id: `${verb.key}-${subject.key}-${complement.key}-round-${state.round}`,
         italian,
@@ -58,7 +58,6 @@ function buildRound() {
         subject: subject.key,
         complement: complement.key,
         visualParts: [
-          {role: "subject", image: subject.image, alt: `Subject ${subject.italian}`, speak: subject.italian},
           {role: "verb", image: verb.image, icon: verb.icon, alt: `Conjugated verb ${form.form}`, label: form.form, speak: form.form},
           {role: "object", icon: complement.icon, alt: complement.label, label: complement.label, speak: complement.phrase},
         ],
@@ -180,7 +179,7 @@ function renderCards() {
     pendingStatusEl.textContent = "PDF esterni · frasi brevi o trasformate · provenienza visibile.";
   } else {
     roundStatusEl.textContent = `Giro ${state.round}: ${state.cards.length} carte · ${registry.verbs.length} verbi attivi.`;
-    pendingStatusEl.textContent = `${registry.pendingVerbs.length} verbi attendono paradigmi e complementi verificati.`;
+    pendingStatusEl.textContent = `Pronome omesso · ascolta la forma verbale · ${registry.pendingVerbs.length} verbi in attesa.`;
   }
 }
 

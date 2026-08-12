@@ -1,7 +1,7 @@
 // Generated practice registry; source evidence remains in LI, assets, captures, and Git history.
 window.ITALIAN_GENERATIVE_FLASHCARD_REGISTRY = {
   "schema": "italian-generative-flashcards/v1",
-  "roundRule": "Each admitted verb uses every subject once and a distinct complement on every card.",
+  "roundRule": "Each admitted verb uses all six forms once and a distinct complement on every card; spoken Italian omits subject pronouns.",
   "subjects": [
     {
       "key": "io",
@@ -35,6 +35,29 @@ window.ITALIAN_GENERATIVE_FLASHCARD_REGISTRY = {
     }
   ],
   "verbs": [
+    {
+      "key": "fare",
+      "infinitive": "fare",
+      "english": "to do; to make",
+      "icon": "🛠️",
+      "forms": [
+        {"form": "faccio", "english": "I"},
+        {"form": "fai", "english": "You"},
+        {"form": "fa", "english": "She"},
+        {"form": "facciamo", "english": "We"},
+        {"form": "fate", "english": "You all"},
+        {"form": "fanno", "english": "They"}
+      ],
+      "complements": [
+        {"key": "colazione", "label": "colazione", "phrase": "colazione", "english": "have breakfast", "icon": "🥐", "provenance": "Day 7 fare slide"},
+        {"key": "domanda", "label": "una domanda", "phrase": "una domanda", "english": "ask a question", "icon": "❓", "provenance": "Day 7 fare slide"},
+        {"key": "spuntino", "label": "uno spuntino", "phrase": "uno spuntino", "english": "have a snack", "icon": "🍎", "provenance": "Day 7 fare slide"},
+        {"key": "prenotazione", "label": "una prenotazione", "phrase": "una prenotazione", "english": "make a reservation", "icon": "🏨", "provenance": "Day 7 hotel material"},
+        {"key": "passeggiata", "label": "una passeggiata", "phrase": "una passeggiata", "english": "take a walk", "icon": "🚶", "provenance": "Standard beginner Italian practice"},
+        {"key": "attenzione", "label": "attenzione", "phrase": "attenzione", "english": "pay attention", "icon": "👀", "provenance": "Standard beginner Italian practice"}
+      ],
+      "provenance": "Day 7 class-visible fare paradigm and useful expressions"
+    },
     {
       "key": "avere",
       "infinitive": "avere",
