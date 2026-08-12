@@ -1,7 +1,9 @@
 const registry = window.ITALIAN_GENERATIVE_FLASHCARD_REGISTRY;
 const handoutRegistry = window.ITALIAN_HANDOUT_FLASHCARD_CANDIDATES;
+const day7Registry = window.ITALIAN_DAY7_FLASHCARDS || [];
 const state = {
   activeView: "class",
+  activeCategory: "all",
   round: 0,
   cards: [],
   complementDecks: new Map(),
@@ -17,6 +19,24 @@ const pendingStatusEl = document.getElementById("pendingStatus");
 const newRoundButtonEl = document.getElementById("newRoundButton");
 const classTabEl = document.getElementById("classTab");
 const handoutTabEl = document.getElementById("handoutTab");
+const filterPanelEl = document.getElementById("filterPanel");
+const filterBarEl = document.getElementById("filterBar");
+const activeFilterLabelEl = document.getElementById("activeFilterLabel");
+
+const categoryOrder = ["all", "class-1", "restaurant-travel", "day-7", "hotel", "body-pain", "health", "pharmacy", "without-pronouns", "avere", "fare"];
+const categoryLabels = {
+  all: "All lessons",
+  "class-1": "Class 1",
+  "restaurant-travel": "Restaurant & travel",
+  "day-7": "Day 7",
+  hotel: "Hotel",
+  "body-pain": "Body & pain",
+  health: "Health",
+  pharmacy: "Pharmacy",
+  "without-pronouns": "Without pronouns",
+  avere: "Avere",
+  fare: "Fare",
+};
 
 function shuffled(items) {
   const result = [...items];
@@ -49,6 +69,12 @@ function buildRound() {
       const form = verb.forms[index];
       const complement = complements[index];
       const italian = `${form.form} ${complement.phrase}.`;
+      const provenance = `${verb.provenance || ""} ${complement.provenance || ""}`;
+      const categories = ["without-pronouns", verb.key];
+      if (/class 1|first class|name exchange|greeting/i.test(provenance)) categories.push("class-1");
+      if (/july 22|restaurant|taxi|places|movement/i.test(provenance)) categories.push("restaurant-travel");
+      if (/day 7/i.test(provenance) || verb.key === "fare") categories.push("day-7");
+      if (/hotel|prenotazione/i.test(provenance)) categories.push("hotel");
       cards.push({
         id: `${verb.key}-${subject.key}-${complement.key}-round-${state.round}`,
         italian,
@@ -57,6 +83,7 @@ function buildRound() {
         verb: verb.infinitive,
         subject: subject.key,
         complement: complement.key,
+        categories: [...new Set(categories)],
         visualParts: [
           {role: "verb", image: verb.image, icon: verb.icon, alt: `Conjugated verb ${form.form}`, label: form.form, speak: form.form},
           {role: "object", icon: complement.icon, alt: complement.label, label: complement.label, speak: complement.phrase},
@@ -128,6 +155,13 @@ function handoutVisualParts(item) {
   return [{role: "object", icon: item.icon, alt: item.italian, label: item.italian, speak: item.italian}];
 }
 
+function day7Cards() {
+  return day7Registry.map((item) => ({
+    ...item,
+    visualParts: [{role: "object", image: item.image, icon: item.icon, alt: item.imageAlt || item.italian, speak: item.speak}],
+  }));
+}
+
 function activeCards() {
   if (state.activeView === "handouts") {
     return handoutRegistry.cards.map((item) => ({
@@ -136,12 +170,40 @@ function activeCards() {
       visualParts: handoutVisualParts(item),
     }));
   }
-  return state.cards;
+  return [...state.cards, ...day7Cards()];
+}
+
+function visibleCards() {
+  const cards = activeCards();
+  if (state.activeView === "handouts" || state.activeCategory === "all") return cards;
+  return cards.filter((item) => (item.categories || []).includes(state.activeCategory));
+}
+
+function renderFilters() {
+  if (!filterBarEl) return;
+  const cards = [...state.cards, ...day7Cards()];
+  filterBarEl.innerHTML = "";
+  categoryOrder.forEach((category) => {
+    const count = category === "all" ? cards.length : cards.filter((item) => (item.categories || []).includes(category)).length;
+    if (!count) return;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "filter-chip";
+    button.setAttribute("aria-pressed", String(state.activeCategory === category));
+    button.textContent = `${categoryLabels[category]} ${count}`;
+    button.addEventListener("click", () => {
+      state.activeCategory = category;
+      renderFilters();
+      renderCards();
+    });
+    filterBarEl.append(button);
+  });
+  if (activeFilterLabelEl) activeFilterLabelEl.textContent = categoryLabels[state.activeCategory];
 }
 
 function renderCards() {
   cardsEl.innerHTML = "";
-  activeCards().forEach((item) => {
+  visibleCards().forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
     const visual = document.createElement("div");
@@ -178,7 +240,7 @@ function renderCards() {
     roundStatusEl.textContent = `${handoutRegistry.cards.length} candidate da tre handout.`;
     pendingStatusEl.textContent = "PDF esterni · frasi brevi o trasformate · provenienza visibile.";
   } else {
-    roundStatusEl.textContent = `Giro ${state.round}: ${state.cards.length} carte · ${registry.verbs.length} verbi attivi.`;
+    roundStatusEl.textContent = `Giro ${state.round}: ${visibleCards().length} carte visibili · ${registry.verbs.length} verbi attivi.`;
     pendingStatusEl.textContent = `Pronome omesso · ascolta la forma verbale · ${registry.pendingVerbs.length} verbi in attesa.`;
   }
 }
@@ -186,6 +248,7 @@ function renderCards() {
 function newRound() {
   state.round += 1;
   state.cards = buildRound();
+  renderFilters();
   renderCards();
 }
 
@@ -197,6 +260,7 @@ function setView(view) {
   classTabEl.setAttribute("aria-pressed", String(!handouts));
   handoutTabEl.setAttribute("aria-pressed", String(handouts));
   newRoundButtonEl.hidden = handouts;
+  if (filterPanelEl) filterPanelEl.hidden = handouts;
   renderCards();
 }
 

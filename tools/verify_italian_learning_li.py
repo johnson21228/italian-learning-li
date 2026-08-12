@@ -12,6 +12,7 @@ REQUIRED = [
     "source/resources/handout_flashcard_derivation_manifest.md",
     "li/flashcards/from_handouts_candidates.json",
     "site/js/handout-flashcard-data.js",
+    "site/js/day7-flashcard-data.js",
     "site/index.html", "site/js/app.js", "site/js/vocabulary-data.js",
     "site/css/app.css",
 ]
@@ -28,6 +29,18 @@ console.log(JSON.stringify(ctx.window.ITALIAN_GENERATIVE_FLASHCARD_REGISTRY));
         raise RuntimeError(result.stderr)
     return json.loads(result.stdout)
 
+def load_day7_cards():
+    script = """
+const fs=require('fs'),vm=require('vm');
+const ctx={window:{}}; vm.createContext(ctx);
+vm.runInContext(fs.readFileSync('site/js/day7-flashcard-data.js','utf8'),ctx);
+console.log(JSON.stringify(ctx.window.ITALIAN_DAY7_FLASHCARDS));
+"""
+    result = subprocess.run(["node", "-e", script], text=True, capture_output=True)
+    if result.returncode:
+        raise RuntimeError(result.stderr)
+    return json.loads(result.stdout)
+
 def main():
     missing = [path for path in REQUIRED if not Path(path).is_file()]
     if missing:
@@ -35,13 +48,13 @@ def main():
         return 1
     index = Path("site/index.html").read_text()
     app = Path("site/js/app.js").read_text()
-    forbidden = ["filterBar", "supabase", "Copy image prompt", "imagePromptFor"]
+    forbidden = ["supabase", "Copy image prompt", "imagePromptFor"]
     combined = (index + app).lower()
     for token in forbidden:
         if token.lower() in combined:
             print(f"Removed site surface remains: {token}")
             return 1
-    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "20260730-handout-tabs-v1"]:
+    for token in ["Nuovo giro", "buildRound", "drawDistinctComplements", "speakItalian", "filterBar", "20260812-lesson-filters-v1"]:
         if token not in index + app:
             print(f"Generative runtime token missing: {token}")
             return 1
@@ -64,6 +77,23 @@ def main():
     for token in ["From Class", "From Handouts", "handoutTab", "handout-flashcard-data.js"]:
         if token not in index + app:
             print(f"Handout view token missing: {token}")
+            return 1
+    day7_cards = load_day7_cards()
+    if len(day7_cards) != 26:
+        print(f"Expected 26 curated Day 7 cards; found {len(day7_cards)}.")
+        return 1
+    required_categories = {"day-7", "hotel", "body-pain", "health", "pharmacy"}
+    day7_categories = {category for card in day7_cards for category in card.get("categories", [])}
+    if not required_categories.issubset(day7_categories):
+        print(f"Day 7 category coverage missing: {sorted(required_categories - day7_categories)}")
+        return 1
+    for card in day7_cards:
+        for field in ["id", "italian", "english", "speak", "image", "imageAlt", "categories"]:
+            if not card.get(field):
+                print(f"Day 7 card metadata missing: {card.get('id')}:{field}")
+                return 1
+        if not Path("site", card["image"]).is_file():
+            print(f"Day 7 card image missing: {card['image']}")
             return 1
     handouts = json.loads(Path("li/flashcards/from_handouts_candidates.json").read_text())
     if handouts.get("schema") != "italian-handout-candidate-registry/v2":
